@@ -1,5 +1,6 @@
 import { ArrowRight, BrainCircuit, Users, BarChart, Network, Mail, Linkedin } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Nav } from "@/components/nav"
@@ -107,7 +108,7 @@ export default function LandingPage() {
                     Born of proprietary MIT research on the productivity and performance benefits of "personality pairing" AI agents with human users, Pairium AI is developing personalization technology that optimizes Human-AI collaboration to maximize performance and productivity returns in any collaborative task.
                   </p>
                   <p className="text-lg leading-relaxed">
-                    MIT collaborators and Pairium AI co-founders Sinan Aral and Harang Ju developed a first of its kind, commercial grade human-AI collaboration platform called MindMeld. MindMeld allows humans to collaborate with fully configured AI agents that "can do anything the humans can do" on any configurable task.
+                    MIT collaborators and Pairium AI co-founders Sinan Aral and Harang Ju developed a first of its kind, commercial grade human-AI collaboration platform called MindMeld. <Link href="/mindmeld" className="text-[#007ACC] dark:text-[#40A9FF]">MindMeld</Link> allows humans to collaborate with fully configured AI agents that "can do anything the humans can do" on any configurable task.
                   </p>
                   <p className="text-lg leading-relaxed">
                     But, unlike other platforms, it is configured to discover causal drivers of improved productivity and performance. Aral and Ju test drove their platform in a large scale randomized controlled trial (RCT) of Human-AI collaboration to create end to end marketing campaigns. They discovered non-obvious and surprisingly strong productivity and performance effects of "pairing" AI agents with their human collaborators. Through this discovery, Pairium was born...
