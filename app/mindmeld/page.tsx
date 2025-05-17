@@ -293,11 +293,10 @@ export default function LandingPage() {
                     <span className="text-xl font-bold">SZNS</span>
                   </div>
                   <a href="https://szns.solutions" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary text-center">
-                    SZNS Solutions*
+                    SZNS Solutions
                   </a>
                 </div>
               </div>
-              <p className="text-xs text-muted-foreground/70 mt-2">* Special thanks to SZNS Solutions for their development support</p>
             </div>
           </div>
         </section>
