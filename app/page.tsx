@@ -11,24 +11,20 @@ export default function LandingPage() {
       <Nav />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-36 md:py-44 lg:py-52 relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700" aria-labelledby="hero-heading">
+        <section className="w-full py-16 md:py-32 lg:py-40 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900/95" aria-labelledby="hero-heading">
           <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
-          
-          {/* Enhanced gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#007ACC]/5 to-[#69C0FF]/15"></div>
-          
           <div className="container relative mx-auto max-w-7xl px-4 sm:px-6">
-            <div className="flex flex-col max-w-3xl">
-              <div className="flex flex-col justify-center space-y-8">
-                <div>
-                  <h1 id="hero-heading" className="text-5xl md:text-6xl font-bold tracking-tighter text-white">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#40A9FF] to-[#69C0FF]">Pairium AI</span>
+            <div className="flex flex-col items-center justify-center text-center">
+              <div className="flex flex-col justify-center space-y-8 w-full">
+                <div className="space-y-5">
+                  <h1 id="hero-heading" className="w-full text-4xl md:text-5xl font-bold tracking-tighter text-white">
+                    Pairium <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#40A9FF] to-[#69C0FF]">AI</span>
                   </h1>
-                  <p className="mt-4 text-xl md:text-2xl max-w-2xl text-white/90">
+                  <p className="text-xl md:text-2xl max-w-2xl mx-auto text-white/90">
                     Personalizing the Agentic Age with AI technology that adapts to your unique work style.
                   </p>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center">
                   <a
                     href="#about"
                     className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#007ACC] to-[#00AAFF] px-4 py-2.5 text-base font-medium text-white shadow-sm hover:from-[#0088CC] hover:to-[#00CCFF] transition-all"
@@ -55,36 +51,36 @@ export default function LandingPage() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+              <Card className="h-full">
                 <CardHeader>
-                  <div className="h-12 w-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
-                    <BrainCircuit className="h-6 w-6 text-[#007ACC]" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
+                    <BrainCircuit className="h-5 w-5 text-[#007ACC]" />
                   </div>
-                  <CardTitle>Personality Pairing</CardTitle>
+                  <CardTitle className="mt-4">Personality Pairing</CardTitle>
                   <CardDescription>
                     Proprietary technology that matches AI agents with human users for optimal collaboration.
                   </CardDescription>
                 </CardHeader>
               </Card>
               
-              <Card className="border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+              <Card className="h-full">
                 <CardHeader>
-                  <div className="h-12 w-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
-                    <BarChart className="h-6 w-6 text-[#007ACC]" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
+                    <BarChart className="h-5 w-5 text-[#007ACC]" />
                   </div>
-                  <CardTitle>Performance Optimization</CardTitle>
+                  <CardTitle className="mt-4">Performance Optimization</CardTitle>
                   <CardDescription>
                     Proven productivity gains based on MIT research and large-scale studies.
                   </CardDescription>
                 </CardHeader>
               </Card>
               
-              <Card className="border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+              <Card className="h-full">
                 <CardHeader>
-                  <div className="h-12 w-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
-                    <Network className="h-6 w-6 text-[#007ACC]" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
+                    <Network className="h-5 w-5 text-[#007ACC]" />
                   </div>
-                  <CardTitle>Adaptive Learning</CardTitle>
+                  <CardTitle className="mt-4">Adaptive Learning</CardTitle>
                   <CardDescription>
                     AI that continuously adapts to your working style and preferences.
                   </CardDescription>
