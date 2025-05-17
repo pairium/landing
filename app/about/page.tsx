@@ -1,6 +1,5 @@
 import { Linkedin } from "lucide-react"
 import Image from "next/image"
-import { Nav } from "@/components/nav"
 
 export const metadata = {
   title: "About the Founders | Pairium AI",
@@ -10,7 +9,6 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main className="flex-1">
-      <Nav />
       
       {/* Hero Section */}
       <section className="w-full py-12 md:py-16 bg-gradient-to-b from-blue-50 via-blue-100 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900/95" aria-labelledby="about-heading">
