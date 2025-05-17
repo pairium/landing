@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MindMeld",
-  description: "Create Online Human-AI Experiments in Minutes",
+  metadataBase: new URL('https://pairium.ai'),
+  title: "Pairium AI",
+  description: "Personalizing the Agentic Age",
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -27,21 +28,21 @@ export const metadata: Metadata = {
     ]
   },
   openGraph: {
-    title: 'MindMeld',
-    description: 'Create Online Human-AI Experiments in Minutes',
+    title: 'Pairium AI',
+    description: 'Personalizing the Agentic Age',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 1200,
-        alt: 'MindMeld - Create Online Human-AI Experiments in Minutes'
+        alt: 'Pairium AI - Personalizing the Agentic Age'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MindMeld',
-    description: 'Create Online Human-AI Experiments in Minutes',
+    title: 'Pairium AI',
+    description: 'Personalizing the Agentic Age',
     images: ['/og-image.png']
   }
 };

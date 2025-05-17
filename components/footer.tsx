@@ -1,27 +1,43 @@
+import { Linkedin } from "lucide-react"
 import Link from "next/link"
-import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Footer() {
   return (
-    <footer className="w-full border-t bg-background">
-      <div className="container mx-auto max-w-7xl flex flex-col gap-4 py-4 px-4 sm:px-6">
-        <p className="text-sm text-muted-foreground text-center sm:text-left">
-          &copy; {new Date().getFullYear()} Harang Ju
-        </p>
-        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
-          <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center sm:justify-start">
-            <Link href="https://accessibility.mit.edu" className="text-sm text-muted-foreground hover:text-foreground">
-              Accessibility
+    <footer className="w-full bg-slate-900 text-white py-12">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="flex flex-col items-center text-center">
+          <div className="mb-8">
+            <h3 className="text-lg font-semibold mb-2">Pairium AI</h3>
+            <p className="text-slate-400 max-w-md">
+              Personalizing the Agentic Age with MIT research-backed AI technology.
+            </p>
+          </div>
+          
+          <div className="flex gap-8 mb-8">
+            <Link
+              href="/mindmeld" 
+              className="text-slate-400 hover:text-white transition-colors"
+            >
+              MindMeld
             </Link>
-            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground">
+            <a 
+              href="https://arxiv.org/abs/2503.18238" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-white transition-colors"
+            >
+              Research
+            </a>
+            <Link
+              href="/privacy" 
+              className="text-slate-400 hover:text-white transition-colors"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground">
-              Terms of Service
-            </Link>
           </div>
-          <div className="sm:ml-auto sm:pl-4 sm:border-l border-border">
-            <ThemeToggle />
+
+          <div className="border-t border-slate-800 w-full pt-8 text-center">
+            <p className="text-slate-400">© {new Date().getFullYear()} Pairium AI. All rights reserved.</p>
           </div>
         </div>
       </div>

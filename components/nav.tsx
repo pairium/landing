@@ -1,60 +1,39 @@
 'use client'
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { BrainCircuit, Github, BookOpenText, ScrollText } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { BrainCircuit, Users, BarChart, Network, Mail } from "lucide-react"
 
 export function Nav() {
   const pathname = usePathname()
   const isHomePage = pathname === '/'
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault()
-    const element = document.getElementById(targetId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-700/20 bg-slate-900">
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="flex-1 flex items-center gap-2 hover:opacity-80 transition-opacity" aria-label="MindMeld Home">
-          <BrainCircuit className="h-6 w-6" aria-hidden="true" />
-          <span className="text-xl font-bold">MindMeld</span>
+        <Link href="/" className="flex-1 flex items-center gap-2 hover:opacity-80 transition-opacity" aria-label="Pairium AI Home">
+          <div className="flex items-center">
+            <Image src="/icon.svg" alt="Pairium AI Logo" width={40} height={40} className="mr-2" />
+          </div>
         </Link>
+        
         {isHomePage && (
-          <nav className="hidden md:flex gap-6" aria-label="Main navigation">
-            <a href="#features" className="text-sm font-medium hover:text-primary" onClick={(e) => handleScroll(e, 'features')}>
-              Features
-            </a>
-            <a href="#how-it-works" className="text-sm font-medium hover:text-primary" onClick={(e) => handleScroll(e, 'how-it-works')}>
-              How It Works
-            </a>
-            <a href="#research-development" className="text-sm font-medium hover:text-primary" onClick={(e) => handleScroll(e, 'research-development')}>
-              R&D
-            </a>
-            <a href="#contact" className="text-sm font-medium hover:text-primary" onClick={(e) => handleScroll(e, 'contact')}>
-              Contact
-            </a>
+          <nav className="flex items-center gap-6" aria-label="Main navigation">
+            <Link
+              href="/mindmeld" 
+              className="text-base hover:text-white transition-colors font-medium text-slate-300"
+            >
+              MindMeld Platform
+            </Link>
+            <Link 
+              href="mailto:info@pairium.ai" 
+              className="ml-2 inline-flex items-center rounded-md bg-gradient-to-r from-[#007ACC] to-[#00AAFF] px-4 py-2 text-base font-medium text-white shadow-sm hover:from-[#0088CC] hover:to-[#00CCFF] transition-all"
+            >
+              Get in Touch
+            </Link>
           </nav>
         )}
-        <div className="flex-1 flex items-center gap-3 justify-end" aria-label="External links">
-          <Button variant="outline" disabled className="relative" aria-label="GitHub Repository (Coming Soon)">
-            <Github className="h-5 w-5" aria-hidden="true" />
-            <span>GitHub</span>
-            <span className="absolute -top-1 -right-1 text-[10px] font-medium bg-primary text-primary-foreground px-1.5 py-0.5 rounded-full">
-              Soon
-            </span>
-          </Button>
-          <Button variant="outline" asChild>
-            <Link href="https://arxiv.org/abs/2503.18238" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2" aria-label="Read the paper">
-              <ScrollText className="h-5 w-5" aria-hidden="true" />
-              <span>Paper</span>
-            </Link>
-          </Button>
-        </div>
       </div>
     </header>
   )

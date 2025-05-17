@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
               <div className="space-y-4">
                 <h2 className="text-2xl font-semibold">1. Introduction</h2>
                 <p>
-                  This Privacy Policy describes how Harang Ju handles your privacy when you visit this website.
+                  This Privacy Policy describes how Pairium AI handles your privacy when you visit this website.
                 </p>
 
                 <h2 className="text-2xl font-semibold">2. Information Collection</h2>
@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
                   If you have any questions about this Privacy Policy, please contact us at:
                 </p>
                 <p className="text-muted-foreground">
-                  Email: digital@mit.edu
+                  Email: info@pairium.ai
                 </p>
               </div>
             </div>
