@@ -28,7 +28,7 @@ export function Nav() {
             </Link>
             <Link 
               href="mailto:info@pairium.ai" 
-              className="ml-2 inline-flex items-center rounded-md bg-gradient-to-r from-[#007ACC] to-[#00AAFF] px-4 py-2 text-base font-medium text-white shadow-sm hover:from-[#0088CC] hover:to-[#00CCFF] transition-all"
+              className="ml-2 inline-flex items-center rounded-md bg-gradient-to-r from-[#007ACC] to-[#00AAFF] px-4 py-2.5 text-base font-medium text-white shadow-sm hover:from-[#0088CC] hover:to-[#00CCFF] transition-all"
             >
               Get in Touch
             </Link>

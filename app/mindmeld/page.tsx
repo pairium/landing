@@ -11,22 +11,35 @@ export default function LandingPage() {
       <Nav />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-16 md:py-32 lg:py-40 xl:py-56" aria-labelledby="hero-heading">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6">
+        <section className="w-full py-16 md:py-32 lg:py-40 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900/95" aria-labelledby="hero-heading">
+          <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
+          <div className="container relative mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center justify-center text-center">
-              <div className="flex flex-col justify-center space-y-6 w-full">
-                <div className="space-y-8">
-                  <h1 id="hero-heading" className="w-full text-4xl font-bold tracking-tighter text-5xl">
-                    Create Online Human-AI Experiments in Minutes
+              <div className="flex flex-col justify-center space-y-8 w-full">
+                <div className="space-y-5">
+                  <span className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-white/20 text-white mb-2">
+                    Powered by Pairium AI
+                  </span>
+                  <h1 id="hero-heading" className="w-full text-4xl md:text-5xl font-bold tracking-tighter text-white">
+                    MindMeld <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#40A9FF] to-[#69C0FF]">Platform</span>
                   </h1>
-                  <p className="text-muted-foreground md:text-xl max-w-2xl mx-auto">
-                    MindMeld is a powerful platform for designing and running interactive experiments between humans and AI agents.
+                  <p className="text-xl md:text-2xl max-w-2xl mx-auto text-white/90">
+                    A powerful platform for designing and running interactive experiments between humans and AI agents, built on Pairium's personality pairing technology.
                   </p>
                 </div>
+                <div className="flex items-center justify-center gap-4 flex-wrap">
+                  <div className="rounded-lg border border-[#40A9FF]/30 bg-slate-800/60 px-5 py-3 text-white">
+                    <span className="font-medium text-[#40A9FF]">Academic Version Available:</span> Free for qualified researchers
+                  </div>
+                </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center">
-                  <Button size="lg" disabled className="relative" aria-label="Get Started (Coming Soon)">
+                  <Button 
+                    disabled 
+                    className="relative bg-gradient-to-r from-[#007ACC] to-[#00AAFF] px-4 py-2.5 text-white opacity-80 font-medium rounded-md h-auto" 
+                    aria-label="Get Started (Coming Soon)"
+                  >
                     Get Started <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-                    <span className="absolute -top-1 -right-1 text-[10px] font-medium bg-primary text-primary-foreground px-1.5 py-0.5 rounded-full">
+                    <span className="absolute -top-1 -right-1 text-[10px] font-medium bg-white text-[#007ACC] px-1.5 py-0.5 rounded-full">
                       Soon
                     </span>
                   </Button>
@@ -41,19 +54,22 @@ export default function LandingPage() {
           <div className="container mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
-                  Features
+                <div className="inline-block rounded-lg bg-[#007ACC] px-3 py-1 text-sm text-white">
+                  Platform Features
                 </div>
                 <h2 id="features-heading" className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                  Everything You Need to Run Your Human-AI Experiments
+                  MindMeld: The Ultimate Human-AI Experiment Platform
                 </h2>
+                <p className="max-w-[800px] text-muted-foreground md:text-lg mx-auto">
+                  Born from MIT research and developed by Pairium AI, MindMeld offers everything researchers and organizations need to run sophisticated human-AI experiments.
+                </p>
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3">
               <Card className="h-full">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-primary/10">
-                    <Code className="h-5 w-5 text-primary" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
+                    <Code className="h-5 w-5 text-[#007ACC]" />
                   </div>
                   <CardTitle className="mt-4">Easy Configuration</CardTitle>
                   <CardDescription>
@@ -63,8 +79,8 @@ export default function LandingPage() {
               </Card>
               <Card className="h-full">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-primary/10">
-                    <Layout className="h-5 w-5 text-primary" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
+                    <Layout className="h-5 w-5 text-[#007ACC]" />
                   </div>
                   <CardTitle className="mt-4">Custom UI Builder</CardTitle>
                   <CardDescription>
@@ -74,8 +90,8 @@ export default function LandingPage() {
               </Card>
               <Card className="h-full">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-primary/10">
-                    <Network className="h-5 w-5 text-primary" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
+                    <Network className="h-5 w-5 text-[#007ACC]" />
                   </div>
                   <CardTitle className="mt-4">Experiment Flows</CardTitle>
                   <CardDescription>
@@ -85,8 +101,8 @@ export default function LandingPage() {
               </Card>
               <Card className="h-full">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-primary/10">
-                    <Users className="h-5 w-5 text-primary" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
+                    <Users className="h-5 w-5 text-[#007ACC]" />
                   </div>
                   <CardTitle className="mt-4">Prolific Integration</CardTitle>
                   <CardDescription>
@@ -96,8 +112,8 @@ export default function LandingPage() {
               </Card>
               <Card className="h-full">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-primary/10">
-                    <Dices className="h-5 w-5 text-primary" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
+                    <Dices className="h-5 w-5 text-[#007ACC]" />
                   </div>
                   <CardTitle className="mt-4">Experimental Randomization</CardTitle>
                   <CardDescription>
@@ -107,8 +123,8 @@ export default function LandingPage() {
               </Card>
               <Card className="h-full">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-primary/10">
-                    <ListCheck className="h-5 w-5 text-primary" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
+                    <ListCheck className="h-5 w-5 text-[#007ACC]" />
                   </div>
                   <CardTitle className="mt-4">Built-in Surveys</CardTitle>
                   <CardDescription>
@@ -118,8 +134,8 @@ export default function LandingPage() {
               </Card>
               <Card className="h-full">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-primary/10">
-                    <Database className="h-5 w-5 text-primary" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
+                    <Database className="h-5 w-5 text-[#007ACC]" />
                   </div>
                   <CardTitle className="mt-4">Data Collection</CardTitle>
                   <CardDescription>
@@ -129,8 +145,8 @@ export default function LandingPage() {
               </Card>
               <Card className="h-full">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-primary/10">
-                    <BarChart className="h-5 w-5 text-primary" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
+                    <BarChart className="h-5 w-5 text-[#007ACC]" />
                   </div>
                   <CardTitle className="mt-4">Data Export</CardTitle>
                   <CardDescription>
@@ -140,8 +156,8 @@ export default function LandingPage() {
               </Card>
               <Card className="h-full">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-primary/10">
-                    <Bot className="h-5 w-5 text-primary" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
+                    <Bot className="h-5 w-5 text-[#007ACC]" />
                   </div>
                   <CardTitle className="mt-4">AI Agents</CardTitle>
                   <CardDescription>
@@ -151,8 +167,8 @@ export default function LandingPage() {
               </Card>
               <Card className="h-full">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-primary/10">
-                    <MessageCircle className="h-5 w-5 text-primary" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
+                    <MessageCircle className="h-5 w-5 text-[#007ACC]" />
                   </div>
                   <CardTitle className="mt-4">Real-Time Chats</CardTitle>
                   <CardDescription>
@@ -162,8 +178,8 @@ export default function LandingPage() {
               </Card>
               <Card className="h-full">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-primary/10">
-                    <RefreshCcw className="h-5 w-5 text-primary" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
+                    <RefreshCcw className="h-5 w-5 text-[#007ACC]" />
                   </div>
                   <CardTitle className="mt-4">Real-Time Collaboration</CardTitle>
                   <CardDescription>
@@ -173,8 +189,8 @@ export default function LandingPage() {
               </Card>
               <Card className="h-full opacity-50">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-primary/5">
-                    <BrainCircuit className="h-5 w-5 text-primary/70" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/20">
+                    <BrainCircuit className="h-5 w-5 text-[#007ACC]/70" />
                   </div>
                   <CardTitle className="mt-4">AI Simulation (Coming Soon)</CardTitle>
                   <CardDescription>
@@ -191,18 +207,21 @@ export default function LandingPage() {
           <div className="container mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
+                <div className="inline-block rounded-lg bg-[#007ACC] px-3 py-1 text-sm text-white">
                   How It Works
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
                   From Design to Results
                 </h2>
+                <p className="max-w-[800px] text-muted-foreground md:text-lg mx-auto">
+                  Leverage Pairium AI's technology to run sophisticated experiments that uncover the power of personality pairing.
+                </p>
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3">
               <Card className="h-full">
                 <CardHeader>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-primary-foreground">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#007ACC] text-lg font-bold text-white">
                     1
                   </div>
                   <CardTitle className="mt-4">Design Your Experiment</CardTitle>
@@ -213,7 +232,7 @@ export default function LandingPage() {
               </Card>
               <Card className="h-full">
                 <CardHeader>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-primary-foreground">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#007ACC] text-lg font-bold text-white">
                     2
                   </div>
                   <CardTitle className="mt-4">Launch on Prolific</CardTitle>
@@ -224,7 +243,7 @@ export default function LandingPage() {
               </Card>
               <Card className="h-full">
                 <CardHeader>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-primary-foreground">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#007ACC] text-lg font-bold text-white">
                     3
                   </div>
                   <CardTitle className="mt-4">Analyze Results</CardTitle>
@@ -242,14 +261,14 @@ export default function LandingPage() {
           <div className="container mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
+                <div className="inline-block rounded-lg bg-[#007ACC] px-3 py-1 text-sm text-white">
                   Research & Development
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
                   Built and Used by Leading Researchers
                 </h2>
-                <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
-                  MindMeld is a platform developed and used by researchers at top academic institutions.
+                <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed">
+                  MindMeld is the research platform behind Pairium AI's foundational discoveries, developed and used by researchers at top academic institutions.
                 </p>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-center justify-center py-8 max-w-2xl mx-auto">
@@ -283,55 +302,66 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
+        {/* Academic Access Section (New) */}
+        <section id="academic-access" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
+                <div className="inline-block rounded-lg bg-[#007ACC] px-3 py-1 text-sm text-white">
+                  Academic Access
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                  Free for Academic Research
+                </h2>
+                <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed">
+                  As part of Pairium AI's commitment to advancing AI research, we provide free access to the MindMeld platform for qualified academic researchers.
+                </p>
+              </div>
+              <div className="mt-8 max-w-3xl mx-auto bg-muted rounded-xl p-6">
+                <h3 className="text-xl font-semibold mb-4">Eligibility Requirements</h3>
+                <ul className="space-y-2 text-left text-muted-foreground">
+                  <li className="flex items-start">
+                    <div className="mr-2 mt-1 h-5 w-5 shrink-0 rounded-full bg-[#007ACC]/10 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#007ACC]"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span>Faculty, postdoctoral researchers, or PhD students at accredited academic institutions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="mr-2 mt-1 h-5 w-5 shrink-0 rounded-full bg-[#007ACC]/10 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#007ACC]"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span>Research project related to human-AI collaboration, personality pairing, or relevant fields</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="mr-2 mt-1 h-5 w-5 shrink-0 rounded-full bg-[#007ACC]/10 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#007ACC]"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span>Commitment to share research findings with the academic community</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-[#007ACC] px-3 py-1 text-sm text-white">
                   Contact
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
                   Get in Touch
                 </h2>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
-                  Have questions or want to collaborate? Feel free to reach out.
+                  For enterprise solutions or research collaborations with Pairium AI and the MindMeld platform, reach out to our team.
                 </p>
               </div>
-              <div className="flex gap-4">
-                <Button asChild variant="outline" size="icon">
-                  <a href="https://x.com/harangju" target="_blank" rel="noopener noreferrer">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="h-5 w-5"
-                    >
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-                    </svg>
-                  </a>
-                </Button>
-                <Button asChild variant="outline" size="icon">
-                  <a href="https://www.linkedin.com/in/harangju" target="_blank" rel="noopener noreferrer">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-5 w-5"
-                    >
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                      <rect width="4" height="12" x="2" y="9"></rect>
-                      <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                  </a>
+              <div className="flex gap-4 mt-4">
+                <Button asChild className="bg-gradient-to-r from-[#007ACC] to-[#00AAFF] hover:from-[#0088CC] hover:to-[#00CCFF] text-white px-4 py-2.5 h-auto rounded-md font-medium">
+                  <a href="mailto:info@pairium.ai">info@pairium.ai</a>
                 </Button>
               </div>
             </div>

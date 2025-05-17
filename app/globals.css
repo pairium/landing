@@ -120,3 +120,63 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Light streak animation */
+@keyframes streak_move_12s {
+  0% {
+    opacity: 0;
+    transform: translateY(60%) rotate(0deg) scale(1);
+  }
+  10% {
+    opacity: 0.7;
+    transform: translateY(0%) rotate(10deg) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    /* This dramatic rotate3d transformation creates a strong curve effect */
+    transform: translateY(-80%) rotate(45deg) rotateY(60deg) rotateX(-20deg) scale(1);
+  }
+  90% {
+    opacity: 0.7;
+    transform: translateY(-150%) rotate(90deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-170%) rotate(90deg) scale(1);
+  }
+}
+
+/* Add curved path for the light streak */
+.light-streak {
+  --curve-strength: 200px;
+  mask-image: linear-gradient(to right, 
+    transparent,
+    rgba(0, 0, 0, 0.8) 20%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0.8) 80%,
+    transparent
+  );
+  transform-style: preserve-3d;
+  perspective: 400px;
+  perspective-origin: right center;
+  will-change: transform;
+  filter: drop-shadow(0 0 15px rgba(105, 192, 255, 0.4));
+  border-radius: 100px;
+  
+  /* Path shape using clipping and pseudo-element for reinforcing the curve */
+  position: relative;
+}
+
+.light-streak::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border-radius: inherit;
+  transform: rotateY(45deg);
+  opacity: 0.5;
+  filter: blur(8px);
+}

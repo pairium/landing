@@ -1,8 +1,7 @@
 import { ArrowRight, BrainCircuit, Users, BarChart, Network, Mail, Linkedin } from "lucide-react"
 import Image from "next/image"
 
-import { Button } from "@/components/ui/button"
-import { Card, CardDescription, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Nav } from "@/components/nav"
 
 export default function LandingPage() {
@@ -12,54 +11,30 @@ export default function LandingPage() {
       <Nav />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-24 md:py-32 relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900/95" aria-labelledby="hero-heading">
+        <section className="w-full py-36 md:py-44 lg:py-52 relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700" aria-labelledby="hero-heading">
           <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
           
+          {/* Enhanced gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#007ACC]/5 to-[#69C0FF]/15"></div>
+          
           <div className="container relative mx-auto max-w-7xl px-4 sm:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="flex flex-col max-w-3xl">
               <div className="flex flex-col justify-center space-y-8">
                 <div>
-                  <span className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-white/20 text-white mb-6">
-                    MIT Research-Backed Technology
-                  </span>
                   <h1 id="hero-heading" className="text-5xl md:text-6xl font-bold tracking-tighter text-white">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#40A9FF] to-[#69C0FF]">Pairium AI</span>
                   </h1>
-                  <p className="mt-4 text-xl md:text-2xl max-w-xl text-white/90">
+                  <p className="mt-4 text-xl md:text-2xl max-w-2xl text-white/90">
                     Personalizing the Agentic Age with AI technology that adapts to your unique work style.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="#about"
-                    className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#007ACC] to-[#00AAFF] px-6 py-3 text-base font-medium text-white shadow-sm hover:from-[#0088CC] hover:to-[#00CCFF] transition-all"
+                    className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#007ACC] to-[#00AAFF] px-4 py-2.5 text-base font-medium text-white shadow-sm hover:from-[#0088CC] hover:to-[#00CCFF] transition-all"
                   >
                     Learn More <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <div className="relative w-full max-w-md aspect-square">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#007ACC] to-[#00AAFF] opacity-20 blur-3xl" />
-                  <div className="relative h-full w-full rounded-xl border border-slate-700 bg-slate-800/50 backdrop-blur-sm flex items-center justify-center overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#007ACC] to-transparent" />
-                    <Image 
-                      src="/dashboard-preview.png" 
-                      alt="Pairium AI Platform" 
-                      width={500} 
-                      height={500}
-                      className="object-contain p-4"
-                      placeholder="blur"
-                      blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Crect width='500' height='500' fill='%23172554'/%3E%3Ctext x='250' y='250' font-family='Arial' font-size='30' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3EPairium AI Platform%3C/text%3E%3C/svg%3E"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="rounded-full bg-gradient-to-br from-[#007ACC] to-[#00AAFF] p-1 animate-pulse">
-                        <div className="bg-slate-900 rounded-full p-6">
-                          <Image src="/icon.svg" alt="Pairium AI" width={100} height={100} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -133,7 +108,7 @@ export default function LandingPage() {
               <div className="flex-1 order-2 md:order-1">
                 <div className="space-y-6 text-slate-700">
                   <p className="text-lg leading-relaxed">
-                    Born of proprietary MIT research on the productivity and performance benefits of "personality pairing" AI agents with human users, Pairium AI is developing personalization technology that optimizes human-AI collaboration to maximize performance and productivity returns in any collaborative task.
+                    Born of proprietary MIT research on the productivity and performance benefits of "personality pairing" AI agents with human users, Pairium AI is developing personalization technology that optimizes Human-AI collaboration to maximize performance and productivity returns in any collaborative task.
                   </p>
                   <p className="text-lg leading-relaxed">
                     MIT collaborators and Pairium AI co-founders Sinan Aral and Harang Ju developed a first of its kind, commercial grade human-AI collaboration platform called MindMeld. MindMeld allows humans to collaborate with fully configured AI agents that "can do anything the humans can do" on any configurable task.
