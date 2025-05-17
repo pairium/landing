@@ -243,87 +243,63 @@ export default function LandingPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
               <div className="group">
-                <div className="relative overflow-hidden rounded-xl border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 p-6 shadow-md transition-all hover:shadow-lg">
-                  <div className="absolute top-0 right-0 h-24 w-24 rounded-bl-full bg-gradient-to-bl from-[#007ACC]/20 to-[#00AAFF]/20"></div>
-                  
-                  <div className="mb-6 flex justify-center">
-                    <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md">
-                      <Image 
-                        src="/sinan-aral.jpg" 
-                        alt="Sinan Aral" 
-                        width={224} 
-                        height={224}
-                        className="object-cover"
-                        placeholder="blur"
-                        blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='224' height='224' viewBox='0 0 224 224'%3E%3Crect width='224' height='224' fill='%23f1f5f9'/%3E%3Ctext x='112' y='112' font-family='Arial' font-size='24' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3ESinan Aral%3C/text%3E%3C/svg%3E"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="text-center">
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">Sinan Aral</h3>
-                    <p className="mb-3 text-[#007ACC] dark:text-[#40A9FF]">Co-founder and CEO</p>
-                    <p className="mb-6 text-slate-600 dark:text-slate-300">
-                      David Austin Professor of IT, Marketing, and Data Science at MIT. Author of "The Hype Machine." Award-winning scientist and entrepreneur.
-                    </p>
+                <Link href="/about#sinan-aral" className="block">
+                  <div className="relative overflow-hidden rounded-xl border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 p-6 shadow-md transition-all hover:shadow-lg">
+                    <div className="absolute top-0 right-0 h-24 w-24 rounded-bl-full bg-gradient-to-bl from-[#007ACC]/20 to-[#00AAFF]/20"></div>
                     
-                    <div className="flex justify-center space-x-4">
-                      <a href="https://www.x.com/sinanaral" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 dark:bg-slate-700 p-2 text-slate-600 dark:text-slate-300 transition-colors hover:bg-[#007ACC] hover:text-white">
-                        <div className="h-5 w-5">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
-                            <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
-                          </svg>
-                        </div>
-                      </a>
-                      <a href="https://www.linkedin.com/in/sinan-aral-3964a7/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 dark:bg-slate-700 p-2 text-slate-600 dark:text-slate-300 transition-colors hover:bg-[#007ACC] hover:text-white">
-                        <Linkedin className="h-5 w-5" />
-                      </a>
+                    <div className="mb-6 flex justify-center">
+                      <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md">
+                        <Image 
+                          src="/sinan-aral.jpg" 
+                          alt="Sinan Aral" 
+                          width={224} 
+                          height={224}
+                          className="object-cover"
+                          placeholder="blur"
+                          blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='224' height='224' viewBox='0 0 224 224'%3E%3Crect width='224' height='224' fill='%23f1f5f9'/%3E%3Ctext x='112' y='112' font-family='Arial' font-size='24' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3ESinan Aral%3C/text%3E%3C/svg%3E"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="text-center">
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-white">Sinan Aral</h3>
+                      <p className="mb-3 text-[#007ACC] dark:text-[#40A9FF]">Co-founder and CEO</p>
+                      <p className="mb-6 text-slate-600 dark:text-slate-300">
+                        David Austin Professor of IT, Marketing, and Data Science at MIT. Author of "The Hype Machine." Award-winning scientist and entrepreneur.
+                      </p>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
               
               <div className="group">
-                <div className="relative overflow-hidden rounded-xl border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 p-6 shadow-md transition-all hover:shadow-lg">
-                  <div className="absolute top-0 right-0 h-24 w-24 rounded-bl-full bg-gradient-to-bl from-[#007ACC]/20 to-[#00AAFF]/20"></div>
-                  
-                  <div className="mb-6 flex justify-center">
-                    <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md">
-                      <Image 
-                        src="/harang-ju.jpg" 
-                        alt="Harang Ju" 
-                        width={224} 
-                        height={224}
-                        className="object-cover"
-                        placeholder="blur"
-                        blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='224' height='224' viewBox='0 0 224 224'%3E%3Crect width='224' height='224' fill='%23f1f5f9'/%3E%3Ctext x='112' y='112' font-family='Arial' font-size='24' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3EHarang Ju%3C/text%3E%3C/svg%3E"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="text-center">
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">Harang Ju</h3>
-                    <p className="mb-3 text-[#007ACC] dark:text-[#40A9FF]">Co-founder and COO</p>
-                    <p className="mb-6 text-slate-600 dark:text-slate-300">
-                      Incoming Assistant Professor at Johns Hopkins University. PhD in Neuroscience. Expert in human-AI collaboration systems.
-                    </p>
+                <Link href="/about#harang-ju" className="block">
+                  <div className="relative overflow-hidden rounded-xl border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 p-6 shadow-md transition-all hover:shadow-lg">
+                    <div className="absolute top-0 right-0 h-24 w-24 rounded-bl-full bg-gradient-to-bl from-[#007ACC]/20 to-[#00AAFF]/20"></div>
                     
-                    <div className="flex justify-center space-x-4">
-                      <a href="https://www.x.com/harangju/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 dark:bg-slate-700 p-2 text-slate-600 dark:text-slate-300 transition-colors hover:bg-[#007ACC] hover:text-white">
-                        <div className="h-5 w-5">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
-                            <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
-                          </svg>
-                        </div>
-                      </a>
-                      <a href="https://www.linkedin.com/in/harangju/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 dark:bg-slate-700 p-2 text-slate-600 dark:text-slate-300 transition-colors hover:bg-[#007ACC] hover:text-white">
-                        <Linkedin className="h-5 w-5" />
-                      </a>
+                    <div className="mb-6 flex justify-center">
+                      <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md">
+                        <Image 
+                          src="/harang-ju.jpg" 
+                          alt="Harang Ju" 
+                          width={224} 
+                          height={224}
+                          className="object-cover"
+                          placeholder="blur"
+                          blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='224' height='224' viewBox='0 0 224 224'%3E%3Crect width='224' height='224' fill='%23f1f5f9'/%3E%3Ctext x='112' y='112' font-family='Arial' font-size='24' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3EHarang Ju%3C/text%3E%3C/svg%3E"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="text-center">
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-white">Harang Ju</h3>
+                      <p className="mb-3 text-[#007ACC] dark:text-[#40A9FF]">Co-founder and COO</p>
+                      <p className="mb-6 text-slate-600 dark:text-slate-300">
+                        Incoming Assistant Professor at Johns Hopkins University. PhD in Neuroscience. Expert in human-AI collaboration systems.
+                      </p>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

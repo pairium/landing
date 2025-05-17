@@ -3,7 +3,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Footer() {
   return (
-    <footer className="w-full bg-white dark:bg-blue-950/80 text-slate-900 dark:text-white py-12">
+    <footer className="w-full bg-white dark:bg-blue-950/80 text-slate-900 dark:text-white py-12 border-t border-slate-200 dark:border-slate-800">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
           <div className="mb-8">
@@ -14,6 +14,12 @@ export function Footer() {
           </div>
           
           <div className="flex gap-8 mb-8">
+            <Link
+              href="/about" 
+              className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+            >
+              About
+            </Link>
             <Link
               href="/mindmeld" 
               className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
