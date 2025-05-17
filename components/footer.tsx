@@ -1,9 +1,9 @@
-import { Linkedin } from "lucide-react"
 import Link from "next/link"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Footer() {
   return (
-    <footer className="w-full bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white py-12">
+    <footer className="w-full bg-white dark:bg-blue-950/80 text-slate-900 dark:text-white py-12">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
           <div className="mb-8">
@@ -35,9 +35,12 @@ export function Footer() {
               Privacy Policy
             </Link>
           </div>
-
-          <div className="border-t border-slate-200 dark:border-slate-800 w-full pt-8 text-center">
-            <p className="text-slate-600 dark:text-slate-400">© {new Date().getFullYear()} Pairium AI. All rights reserved.</p>
+          
+          <div className="border-t border-slate-200 dark:border-slate-800 w-full pt-8">
+            <div className="flex justify-between items-center">
+              <p className="text-slate-600 dark:text-slate-400">© {new Date().getFullYear()} Pairium AI. All rights reserved.</p>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>

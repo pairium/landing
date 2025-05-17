@@ -38,50 +38,50 @@ export default function LandingPage() {
         </section>
 
         {/* Features Section */}
-        <section id="features" className="w-full py-16 md:py-24 lg:py-32 bg-white" aria-labelledby="features-heading">
+        <section id="features" className="w-full py-16 md:py-24 lg:py-32 bg-white dark:bg-blue-950/80" aria-labelledby="features-heading">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center text-center mb-16">
-              <span className="px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-800 mb-4">Features</span>
-              <h2 id="features-heading" className="text-3xl md:text-4xl font-bold tracking-tighter text-slate-900">
-                Why Choose <span className="text-[#007ACC]">Pairium AI</span>
+              <span className="px-3 py-1 text-sm font-medium rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 mb-4">Features</span>
+              <h2 id="features-heading" className="text-3xl md:text-4xl font-bold tracking-tighter text-slate-900 dark:text-white">
+                Why Choose <span className="text-[#007ACC] dark:text-[#40A9FF]">Pairium AI</span>
               </h2>
-              <p className="mt-4 text-lg text-slate-600 max-w-2xl">
+              <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-2xl">
                 Our AI personality pairing technology enhances productivity and performance in human-AI collaboration.
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="h-full">
+              <Card className="h-full border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
-                    <BrainCircuit className="h-5 w-5 text-[#007ACC]" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10 dark:bg-[#40A9FF]/20">
+                    <BrainCircuit className="h-5 w-5 text-[#007ACC] dark:text-[#40A9FF]" />
                   </div>
-                  <CardTitle className="mt-4">Personality Pairing</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="mt-4 dark:text-white">Personality Pairing</CardTitle>
+                  <CardDescription className="dark:text-slate-300">
                     Proprietary technology that matches AI agents with human users for optimal collaboration.
                   </CardDescription>
                 </CardHeader>
               </Card>
               
-              <Card className="h-full">
+              <Card className="h-full border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
-                    <BarChart className="h-5 w-5 text-[#007ACC]" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10 dark:bg-[#40A9FF]/20">
+                    <BarChart className="h-5 w-5 text-[#007ACC] dark:text-[#40A9FF]" />
                   </div>
-                  <CardTitle className="mt-4">Performance Optimization</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="mt-4 dark:text-white">Performance Optimization</CardTitle>
+                  <CardDescription className="dark:text-slate-300">
                     Proven productivity gains based on MIT research and large-scale studies.
                   </CardDescription>
                 </CardHeader>
               </Card>
               
-              <Card className="h-full">
+              <Card className="h-full border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
-                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
-                    <Network className="h-5 w-5 text-[#007ACC]" />
+                  <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10 dark:bg-[#40A9FF]/20">
+                    <Network className="h-5 w-5 text-[#007ACC] dark:text-[#40A9FF]" />
                   </div>
-                  <CardTitle className="mt-4">Adaptive Learning</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="mt-4 dark:text-white">Adaptive Learning</CardTitle>
+                  <CardDescription className="dark:text-slate-300">
                     AI that continuously adapts to your working style and preferences.
                   </CardDescription>
                 </CardHeader>
@@ -91,18 +91,18 @@ export default function LandingPage() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="w-full py-16 md:py-24 lg:py-32 bg-slate-50" aria-labelledby="about-heading">
+        <section id="about" className="w-full py-16 md:py-24 lg:py-32 bg-blue-50 dark:bg-slate-900" aria-labelledby="about-heading">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center text-center mb-12">
-              <span className="px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-800 mb-4">About Us</span>
-              <h2 id="about-heading" className="text-3xl md:text-4xl font-bold tracking-tighter text-slate-900">
-                About <span className="text-[#007ACC]">Pairium AI</span>
+              <span className="px-3 py-1 text-sm font-medium rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 mb-4">About Us</span>
+              <h2 id="about-heading" className="text-3xl md:text-4xl font-bold tracking-tighter text-slate-900 dark:text-white">
+                About <span className="text-[#007ACC] dark:text-[#40A9FF]">Pairium AI</span>
               </h2>
             </div>
             
             <div className="flex flex-col md:flex-row gap-12 items-center">
               <div className="flex-1 order-2 md:order-1">
-                <div className="space-y-6 text-slate-700">
+                <div className="space-y-6 text-slate-700 dark:text-slate-300">
                   <p className="text-lg leading-relaxed">
                     Born of proprietary MIT research on the productivity and performance benefits of "personality pairing" AI agents with human users, Pairium AI is developing personalization technology that optimizes Human-AI collaboration to maximize performance and productivity returns in any collaborative task.
                   </p>
@@ -117,19 +117,19 @@ export default function LandingPage() {
               <div className="flex-1 order-1 md:order-2">
                 <div className="relative mx-auto w-full max-w-md aspect-square">
                   <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-[#007ACC] to-[#00AAFF] opacity-20 blur-3xl" />
-                  <div className="relative h-full w-full rounded-xl border border-blue-100 bg-white shadow-lg flex items-center justify-center overflow-hidden p-8">
+                  <div className="relative h-full w-full rounded-xl border border-slate-200 dark:border-blue-900/50 bg-white dark:bg-blue-950/40 shadow-lg flex items-center justify-center overflow-hidden p-8">
                     <div className="grid grid-cols-2 gap-4 w-full h-full">
-                      <div className="bg-blue-50 rounded-lg flex items-center justify-center">
-                        <BrainCircuit className="h-12 w-12 text-[#007ACC]" />
+                      <div className="border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 rounded-lg flex items-center justify-center">
+                        <BrainCircuit className="h-12 w-12 text-[#007ACC] dark:text-[#40A9FF]" />
                       </div>
-                      <div className="bg-blue-50 rounded-lg flex items-center justify-center">
-                        <Users className="h-12 w-12 text-[#007ACC]" />
+                      <div className="border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 rounded-lg flex items-center justify-center">
+                        <Users className="h-12 w-12 text-[#007ACC] dark:text-[#40A9FF]" />
                       </div>
-                      <div className="bg-blue-50 rounded-lg flex items-center justify-center">
-                        <BarChart className="h-12 w-12 text-[#007ACC]" />
+                      <div className="border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 rounded-lg flex items-center justify-center">
+                        <BarChart className="h-12 w-12 text-[#007ACC] dark:text-[#40A9FF]" />
                       </div>
-                      <div className="bg-blue-50 rounded-lg flex items-center justify-center">
-                        <Network className="h-12 w-12 text-[#007ACC]" />
+                      <div className="border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 rounded-lg flex items-center justify-center">
+                        <Network className="h-12 w-12 text-[#007ACC] dark:text-[#40A9FF]" />
                       </div>
                     </div>
                   </div>
@@ -231,22 +231,22 @@ export default function LandingPage() {
         */}
 
         {/* Team Section */}
-        <section id="team" className="w-full py-16 md:py-24 lg:py-32 bg-white" aria-labelledby="team-heading">
+        <section id="team" className="w-full py-16 md:py-24 lg:py-32 bg-white dark:bg-blue-950/80" aria-labelledby="team-heading">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center text-center mb-16">
-              <span className="px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-800 mb-4">Our Team</span>
-              <h2 id="team-heading" className="text-3xl md:text-4xl font-bold tracking-tighter text-slate-900">
-                Meet Our <span className="text-[#007ACC]">Leadership</span>
+              <span className="px-3 py-1 text-sm font-medium rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 mb-4">Our Team</span>
+              <h2 id="team-heading" className="text-3xl md:text-4xl font-bold tracking-tighter text-slate-900 dark:text-white">
+                Meet Our <span className="text-[#007ACC] dark:text-[#40A9FF]">Leadership</span>
               </h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
               <div className="group">
-                <div className="relative overflow-hidden rounded-xl bg-slate-50 p-6 shadow-md transition-all hover:shadow-lg">
+                <div className="relative overflow-hidden rounded-xl border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 p-6 shadow-md transition-all hover:shadow-lg">
                   <div className="absolute top-0 right-0 h-24 w-24 rounded-bl-full bg-gradient-to-bl from-[#007ACC]/20 to-[#00AAFF]/20"></div>
                   
                   <div className="mb-6 flex justify-center">
-                    <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white bg-slate-100 shadow-md">
+                    <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md">
                       <Image 
                         src="/sinan-aral.jpg" 
                         alt="Sinan Aral" 
@@ -260,14 +260,14 @@ export default function LandingPage() {
                   </div>
                   
                   <div className="text-center">
-                    <h3 className="text-xl font-bold text-slate-900">Sinan Aral</h3>
-                    <p className="mb-3 text-[#007ACC]">Co-founder and CEO</p>
-                    <p className="mb-6 text-slate-600">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">Sinan Aral</h3>
+                    <p className="mb-3 text-[#007ACC] dark:text-[#40A9FF]">Co-founder and CEO</p>
+                    <p className="mb-6 text-slate-600 dark:text-slate-300">
                       David Austin Professor of IT, Marketing, and Data Science at MIT. Author of "The Hype Machine." Award-winning scientist and entrepreneur.
                     </p>
                     
                     <div className="flex justify-center space-x-4">
-                      <a href="https://www.x.com/sinanaral" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 p-2 text-slate-600 transition-colors hover:bg-[#007ACC] hover:text-white">
+                      <a href="https://www.x.com/sinanaral" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 dark:bg-slate-700 p-2 text-slate-600 dark:text-slate-300 transition-colors hover:bg-[#007ACC] hover:text-white">
                         <div className="h-5 w-5">
                           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
@@ -275,7 +275,7 @@ export default function LandingPage() {
                           </svg>
                         </div>
                       </a>
-                      <a href="https://www.linkedin.com/in/sinan-aral-3964a7/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 p-2 text-slate-600 transition-colors hover:bg-[#007ACC] hover:text-white">
+                      <a href="https://www.linkedin.com/in/sinan-aral-3964a7/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 dark:bg-slate-700 p-2 text-slate-600 dark:text-slate-300 transition-colors hover:bg-[#007ACC] hover:text-white">
                         <Linkedin className="h-5 w-5" />
                       </a>
                     </div>
@@ -284,11 +284,11 @@ export default function LandingPage() {
               </div>
               
               <div className="group">
-                <div className="relative overflow-hidden rounded-xl bg-slate-50 p-6 shadow-md transition-all hover:shadow-lg">
+                <div className="relative overflow-hidden rounded-xl border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 p-6 shadow-md transition-all hover:shadow-lg">
                   <div className="absolute top-0 right-0 h-24 w-24 rounded-bl-full bg-gradient-to-bl from-[#007ACC]/20 to-[#00AAFF]/20"></div>
                   
                   <div className="mb-6 flex justify-center">
-                    <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white bg-slate-100 shadow-md">
+                    <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md">
                       <Image 
                         src="/harang-ju.jpg" 
                         alt="Harang Ju" 
@@ -302,14 +302,14 @@ export default function LandingPage() {
                   </div>
                   
                   <div className="text-center">
-                    <h3 className="text-xl font-bold text-slate-900">Harang Ju</h3>
-                    <p className="mb-3 text-[#007ACC]">Co-founder and COO</p>
-                    <p className="mb-6 text-slate-600">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">Harang Ju</h3>
+                    <p className="mb-3 text-[#007ACC] dark:text-[#40A9FF]">Co-founder and COO</p>
+                    <p className="mb-6 text-slate-600 dark:text-slate-300">
                       Incoming Assistant Professor at Johns Hopkins University. PhD in Neuroscience. Expert in human-AI collaboration systems.
                     </p>
                     
                     <div className="flex justify-center space-x-4">
-                      <a href="https://www.x.com/harangju/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 p-2 text-slate-600 transition-colors hover:bg-[#007ACC] hover:text-white">
+                      <a href="https://www.x.com/harangju/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 dark:bg-slate-700 p-2 text-slate-600 dark:text-slate-300 transition-colors hover:bg-[#007ACC] hover:text-white">
                         <div className="h-5 w-5">
                           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
@@ -317,7 +317,7 @@ export default function LandingPage() {
                           </svg>
                         </div>
                       </a>
-                      <a href="https://www.linkedin.com/in/harangju/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 p-2 text-slate-600 transition-colors hover:bg-[#007ACC] hover:text-white">
+                      <a href="https://www.linkedin.com/in/harangju/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 dark:bg-slate-700 p-2 text-slate-600 dark:text-slate-300 transition-colors hover:bg-[#007ACC] hover:text-white">
                         <Linkedin className="h-5 w-5" />
                       </a>
                     </div>
@@ -329,28 +329,28 @@ export default function LandingPage() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="w-full py-16 md:py-24 lg:py-32 bg-slate-50" aria-labelledby="contact-heading">
+        <section id="contact" className="w-full py-16 md:py-24 lg:py-32 bg-blue-50 dark:bg-slate-900" aria-labelledby="contact-heading">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center text-center mb-16">
-              <span className="px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-800 mb-4">Contact</span>
-              <h2 id="contact-heading" className="text-3xl md:text-4xl font-bold tracking-tighter text-slate-900">
-                Get in <span className="text-[#007ACC]">Touch</span>
+              <span className="px-3 py-1 text-sm font-medium rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 mb-4">Contact</span>
+              <h2 id="contact-heading" className="text-3xl md:text-4xl font-bold tracking-tighter text-slate-900 dark:text-white">
+                Get in <span className="text-[#007ACC] dark:text-[#40A9FF]">Touch</span>
               </h2>
-              <p className="mt-4 text-lg text-slate-600 max-w-2xl">
+              <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-2xl">
                 Interested in learning more about Pairium AI? Contact us today.
               </p>
             </div>
             
             <div className="max-w-xl mx-auto text-center">
-              <div className="rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
+              <div className="rounded-xl border border-slate-200 dark:border-blue-900/50 bg-white dark:bg-blue-950/40 p-8 shadow-sm">
                 <div className="flex flex-col items-center justify-center space-y-6">
-                  <div className="bg-blue-50 rounded-full p-5">
-                    <Mail className="h-10 w-10 text-[#007ACC]" />
+                  <div className="bg-blue-50 dark:bg-blue-900/20 rounded-full p-5">
+                    <Mail className="h-10 w-10 text-[#007ACC] dark:text-[#40A9FF]" />
                   </div>
                   
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900">Email Us</h3>
-                    <p className="mt-2 text-slate-600 mb-4">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">Email Us</h3>
+                    <p className="mt-2 text-slate-600 dark:text-slate-300 mb-4">
                       We'd love to hear from you.
                     </p>
                     <a 

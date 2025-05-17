@@ -24,7 +24,7 @@ export default function LandingPage() {
                     MindMeld <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007ACC] to-[#40A9FF] dark:from-[#40A9FF] dark:to-[#69C0FF]">Platform</span>
                   </h1>
                   <p className="text-xl md:text-2xl max-w-2xl mx-auto text-slate-700 dark:text-white/90">
-                    A powerful platform for designing and running interactive experiments between humans and AI agents, built on Pairium's personality pairing technology.
+                    A powerful platform for designing and running interactive experiments between humans and AI agents.
                   </p>
                 </div>
                 <div className="flex items-center justify-center gap-4 flex-wrap">
@@ -50,7 +50,7 @@ export default function LandingPage() {
         </section>
 
         {/* Features Section */}
-        <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50" aria-labelledby="features-heading">
+        <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-blue-950/80" aria-labelledby="features-heading">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -66,7 +66,7 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3">
-              <Card className="h-full">
+              <Card className="h-full border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
                   <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
                     <Code className="h-5 w-5 text-[#007ACC]" />
@@ -77,7 +77,7 @@ export default function LandingPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="h-full">
+              <Card className="h-full border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
                   <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
                     <Layout className="h-5 w-5 text-[#007ACC]" />
@@ -88,7 +88,7 @@ export default function LandingPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="h-full">
+              <Card className="h-full border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
                   <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
                     <Network className="h-5 w-5 text-[#007ACC]" />
@@ -99,7 +99,7 @@ export default function LandingPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="h-full">
+              <Card className="h-full border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
                   <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
                     <Users className="h-5 w-5 text-[#007ACC]" />
@@ -110,7 +110,7 @@ export default function LandingPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="h-full">
+              <Card className="h-full border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
                   <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
                     <Dices className="h-5 w-5 text-[#007ACC]" />
@@ -121,7 +121,7 @@ export default function LandingPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="h-full">
+              <Card className="h-full border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
                   <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
                     <ListCheck className="h-5 w-5 text-[#007ACC]" />
@@ -132,7 +132,7 @@ export default function LandingPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="h-full">
+              <Card className="h-full border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
                   <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
                     <Database className="h-5 w-5 text-[#007ACC]" />
@@ -143,7 +143,7 @@ export default function LandingPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="h-full">
+              <Card className="h-full border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
                   <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
                     <BarChart className="h-5 w-5 text-[#007ACC]" />
@@ -154,7 +154,7 @@ export default function LandingPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="h-full">
+              <Card className="h-full border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
                   <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
                     <Bot className="h-5 w-5 text-[#007ACC]" />
@@ -165,7 +165,7 @@ export default function LandingPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="h-full">
+              <Card className="h-full border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
                   <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
                     <MessageCircle className="h-5 w-5 text-[#007ACC]" />
@@ -176,7 +176,7 @@ export default function LandingPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="h-full">
+              <Card className="h-full border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
                   <div className="p-2 w-fit rounded-lg bg-[#007ACC]/10">
                     <RefreshCcw className="h-5 w-5 text-[#007ACC]" />
@@ -187,7 +187,7 @@ export default function LandingPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="h-full opacity-50">
+              <Card className="h-full opacity-50 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900">
                 <CardHeader>
                   <div className="p-2 w-fit rounded-lg bg-[#007ACC]/20">
                     <BrainCircuit className="h-5 w-5 text-[#007ACC]/70" />
@@ -203,7 +203,7 @@ export default function LandingPage() {
         </section>
 
         {/* How It Works Section */}
-        <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32 bg-blue-50 dark:bg-slate-900">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -219,7 +219,7 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3">
-              <Card className="h-full">
+              <Card className="h-full border border-slate-200 dark:border-blue-900/50 bg-white dark:bg-blue-950/40">
                 <CardHeader>
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#007ACC] text-lg font-bold text-white">
                     1
@@ -230,7 +230,7 @@ export default function LandingPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="h-full">
+              <Card className="h-full border border-slate-200 dark:border-blue-900/50 bg-white dark:bg-blue-950/40">
                 <CardHeader>
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#007ACC] text-lg font-bold text-white">
                     2
@@ -241,7 +241,7 @@ export default function LandingPage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="h-full">
+              <Card className="h-full border border-slate-200 dark:border-blue-900/50 bg-white dark:bg-blue-950/40">
                 <CardHeader>
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#007ACC] text-lg font-bold text-white">
                     3
@@ -257,7 +257,7 @@ export default function LandingPage() {
         </section>
 
         {/* Research & Development Section */}
-        <section id="research-development" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
+        <section id="research-development" className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-blue-950/80">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -303,7 +303,7 @@ export default function LandingPage() {
         </section>
 
         {/* Academic Access Section (New) */}
-        <section id="academic-access" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="academic-access" className="w-full py-12 md:py-24 lg:py-32 bg-blue-50 dark:bg-slate-900">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -317,7 +317,7 @@ export default function LandingPage() {
                   As part of Pairium AI's commitment to advancing AI research, we provide free access to the MindMeld platform for qualified academic researchers.
                 </p>
               </div>
-              <div className="mt-8 max-w-3xl mx-auto bg-muted rounded-xl p-6">
+              <div className="mt-8 max-w-3xl mx-auto bg-muted rounded-xl p-6 border border-slate-200 dark:border-blue-900/50 bg-white dark:bg-blue-950/40">
                 <h3 className="text-xl font-semibold mb-4">Eligibility Requirements</h3>
                 <ul className="space-y-2 text-left text-muted-foreground">
                   <li className="flex items-start">
@@ -345,7 +345,7 @@ export default function LandingPage() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-blue-950/80">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
