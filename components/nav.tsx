@@ -10,7 +10,7 @@ export function Nav() {
   const isHomePage = pathname === '/'
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-700/20 bg-slate-900">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-700/20 bg-white dark:bg-slate-900">
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex-1 flex items-center gap-2 hover:opacity-80 transition-opacity" aria-label="Pairium AI Home">
           <div className="flex items-center">
@@ -22,9 +22,9 @@ export function Nav() {
           <nav className="flex items-center gap-6" aria-label="Main navigation">
             <Link
               href="/mindmeld" 
-              className="text-base hover:text-white transition-colors font-medium text-slate-300"
+              className="text-base hover:text-slate-900 dark:hover:text-white transition-colors font-medium text-slate-600 dark:text-slate-300"
             >
-              MindMeld Platform
+              MindMeld
             </Link>
             <Link 
               href="mailto:info@pairium.ai" 

@@ -11,25 +11,25 @@ export default function LandingPage() {
       <Nav />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-16 md:py-32 lg:py-40 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900/95" aria-labelledby="hero-heading">
-          <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
+        <section className="w-full py-16 md:py-32 lg:py-40 bg-gradient-to-b from-blue-50 via-blue-100 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900/95" aria-labelledby="hero-heading">
+          <div className="absolute inset-0 bg-grid-slate-100/[0.5] dark:bg-grid-white/[0.02] bg-[size:60px_60px]" />
           <div className="container relative mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center justify-center text-center">
               <div className="flex flex-col justify-center space-y-8 w-full">
                 <div className="space-y-5">
-                  <span className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-white/20 text-white mb-2">
+                  <span className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-blue-100 text-blue-800 dark:bg-white/20 dark:text-white mb-2">
                     Powered by Pairium AI
                   </span>
-                  <h1 id="hero-heading" className="w-full text-4xl md:text-5xl font-bold tracking-tighter text-white">
-                    MindMeld <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#40A9FF] to-[#69C0FF]">Platform</span>
+                  <h1 id="hero-heading" className="w-full text-4xl md:text-5xl font-bold tracking-tighter text-slate-900 dark:text-white">
+                    MindMeld <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007ACC] to-[#40A9FF] dark:from-[#40A9FF] dark:to-[#69C0FF]">Platform</span>
                   </h1>
-                  <p className="text-xl md:text-2xl max-w-2xl mx-auto text-white/90">
+                  <p className="text-xl md:text-2xl max-w-2xl mx-auto text-slate-700 dark:text-white/90">
                     A powerful platform for designing and running interactive experiments between humans and AI agents, built on Pairium's personality pairing technology.
                   </p>
                 </div>
                 <div className="flex items-center justify-center gap-4 flex-wrap">
-                  <div className="rounded-lg border border-[#40A9FF]/30 bg-slate-800/60 px-5 py-3 text-white">
-                    <span className="font-medium text-[#40A9FF]">Academic Version Available:</span> Free for qualified researchers
+                  <div className="rounded-lg border border-[#007ACC]/30 bg-blue-50 dark:bg-slate-800/60 px-5 py-3 text-slate-700 dark:text-white">
+                    <span className="font-medium text-[#007ACC] dark:text-[#40A9FF]">Academic Version Available:</span> Free for qualified researchers
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center">

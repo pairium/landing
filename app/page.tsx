@@ -11,16 +11,16 @@ export default function LandingPage() {
       <Nav />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-16 md:py-32 lg:py-40 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900/95" aria-labelledby="hero-heading">
-          <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
+        <section className="w-full py-16 md:py-32 lg:py-40 bg-gradient-to-b from-blue-50 via-blue-100 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900/95" aria-labelledby="hero-heading">
+          <div className="absolute inset-0 bg-grid-slate-100/[0.5] dark:bg-grid-white/[0.02] bg-[size:60px_60px]" />
           <div className="container relative mx-auto max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-center justify-center text-center">
               <div className="flex flex-col justify-center space-y-8 w-full">
                 <div className="space-y-5">
-                  <h1 id="hero-heading" className="w-full text-4xl md:text-5xl font-bold tracking-tighter text-white">
-                    Pairium <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#40A9FF] to-[#69C0FF]">AI</span>
+                  <h1 id="hero-heading" className="w-full text-4xl md:text-5xl font-bold tracking-tighter text-slate-900 dark:text-white">
+                    Pairium <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007ACC] to-[#40A9FF] dark:from-[#40A9FF] dark:to-[#69C0FF]">AI</span>
                   </h1>
-                  <p className="text-xl md:text-2xl max-w-2xl mx-auto text-white/90">
+                  <p className="text-xl md:text-2xl max-w-2xl mx-auto text-slate-700 dark:text-white/90">
                     Personalizing the Agentic Age with AI technology that adapts to your unique work style.
                   </p>
                 </div>
