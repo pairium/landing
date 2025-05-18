@@ -109,7 +109,7 @@ export default function AboutPage() {
                 </div>
                 <div className="text-slate-700 dark:text-slate-300 space-y-4">
                   <p>
-                    Harang Ju is an assistant professor in the Johns Hopkins Carey Business School and former post-doctoral fellow at MIT. He studies AI agents and how they help people work. Harang's current work uses large field and lab experiments and observational studies. His research appears in Nature Neuroscience and other peer-reviewed journals. Harang holds degrees from the University of Pennsylvania in neuroscience (PhD) and from the University of Virginia in computer science (BS) and cognitive science (BA).
+                    Harang Ju is an assistant professor in the <a href="https://carey.jhu.edu/" className="text-[#007ACC] dark:text-[#40A9FF] hover:underline">Johns Hopkins Carey Business School</a> and former post-doctoral fellow at MIT. He studies AI agents and how they help people work. Harang's <a href="https://arxiv.org/abs/2503.18238" className="text-[#007ACC] dark:text-[#40A9FF] hover:underline">current work</a> uses large field and lab experiments and observational studies. His research appears in Nature Neuroscience and other peer-reviewed journals. He is also an advisor at <a href="https://www.linkedin.com/company/mokuhq/" className="text-[#007ACC] dark:text-[#40A9FF] hover:underline">Moku</a>, an AI and web3 gaming company. Harang holds degrees from the University of Pennsylvania in neuroscience (PhD) and from the University of Virginia in computer science (BS) and cognitive science (BA).
                   </p>
                 </div>
               </div>
