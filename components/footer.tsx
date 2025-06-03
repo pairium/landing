@@ -21,10 +21,10 @@ export function Footer() {
               About
             </Link>
             <Link
-              href="/mindmeld" 
+              href="/synct" 
               className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
             >
-              MindMeld
+              Synct
             </Link>
             <a 
               href="https://arxiv.org/abs/2503.18238" 
