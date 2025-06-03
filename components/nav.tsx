@@ -21,10 +21,10 @@ export function Nav() {
         {isHomePage && (
           <nav className="flex items-center gap-6" aria-label="Main navigation">
             <Link
-              href="/mindmeld" 
+              href="/synct" 
               className="text-base hover:text-slate-900 dark:hover:text-white transition-colors font-medium text-slate-600 dark:text-slate-300"
             >
-              MindMeld
+              Synct
             </Link>
             <Link 
               href="mailto:info@pairium.ai" 
