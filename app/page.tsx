@@ -104,7 +104,7 @@ export default function LandingPage() {
                   Born of proprietary MIT research on the productivity and performance benefits of "personality pairing" AI agents with human users, Pairium AI is developing personalization technology that optimizes Human-AI collaboration to maximize performance and productivity returns in any collaborative task.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  MIT collaborators and Pairium AI co-founders Sinan Aral and Harang Ju developed a first of its kind, commercial grade human-AI collaboration platform called Synct. <Link href="/synct" className="text-[#007ACC] dark:text-[#40A9FF]">Synct</Link> allows humans to collaborate with fully configured AI agents that "can do anything the humans can do" on any configurable task.
+                  MIT collaborators and Pairium AI co-founders Sinan Aral and Harang Ju developed a first of its kind, commercial grade human-AI collaboration platform called Pairit. <Link href="/pairit" className="text-[#007ACC] dark:text-[#40A9FF]">Pairit</Link> allows humans to collaborate with fully configured AI agents that "can do anything the humans can do" on any configurable task.
                 </p>
                 <p className="text-lg leading-relaxed">
                   But, unlike other platforms, it is configured to discover causal drivers of improved productivity and performance. Aral and Ju test drove their platform in a large scale randomized controlled trial (RCT) of Human-AI collaboration to create end to end marketing campaigns. They discovered non-obvious and surprisingly strong productivity and performance effects of "pairing" AI agents with their human collaborators. Through this discovery, Pairium was born...

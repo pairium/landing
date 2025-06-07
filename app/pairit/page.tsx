@@ -18,7 +18,7 @@ export default function LandingPage() {
                   Powered by Pairium AI
                 </span>
                 <h1 id="hero-heading" className="w-full text-4xl md:text-5xl font-bold tracking-tighter text-slate-900 dark:text-white">
-                  Synct <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007ACC] to-[#40A9FF] dark:from-[#40A9FF] dark:to-[#69C0FF]">Platform</span>
+                  Pairit <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007ACC] to-[#40A9FF] dark:from-[#40A9FF] dark:to-[#69C0FF]">Platform</span>
                 </h1>
                 <p className="text-xl md:text-2xl max-w-2xl mx-auto text-slate-700 dark:text-white/90">
                   A powerful platform for designing and running interactive experiments between humans and AI agents.
@@ -55,10 +55,10 @@ export default function LandingPage() {
                 Platform Features
               </div>
               <h2 id="features-heading" className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                Synct: The Ultimate Human-AI Experiment Platform
+                Pairit: The Ultimate Human-AI Experiment Platform
               </h2>
               <p className="max-w-[800px] text-muted-foreground md:text-lg mx-auto">
-                Born from MIT research and developed by Pairium AI, Synct offers everything researchers and organizations need to run sophisticated human-AI experiments.
+                Born from MIT research and developed by Pairium AI, Pairit offers everything researchers and organizations need to run sophisticated human-AI experiments.
               </p>
             </div>
           </div>
@@ -211,7 +211,7 @@ export default function LandingPage() {
                 From Design to Results
               </h2>
               <p className="max-w-[800px] text-muted-foreground md:text-lg mx-auto">
-                Leverage Pairium AI's technology to run sophisticated experiments that uncover the power of personality pairing.
+                Leverage Pairium AI's technology to run sophisticated experiments that uncover the power of human-AI collaboration.
               </p>
             </div>
           </div>
@@ -265,7 +265,7 @@ export default function LandingPage() {
                 Built and Used by Leading Researchers
               </h2>
               <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed">
-                Synct is the research platform behind Pairium AI's foundational discoveries, developed and used by researchers at top academic institutions.
+                Pairit is the research platform behind Pairium AI's foundational discoveries, developed and used by researchers at top academic institutions.
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-center justify-center py-8 max-w-2xl mx-auto">
@@ -310,7 +310,7 @@ export default function LandingPage() {
                 Free for Academic Research
               </h2>
               <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed">
-                As part of Pairium AI's commitment to advancing AI research, we provide free access to the Synct platform for qualified academic researchers.
+                As part of Pairium AI's commitment to advancing AI research, we provide free access to the Pairit platform for qualified academic researchers.
               </p>
             </div>
             <div className="mt-8 max-w-3xl mx-auto bg-muted rounded-xl p-6 border border-slate-200 dark:border-blue-900/50 bg-white dark:bg-blue-950/40">
@@ -352,7 +352,7 @@ export default function LandingPage() {
                 Get in Touch
               </h2>
               <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
-                For enterprise solutions or research collaborations with Pairium AI and the Synct platform, reach out to our team.
+                For enterprise solutions or research collaborations with Pairium AI and the Pairit platform, reach out to our team.
               </p>
             </div>
             <div className="flex gap-4 mt-4">
