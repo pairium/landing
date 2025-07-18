@@ -1,54 +1,64 @@
 import Link from "next/link"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { Mail, ArrowRight } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="w-full bg-white dark:bg-blue-950/80 text-slate-900 dark:text-white py-12 border-t border-slate-200 dark:border-slate-800">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="flex flex-col items-center text-center">
-          <div className="mb-8">
-            <h3 className="text-lg font-semibold mb-2">Pairium AI</h3>
-            <p className="text-slate-600 dark:text-slate-400 max-w-md">
-              Personalizing the Agentic Age with MIT research-backed AI technology.
-            </p>
+    <footer className="container lg:py-20 flex md:items-center justify-between max-md:flex-col gap-y-6 md:col-start-1 md:col-span-8 md:row-start-2">
+      {/* <form className="newsletter max-w-[300px] w-full">
+        <label className="text-button block mb-4">Keep up to date</label>
+        <div className="input-group flex gap-2 h-[2.75rem]">
+          <div className="input-field flex-1 flex items-center gap-3 px-4 bg-[--color-background-alt] border border-[--color-background-alt] rounded-full text-[--color-mid]">
+            <Mail className="h-4 w-4" />
+            <input 
+              type="email" 
+              placeholder="Your email" 
+              className="bg-transparent border-none outline-none w-full text-small" 
+            />
           </div>
-          
-          <div className="flex gap-8 mb-8">
-            <Link
-              href="/about" 
-              className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              href="/pairit" 
-              className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
-            >
-              Pairit
-            </Link>
-            <a 
-              href="https://arxiv.org/abs/2503.18238" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
-            >
-              Research
-            </a>
-            <Link
-              href="/privacy" 
-              className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
-            >
-              Privacy Policy
-            </Link>
-          </div>
-          
-          <div className="border-t border-slate-200 dark:border-slate-800 w-full pt-8">
-            <div className="flex justify-between items-center">
-              <p className="text-slate-600 dark:text-slate-400">© {new Date().getFullYear()} Pairium AI. All rights reserved.</p>
-              <ThemeToggle />
-            </div>
-          </div>
+          <button 
+            type="submit" 
+            className="aspect-[1/1] h-full rounded-full bg-[--color-background-alt] text-[--color-mid] flex items-center justify-center hover:opacity-70 transition"
+          >
+            <ArrowRight className="h-4 w-4" />
+          </button>
         </div>
+      </form> */}
+      
+      <div className="flex gap-6 items-center">
+        <a 
+          href="mailto:info@pairium.ai" 
+          className="text-button text-[--color-mid] capitalize hover:opacity-50"
+        >
+          email
+        </a>
+        <a 
+          href="https://www.linkedin.com/company/pairium-ai" 
+          className="text-button text-[--color-mid] capitalize hover:opacity-50"
+        >
+          linkedin
+        </a>
+        <a 
+          href="https://x.com/pairium_ai" 
+          className="text-button text-[--color-mid] capitalize hover:opacity-50"
+        >
+          x
+        </a>
+      </div>
+      
+      <div className="flex gap-6 items-center">
+        <Link 
+          href="/privacy" 
+          className="text-button text-[--color-mid] hover:opacity-50"
+        >
+          Privacy Policy
+        </Link>
+        <Link 
+          href="/terms" 
+          className="text-button text-[--color-mid] hover:opacity-50"
+        >
+          Terms of Service
+        </Link>
       </div>
     </footer>
   )

@@ -4,6 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-primary: var(--font-crimson-text);
+  --font-secondary: var(--font-inter);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -44,17 +46,42 @@
 }
 
 :root {
+  --color-brand: #007ACC;
+  --color-brand-secondary: #0099FF;
+  --color-light-90: #f8f9fa;
+  --color-light-80: #e9ecef;
+  --color-light-70: #6c757d;
+  --color-dark-05: #212529;
+  --color-dark-10: #343a40;
+  --color-dark-30: #495057;
+  --color-background: var(--color-light-90);
+  --color-background-alt: var(--color-light-80);
+  --color-mid: var(--color-dark-30);
+  --color-foreground: var(--color-dark-05);
+  --color-line: #dee2e6;
+  --color-button-secondary: var(--color-brand);
+  --color-white: #fff;
+
+  /* Typography */
+  --font-size-h1: 3.125rem;
+  --font-size-h2: 2.5rem;
+  --font-size-h3: 1.8rem;
+  --font-size-p: 1.1rem;
+  --font-size-body: 1.0625rem;
+  --font-size-small: 0.875rem;
+  --font-size-button: 0.8125rem;
+
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: var(--color-background);
+  --foreground: var(--color-foreground);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --primary: var(--color-brand);
+  --primary-foreground: white;
+  --secondary: var(--color-background-alt);
+  --secondary-foreground: var(--color-button-secondary);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -79,16 +106,23 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  --color-background: var(--color-dark-05);
+  --color-background-alt: var(--color-dark-10);
+  --color-mid: var(--color-light-70);
+  --color-foreground: var(--color-light-90);
+  --color-line: var(--color-dark-30);
+  --color-button-secondary: #40A9FF;
+
+  --background: var(--color-background);
+  --foreground: var(--color-foreground);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
+  --primary: var(--color-brand);
+  --primary-foreground: white;
+  --secondary: var(--color-background-alt);
+  --secondary-foreground: var(--color-button-secondary);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.269 0 0);
@@ -118,6 +152,128 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-secondary);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+/* Typography */
+.text-h1 {
+  font: 400 var(--font-size-h1)/.88 var(--font-primary);
+  letter-spacing: -.04em;
+}
+
+.text-h2 {
+  font: 400 var(--font-size-h2)/.88 var(--font-primary);
+  letter-spacing: -.02em;
+}
+
+.text-h3 {
+  font: 400 var(--font-size-h3)/1 var(--font-primary);
+  letter-spacing: -.02em;
+}
+
+.text-nav {
+  font: 500 var(--font-size-body)/1 var(--font-secondary);
+  letter-spacing: -.02em;
+}
+
+.text-p {
+  font: 400 var(--font-size-p)/1.4 var(--font-secondary);
+  letter-spacing: 0;
+}
+
+.text-button {
+  font: 500 var(--font-size-button)/1 var(--font-secondary);
+  letter-spacing: 0;
+}
+
+.text-small {
+  font: 400 var(--font-size-small)/1.2 var(--font-secondary);
+  letter-spacing: .01em;
+}
+
+/* Buttons */
+.button-primary {
+  background-color: var(--color-brand);
+  border-radius: .4rem;
+  color: var(--color-white) !important;
+  font: 500 var(--font-size-button)/1 var(--font-secondary);
+  letter-spacing: 0;
+  outline: none;
+  padding: 1rem 1.75rem;
+  transition: background-color .2s;
+}
+
+.button-primary:hover {
+  background-color: var(--color-brand-secondary);
+}
+
+.button-secondary {
+  background-color: var(--color-background-alt);
+  border-radius: .4rem;
+  color: var(--color-button-secondary);
+  font: 500 var(--font-size-button)/1 var(--font-secondary);
+  letter-spacing: 0;
+  outline: none;
+  padding: 1rem 1.75rem;
+  transition: opacity .2s;
+}
+
+.button-secondary:hover {
+  opacity: .7;
+}
+
+/* Layout utilities */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 2rem 0;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --font-size-h1: 4.25rem;
+    --font-size-h2: 3rem;
+    --font-size-h3: 1.75rem;
+    --font-size-body: 1.0625rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --font-size-h1: 4.25rem;
+    --font-size-h2: 3rem;
+    --font-size-h3: 2rem;
+    --font-size-body: 1.0625rem;
+  }
+}
+
+/* Prose styles */
+.prose p {
+  color: var(--color-mid);
+  margin-top: 1rem;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* Component spacing */
+.component {
+  margin-block: 4rem;
+}
+
+.textstack {
+  max-width: 65ch;
+}
+
+@media (min-width: 1024px) {
+  .lg\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 

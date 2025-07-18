@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Crimson_Text, Inter } from 'next/font/google';
 import "./globals.css";
-import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/providers/theme-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// Define fonts to match reflection.ai
+const crimsonText = Crimson_Text({
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  variable: '--font-primary',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-secondary',
 });
 
 export const metadata: Metadata = {
@@ -50,23 +53,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${crimsonText.variable} ${inter.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen flex-col">
+          <div className="grid md:grid-cols-[repeat(8,1fr)] grid-rows-[1fr_auto] gap-4 min-h-screen max-w-[1324px] mx-auto px-8 box-content md:pt-40">
             <Nav />
-            {children}
+            <main className="md:col-start-3 md:col-span-6">
+              {children}
+            </main>
             <Footer />
           </div>
         </ThemeProvider>

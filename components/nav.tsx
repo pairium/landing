@@ -3,38 +3,52 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { BrainCircuit, Users, BarChart, Network, Mail } from "lucide-react"
 
 export function Nav() {
   const pathname = usePathname()
   const isHomePage = pathname === '/'
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-700/20 bg-white dark:bg-slate-900">
-      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="flex-1 flex items-center gap-2 hover:opacity-80 transition-opacity" aria-label="Pairium AI Home">
+    <header className="md:col-start-1 md:col-span-2 sticky top-0 md:top-24 flex flex-col gap-y-14 h-fit z-11 py-6">
+      <div className="flex items-center justify-between z-11">
+        <Link href="/" className="inline-flex items-center gap-x-2" aria-label="Go to Home">
           <div className="flex items-center">
-            <Image src="/icon.svg" alt="Pairium AI Logo" width={40} height={40} className="mr-2" />
+            <Image src="/icon.svg" alt="Pairium AI Logo" width={20} height={20} className="mr-2" />
+            <span className="text-lg font-medium text-[--color-foreground]">Pairium</span>
           </div>
         </Link>
-        
-        {isHomePage && (
-          <nav className="flex items-center gap-6" aria-label="Main navigation">
-            <Link
-              href="/pairit" 
-              className="text-base hover:text-slate-900 dark:hover:text-white transition-colors font-medium text-slate-600 dark:text-slate-300"
-            >
-              Pairit
-            </Link>
-            <Link 
-              href="mailto:info@pairium.ai" 
-              className="ml-2 inline-flex items-center rounded-md bg-gradient-to-r from-[#007ACC] to-[#00AAFF] px-4 py-2.5 text-base font-medium text-white shadow-sm hover:from-[#0088CC] hover:to-[#00CCFF] transition-all"
-            >
-              Get in Touch
-            </Link>
-          </nav>
-        )}
       </div>
+      
+      {isHomePage && (
+        <nav className="flex flex-col" aria-label="Main navigation">
+          <ul role="list" className="flex flex-col">
+            <li className="contents">
+              <Link 
+                href="/pairit" 
+                className="inline-flex items-center gap-x-2 text-nav md:text-button text-[--color-mid] pointer-events-auto w-fit py-2"
+              >
+                Product
+              </Link>
+            </li>
+            <li className="contents">
+              <Link 
+                href="/research" 
+                className="inline-flex items-center gap-x-2 text-nav md:text-button text-[--color-mid] pointer-events-auto w-fit py-2"
+              >
+                Research
+              </Link>
+            </li>
+            <li className="contents">
+              <Link 
+                href="/about" 
+                className="text-nav md:text-button text-[--color-mid] pointer-events-auto w-fit py-2"
+              >
+                About
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   )
 } 
