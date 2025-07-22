@@ -231,7 +231,7 @@ export default function LandingPage() {
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white">James Kupernik</h3>
                     <p className="mb-3 text-[#007ACC] dark:text-[#40A9FF]">Technical staff</p>
                     <p className="mb-6 text-slate-600 dark:text-slate-300">
-                      Technology executive and former CTO at Airship and Vidmob. Expert in GenAI and serverless development.
+                      Technology executive and CTO at Airship and Vidmob. Expert in GenAI and serverless development.
                     </p>
                   </div>
                 </div>
