@@ -114,6 +114,96 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
+
+            {/* James Kupernik Bio */}
+            <div id="james-kupernik" className="flex flex-col lg:flex-row gap-12 mb-16 items-start scroll-mt-24">
+              <div className="w-full lg:w-1/3 flex justify-center">
+                <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md mb-8">
+                  <Image 
+                    src="/james-kupernik.jpg" 
+                    alt="James Kupernik" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="w-full lg:w-2/3">
+                <div className="flex items-center mb-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mr-4">James Kupernik</h3>
+                  <div className="flex space-x-2">
+                    <a href="https://www.linkedin.com/in/jameskupernik/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 dark:bg-slate-700 p-2 text-slate-600 dark:text-slate-300 transition-colors hover:bg-[#007ACC] hover:text-white">
+                      <Linkedin className="h-4 w-4" />
+                    </a>
+                  </div>
+                </div>
+                <div className="text-slate-700 dark:text-slate-300 space-y-4">
+                  <p>
+                    James is an experienced technology executive with a track record of leading high-performing engineering teams in fast-growing MarTech companies. Prior to his role as CTO at Airship, he was CTO at Vidmob, where he helped scale the platform and built critical infrastructure supporting creative data and media workflows for global brands. James brings deep expertise in GenAI, composable architectures, and serverless-first development, with a focus on aligning technical strategy to business outcomes.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Josh Attenberg Bio */}
+            <div id="josh-attenberg" className="flex flex-col lg:flex-row gap-12 mb-16 items-start scroll-mt-24">
+              <div className="w-full lg:w-1/3 flex justify-center">
+                <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md mb-8">
+                  <Image 
+                    src="/josh-attenberg.jpg" 
+                    alt="Josh Attenberg" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="w-full lg:w-2/3">
+                <div className="flex items-center mb-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mr-4">Josh Attenberg</h3>
+                  <div className="flex space-x-2">
+                    <a href="https://www.linkedin.com/in/joshattenberg/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 dark:bg-slate-700 p-2 text-slate-600 dark:text-slate-300 transition-colors hover:bg-[#007ACC] hover:text-white">
+                      <Linkedin className="h-4 w-4" />
+                    </a>
+                  </div>
+                </div>
+                <div className="text-slate-700 dark:text-slate-300 space-y-4">
+                  <p>
+                    Josh is a seasoned technology leader and data scientist with a passion for applying machine learning and AI to solve real-world problems. With a Ph.D. in machine learning and over 15 years of experience spanning a variety of startups and enterprise tech, Josh has led data and AI initiatives at companies like Etsy, Compass, Integral Ad Science and VSCO, and has a proven track record of delivering business value using AI.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Michael Zhao Bio */}
+            <div id="michael-zhao" className="flex flex-col lg:flex-row gap-12 items-start scroll-mt-24">
+              <div className="w-full lg:w-1/3 flex justify-center">
+                <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md mb-8">
+                  <Image 
+                    src="/michael-zhao.jpg" 
+                    alt="Michael Zhao" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="w-full lg:w-2/3">
+                <div className="flex items-center mb-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mr-4">Michael Zhao</h3>
+                  <div className="flex space-x-2">
+                    <a href="https://www.linkedin.com/in/mfzhao/" target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-100 dark:bg-slate-700 p-2 text-slate-600 dark:text-slate-300 transition-colors hover:bg-[#007ACC] hover:text-white">
+                      <Linkedin className="h-4 w-4" />
+                    </a>
+                  </div>
+                </div>
+                <div className="text-slate-700 dark:text-slate-300 space-y-4">
+                  <p>
+                    Michael is an Applied Scientist at the Columbia–Dream Sports AI Innovation Center, where he turns state-of-the-art research in machine learning and causal inference into practical advances for sports technology. Earlier in his career he refined Netflix's core recommendation engine and built next-generation upper-funnel measurement tools for Amazon Advertising. Michael holds a Ph.D. from MIT, and his research has been published in Science Advances and the Proceedings of the National Academy of Sciences.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

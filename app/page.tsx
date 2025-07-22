@@ -200,7 +200,98 @@ export default function LandingPage() {
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white">Harang Ju</h3>
                     <p className="mb-3 text-[#007ACC] dark:text-[#40A9FF]">Co-founder and COO</p>
                     <p className="mb-6 text-slate-600 dark:text-slate-300">
-                      Incoming Assistant Professor at Johns Hopkins University. PhD in Neuroscience. Expert in human-AI collaboration systems.
+                      Assistant Professor at Johns Hopkins Carey Business School. PhD in Neuroscience. Expert in human-AI collaboration systems.
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto mt-12">
+            <div className="group">
+              <Link href="/about#james-kupernik" className="block">
+                <div className="relative overflow-hidden rounded-xl border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 p-6 shadow-md transition-all hover:shadow-lg">
+                  <div className="absolute top-0 right-0 h-24 w-24 rounded-bl-full bg-gradient-to-bl from-[#007ACC]/20 to-[#00AAFF]/20"></div>
+                  
+                  <div className="mb-6 flex justify-center">
+                    <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md">
+                      <Image 
+                        src="/james-kupernik.jpg" 
+                        alt="James Kupernik" 
+                        width={224} 
+                        height={224}
+                        className="object-cover"
+                        placeholder="blur"
+                        blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='224' height='224' viewBox='0 0 224 224'%3E%3Crect width='224' height='224' fill='%23f1f5f9'/%3E%3Ctext x='112' y='112' font-family='Arial' font-size='24' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3EJames Kupernik%3C/text%3E%3C/svg%3E"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">James Kupernik</h3>
+                    <p className="mb-3 text-[#007ACC] dark:text-[#40A9FF]">Technical staff</p>
+                    <p className="mb-6 text-slate-600 dark:text-slate-300">
+                      Technology executive and former CTO at Airship and Vidmob. Expert in GenAI and serverless development.
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            
+            <div className="group">
+              <Link href="/about#josh-attenberg" className="block">
+                <div className="relative overflow-hidden rounded-xl border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 p-6 shadow-md transition-all hover:shadow-lg">
+                  <div className="absolute top-0 right-0 h-24 w-24 rounded-bl-full bg-gradient-to-bl from-[#007ACC]/20 to-[#00AAFF]/20"></div>
+                  
+                  <div className="mb-6 flex justify-center">
+                    <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md">
+                      <Image 
+                        src="/josh-attenberg.jpg" 
+                        alt="Josh Attenberg" 
+                        width={224} 
+                        height={224}
+                        className="object-cover"
+                        placeholder="blur"
+                        blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='224' height='224' viewBox='0 0 224 224'%3E%3Crect width='224' height='224' fill='%23f1f5f9'/%3E%3Ctext x='112' y='112' font-family='Arial' font-size='24' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3EJosh Attenberg%3C/text%3E%3C/svg%3E"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">Josh Attenberg</h3>
+                    <p className="mb-3 text-[#007ACC] dark:text-[#40A9FF]">Technical staff</p>
+                    <p className="mb-6 text-slate-600 dark:text-slate-300">
+                      Data scientist with PhD in machine learning and 15+ years experience. Former AI leader at Etsy, Compass, and VSCO.
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            <div className="group">
+              <Link href="/about#michael-zhao" className="block">
+                <div className="relative overflow-hidden rounded-xl border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 p-6 shadow-md transition-all hover:shadow-lg">
+                  <div className="absolute top-0 right-0 h-24 w-24 rounded-bl-full bg-gradient-to-bl from-[#007ACC]/20 to-[#00AAFF]/20"></div>
+                  
+                  <div className="mb-6 flex justify-center">
+                    <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md">
+                      <Image 
+                        src="/michael-zhao.jpg" 
+                        alt="Michael Zhao" 
+                        width={224} 
+                        height={224}
+                        className="object-cover"
+                        placeholder="blur"
+                        blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='224' height='224' viewBox='0 0 224 224'%3E%3Crect width='224' height='224' fill='%23f1f5f9'/%3E%3Ctext x='112' y='112' font-family='Arial' font-size='24' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3EMichael Zhao%3C/text%3E%3C/svg%3E"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">Michael Zhao</h3>
+                    <p className="mb-3 text-[#007ACC] dark:text-[#40A9FF]">Technical staff</p>
+                    <p className="mb-6 text-slate-600 dark:text-slate-300">
+                      Applied Scientist at Columbia-Dream Sports AI Center. PhD from MIT. Former researcher at Netflix and Amazon.
                     </p>
                   </div>
                 </div>
