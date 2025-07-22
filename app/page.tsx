@@ -158,57 +158,145 @@ export default function LandingPage() {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto component">
-          <div className="group">
-            <Link href="/about#sinan-aral" className="block">
-              <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-6 shadow-md transition-all hover:shadow-lg">
-                <div className="mb-6 flex justify-center">
-                  <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-[--color-line] bg-[--color-background-alt] shadow-md">
-                    <Image 
-                      src="/sinan-aral.jpg" 
-                      alt="Sinan Aral" 
-                      width={224} 
-                      height={224}
-                      className="object-cover"
-                    />
+        {/* Co-founders */}
+        <div className="component">
+          <h3 className="text-h3 text-[--color-foreground] mb-8 text-center">Co-founders</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            <div className="group">
+              <Link href="/about#sinan-aral" className="block">
+                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-6 shadow-md transition-all hover:shadow-lg">
+                  <div className="mb-6 flex justify-center">
+                    <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-[--color-line] bg-[--color-background-alt] shadow-md">
+                      <Image 
+                        src="/sinan-aral.jpg" 
+                        alt="Sinan Aral" 
+                        width={224} 
+                        height={224}
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h4 className="text-h3 text-[--color-foreground]">Sinan Aral</h4>
+                    <p className="mb-3 text-p text-[--color-brand]">Co-founder and CEO</p>
+                    <p className="mb-6 text-p text-[--color-mid]">
+                      David Austin Professor of IT, Marketing, and Data Science at MIT. Author of "The Hype Machine." Award-winning scientist and entrepreneur.
+                    </p>
                   </div>
                 </div>
-                
-                <div className="text-center">
-                  <h3 className="text-h3 text-[--color-foreground]">Sinan Aral</h3>
-                  <p className="mb-3 text-p text-[--color-brand]">Co-founder and CEO</p>
-                  <p className="mb-6 text-p text-[--color-mid]">
-                    David Austin Professor of IT, Marketing, and Data Science at MIT. Author of "The Hype Machine." Award-winning scientist and entrepreneur.
-                  </p>
+              </Link>
+            </div>
+            
+            <div className="group">
+              <Link href="/about#harang-ju" className="block">
+                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-6 shadow-md transition-all hover:shadow-lg">
+                  <div className="mb-6 flex justify-center">
+                    <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-[--color-line] bg-[--color-background-alt] shadow-md">
+                      <Image 
+                        src="/harang-ju.jpg" 
+                        alt="Harang Ju" 
+                        width={224} 
+                        height={224}
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h4 className="text-h3 text-[--color-foreground]">Harang Ju</h4>
+                    <p className="mb-3 text-p text-[--color-brand]">Co-founder and COO</p>
+                    <p className="mb-6 text-p text-[--color-mid]">
+                      Incoming Assistant Professor at Johns Hopkins University. PhD in Neuroscience. Expert in human-AI collaboration systems.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           </div>
-          
-          <div className="group">
-            <Link href="/about#harang-ju" className="block">
-              <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-6 shadow-md transition-all hover:shadow-lg">
-                <div className="mb-6 flex justify-center">
-                  <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-[--color-line] bg-[--color-background-alt] shadow-md">
-                    <Image 
-                      src="/harang-ju.jpg" 
-                      alt="Harang Ju" 
-                      width={224} 
-                      height={224}
-                      className="object-cover"
-                    />
+        </div>
+
+        {/* Staff */}
+        <div className="component">
+          <h3 className="text-h3 text-[--color-foreground] mb-8 text-center">Technical Staff</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="group">
+              <Link href="/about#james-kupernik" className="block">
+                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-6 shadow-md transition-all hover:shadow-lg">
+                  <div className="mb-6 flex justify-center">
+                    <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-[--color-line] bg-[--color-background-alt] shadow-md">
+                      <Image 
+                        src="/james-kupernik.jpg" 
+                        alt="James Kupernik" 
+                        width={192} 
+                        height={192}
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h4 className="text-h3 text-[--color-foreground]">James Kupernik</h4>
+                    <p className="mb-3 text-p text-[--color-brand]">Staff</p>
+                    <p className="mb-6 text-p text-[--color-mid] text-sm">
+                      Technology executive and former CTO at Airship and Vidmob. Expert in GenAI and serverless development.
+                    </p>
                   </div>
                 </div>
-                
-                <div className="text-center">
-                  <h3 className="text-h3 text-[--color-foreground]">Harang Ju</h3>
-                  <p className="mb-3 text-p text-[--color-brand]">Co-founder and COO</p>
-                  <p className="mb-6 text-p text-[--color-mid]">
-                    Incoming Assistant Professor at Johns Hopkins University. PhD in Neuroscience. Expert in human-AI collaboration systems.
-                  </p>
+              </Link>
+            </div>
+            
+            <div className="group">
+              <Link href="/about#josh-attenberg" className="block">
+                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-6 shadow-md transition-all hover:shadow-lg">
+                  <div className="mb-6 flex justify-center">
+                    <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-[--color-line] bg-[--color-background-alt] shadow-md">
+                      <Image 
+                        src="/josh-attenberg.jpg" 
+                        alt="Josh Attenberg" 
+                        width={192} 
+                        height={192}
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h4 className="text-h3 text-[--color-foreground]">Josh Attenberg</h4>
+                    <p className="mb-3 text-p text-[--color-brand]">Staff</p>
+                    <p className="mb-6 text-p text-[--color-mid] text-sm">
+                      Data scientist with Ph.D. in machine learning and 15+ years experience. Former AI leader at Etsy, Compass, and VSCO.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
+            
+            <div className="group">
+              <Link href="/about#michael-zhao" className="block">
+                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-6 shadow-md transition-all hover:shadow-lg">
+                  <div className="mb-6 flex justify-center">
+                    <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-[--color-line] bg-[--color-background-alt] shadow-md">
+                      <Image 
+                        src="/michael-zhao.jpg" 
+                        alt="Michael Zhao" 
+                        width={192} 
+                        height={192}
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h4 className="text-h3 text-[--color-foreground]">Michael Zhao</h4>
+                    <p className="mb-3 text-p text-[--color-brand]">Staff</p>
+                    <p className="mb-6 text-p text-[--color-mid] text-sm">
+                      Applied Scientist at Columbia–Dream Sports AI Center. Ph.D. from MIT. Former researcher at Netflix and Amazon.
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -2,8 +2,8 @@ import { Linkedin } from "lucide-react"
 import Image from "next/image"
 
 export const metadata = {
-  title: "About the Founders | Pairium AI",
-  description: "Learn about Pairium AI's founders Sinan Aral and Harang Ju."
+  title: "About the Team | Pairium AI",
+  description: "Learn about Pairium AI's founders and team members including Sinan Aral, Harang Ju, James Kupernik, Josh Attenberg, and Michael Zhao."
 }
 
 export default function AboutPage() {
@@ -25,7 +25,13 @@ export default function AboutPage() {
       <section className="w-full py-16 md:py-24 bg-white dark:bg-blue-950/80">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6">
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-10 text-center">Founder Bios</h2>
+            {/* Header with proper alignment */}
+            <div className="flex flex-col lg:flex-row gap-12 mb-10">
+              <div className="w-full lg:w-1/3"></div>
+              <div className="w-full lg:w-2/3">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Founder Bios</h2>
+              </div>
+            </div>
             
             {/* Sinan Aral Bio */}
             <div id="sinan-aral" className="flex flex-col lg:flex-row gap-12 mb-16 items-start scroll-mt-24">
@@ -78,7 +84,7 @@ export default function AboutPage() {
             </div>
             
             {/* Harang Ju Bio */}
-            <div id="harang-ju" className="flex flex-col lg:flex-row gap-12 items-start scroll-mt-24">
+            <div id="harang-ju" className="flex flex-col lg:flex-row gap-12 mb-16 items-start scroll-mt-24">
               <div className="w-full lg:w-1/3 flex justify-center">
                 <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md mb-8">
                   <Image 
@@ -110,6 +116,89 @@ export default function AboutPage() {
                 <div className="text-slate-700 dark:text-slate-300 space-y-4">
                   <p>
                     Harang Ju is an assistant professor in the <a href="https://carey.jhu.edu/" className="text-[#007ACC] dark:text-[#40A9FF] hover:underline">Johns Hopkins Carey Business School</a> and former post-doctoral fellow at MIT. He studies AI agents and how they help people work. Harang's <a href="https://arxiv.org/abs/2503.18238" className="text-[#007ACC] dark:text-[#40A9FF] hover:underline">current work</a> uses large field and lab experiments and observational studies. His research appears in Nature Neuroscience and other peer-reviewed journals. He is also an advisor at <a href="https://www.linkedin.com/company/mokuhq/" className="text-[#007ACC] dark:text-[#40A9FF] hover:underline">Moku</a>, an AI and web3 gaming company. Harang holds degrees from the University of Pennsylvania in neuroscience (PhD) and from the University of Virginia in computer science (BS) and cognitive science (BA).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Staff Section Header */}
+            <div className="flex flex-col lg:flex-row gap-12 mb-10 mt-16">
+              <div className="w-full lg:w-1/3"></div>
+              <div className="w-full lg:w-2/3">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Technical Staff</h2>
+              </div>
+            </div>
+            
+            {/* James Kupernik Bio */}
+            <div id="james-kupernik" className="flex flex-col lg:flex-row gap-12 mb-16 items-start scroll-mt-24">
+              <div className="w-full lg:w-1/3 flex justify-center">
+                <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md mb-8">
+                  <Image 
+                    src="/james-kupernik.jpg" 
+                    alt="James Kupernik" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="w-full lg:w-2/3">
+                <div className="flex items-center mb-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mr-4">James Kupernik</h3>
+                </div>
+                <div className="text-slate-700 dark:text-slate-300 space-y-4">
+                  <p>
+                    James is an experienced technology executive with a track record of leading high-performing engineering teams in fast-growing MarTech companies. Prior to his role as CTO at Airship, he was CTO at Vidmob, where he helped scale the platform and built critical infrastructure supporting creative data and media workflows for global brands. James brings deep expertise in GenAI, composable architectures, and serverless-first development, with a focus on aligning technical strategy to business outcomes.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Josh Attenberg Bio */}
+            <div id="josh-attenberg" className="flex flex-col lg:flex-row gap-12 mb-16 items-start scroll-mt-24">
+              <div className="w-full lg:w-1/3 flex justify-center">
+                <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md mb-8">
+                  <Image 
+                    src="/josh-attenberg.jpg" 
+                    alt="Josh Attenberg" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="w-full lg:w-2/3">
+                <div className="flex items-center mb-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mr-4">Josh Attenberg</h3>
+                </div>
+                <div className="text-slate-700 dark:text-slate-300 space-y-4">
+                  <p>
+                    Josh is a seasoned technology leader and data scientist with a passion for applying machine learning and AI to solve real-world problems. With a Ph.D. in machine learning and over 15 years of experience spanning a variety of startups and enterprise tech, Josh has led data and AI initiatives at companies like Etsy, Compass, Integral Ad Science and VSCO, and has a proven track record of delivering business value using AI.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Michael Zhao Bio */}
+            <div id="michael-zhao" className="flex flex-col lg:flex-row gap-12 items-start scroll-mt-24">
+              <div className="w-full lg:w-1/3 flex justify-center">
+                <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white dark:border-slate-700 bg-slate-100 dark:bg-slate-900 shadow-md mb-8">
+                  <Image 
+                    src="/michael-zhao.jpg" 
+                    alt="Michael Zhao" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="w-full lg:w-2/3">
+                <div className="flex items-center mb-4">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mr-4">Michael Zhao</h3>
+                </div>
+                <div className="text-slate-700 dark:text-slate-300 space-y-4">
+                  <p>
+                    Michael is an Applied Scientist at the Columbia–Dream Sports AI Innovation Center, where he turns state-of-the-art research in machine learning and causal inference into practical advances for sports technology. Earlier in his career he refined Netflix's core recommendation engine and built next-generation upper-funnel measurement tools for Amazon Advertising. Michael holds a Ph.D. from MIT, and his research has been published in Science Advances and the Proceedings of the National Academy of Sciences.
                   </p>
                 </div>
               </div>
