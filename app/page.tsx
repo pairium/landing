@@ -7,7 +7,7 @@ export default function LandingPage() {
     <div className="flex flex-col gap-y-50 mb-32">
       {/* Hero Section */}
       <section className="container flex flex-col gap-y-12" data-theme="light">
-        <div className="textstack flex flex-col gap-6 lg:px-8 lg:col-width-6">
+        <div className="flex flex-col gap-6 lg:px-8 py-12">
           <div className="flex flex-col">
             <h1 className="text-[--color-foreground] text-h1">Personalizing AI agents to adapt to your unique work style</h1>
             <div className="prose prose-p:text-p prose-p:text-mid prose-a:text-p prose-a:text-mid prose-p:last:mb-0 prose-p:mt-4">
@@ -25,7 +25,7 @@ export default function LandingPage() {
             </Link>
           </div>
         </div>
-        {/* <div className="w-full h-auto component">
+        {/* <div className="w-full h-auto component lg:w-1/2">
           <Image 
             width={800} 
             height={600} 
@@ -85,12 +85,12 @@ export default function LandingPage() {
 
       {/* Product Section */}
       <section id="pairit" className="container flex flex-col gap-y-8 scroll-mt-24" data-theme="light">
-        <div className="textstack flex flex-col gap-6 lg:px-8 lg:col-width-6">
+        <div className="textstack flex flex-col gap-6 lg:px-8">
           <div className="flex flex-col">
             <h2 className="text-[--color-foreground] text-h2">Pairit</h2>
             <div className="prose prose-p:text-p prose-p:text-mid prose-a:text-p prose-a:text-mid prose-p:last:mb-0 prose-p:mt-4">
               <div>
-                <p>A first-of-its-kind human-AI collaboration platform for optimal productivity. Pairit allows humans to collaborate with fully configured AI agents that can do anything the humans can do on any configurable task.</p>
+                <p>A first-of-its-kind experimentation platform for studying the productivity and performance effects of human-AI collaboration. Pairit allows humans to collaborate with other humans or fully configured AI agents that can do anything the humans can do on any configurable task.</p>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function LandingPage() {
             </Link>
           </div>
         </div>
-        {/* <div className="w-full h-auto component inset">
+        {/* <div className="w-full h-auto component inset lg:w-1/2">
           <Image 
             width={800} 
             height={600} 
@@ -114,7 +114,7 @@ export default function LandingPage() {
 
       {/* Research Section */}
       <section id="research" className="container flex flex-col gap-y-8 scroll-mt-24" data-theme="light">
-        <div className="textstack flex flex-col gap-6 lg:px-8 lg:col-width-6">
+        <div className="textstack flex flex-col gap-6 lg:px-8">
           <div className="flex flex-col">
             <h2 className="text-[--color-foreground] text-h2">Research</h2>
             <div className="prose prose-p:text-p prose-p:text-mid prose-a:text-p prose-a:text-mid prose-p:last:mb-0 prose-p:mt-4">
@@ -131,7 +131,7 @@ export default function LandingPage() {
             </a>
           </div>
         </div>
-        {/* <div className="w-full h-auto component inset">
+        {/* <div className="w-full h-auto component inset lg:w-1/2">
           <Image 
             width={800} 
             height={600} 
@@ -150,7 +150,7 @@ export default function LandingPage() {
             <h2 className="text-[--color-foreground] text-h2">Team</h2>
             <div className="prose prose-p:text-p prose-p:text-mid prose-a:text-p prose-a:text-mid prose-p:last:mb-0 prose-p:mt-4">
                 <div>
-                  <p>Our team is a group of MIT collaborators and co-founders Sinan Aral and Harang Ju, and a group of technical staff with deep experience in GenAI and serverless development.</p>
+                  <p>Our team is a group of scientists and engineers from MIT, Johns Hopkins, Vidmob, Netflix, VSCO, and Amazon.</p>
                 </div>
             </div>
           </div>
@@ -163,7 +163,7 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
             <div className="group">
               <Link href="/about#sinan-aral" className="block">
-                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-4 md:p-6 shadow-md transition-all hover:shadow-lg h-[380px] sm:h-[420px] md:h-[420px] flex flex-col">
+                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-4 md:p-6 shadow-md transition-all hover:shadow-lg h-[320px] md:h-[400px] flex flex-col">
                   <div className="mb-3 md:mb-4 flex justify-center">
                     <div className="relative h-40 w-40 sm:h-44 sm:w-44 md:h-48 md:w-48 overflow-hidden rounded-full border-4 border-[--color-line] bg-[--color-background-alt] shadow-md">
                       <Image 
@@ -189,7 +189,7 @@ export default function LandingPage() {
             
             <div className="group">
               <Link href="/about#harang-ju" className="block">
-                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-4 md:p-6 shadow-md transition-all hover:shadow-lg h-[380px] sm:h-[420px] md:h-[420px] flex flex-col">
+                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-4 md:p-6 shadow-md transition-all hover:shadow-lg h-[320px] md:h-[400px] flex flex-col">
                   <div className="mb-3 md:mb-4 flex justify-center">
                     <div className="relative h-40 w-40 sm:h-44 sm:w-44 md:h-48 md:w-48 overflow-hidden rounded-full border-4 border-[--color-line] bg-[--color-background-alt] shadow-md">
                       <Image 
@@ -219,7 +219,7 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="group">
               <Link href="/about#james-kupernik" className="block">
-                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-4 md:p-6 shadow-md transition-all hover:shadow-lg h-[380px] sm:h-[420px] md:h-[420px] flex flex-col">
+                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-4 md:p-6 shadow-md transition-all hover:shadow-lg h-[320px] md:h-[400px] flex flex-col">
                   <div className="mb-3 md:mb-4 flex justify-center">
                     <div className="relative h-40 w-40 sm:h-44 sm:w-44 md:h-48 md:w-48 overflow-hidden rounded-full border-4 border-[--color-line] bg-[--color-background-alt] shadow-md">
                       <Image 
@@ -245,7 +245,7 @@ export default function LandingPage() {
             
             <div className="group">
               <Link href="/about#josh-attenberg" className="block">
-                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-4 md:p-6 shadow-md transition-all hover:shadow-lg h-[380px] sm:h-[420px] md:h-[420px] flex flex-col">
+                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-4 md:p-6 shadow-md transition-all hover:shadow-lg h-[320px] md:h-[400px] flex flex-col">
                   <div className="mb-3 md:mb-4 flex justify-center">
                     <div className="relative h-40 w-40 sm:h-44 sm:w-44 md:h-48 md:w-48 overflow-hidden rounded-full border-4 border-[--color-line] bg-[--color-background-alt] shadow-md">
                       <Image 
@@ -271,7 +271,7 @@ export default function LandingPage() {
             
             <div className="group">
               <Link href="/about#michael-zhao" className="block">
-                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-4 md:p-6 shadow-md transition-all hover:shadow-lg h-[380px] sm:h-[420px] md:h-[420px] flex flex-col">
+                <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-4 md:p-6 shadow-md transition-all hover:shadow-lg h-[320px] md:h-[400px] flex flex-col">
                   <div className="mb-3 md:mb-4 flex justify-center">
                     <div className="relative h-40 w-40 sm:h-44 sm:w-44 md:h-48 md:w-48 overflow-hidden rounded-full border-4 border-[--color-line] bg-[--color-background-alt] shadow-md">
                       <Image 

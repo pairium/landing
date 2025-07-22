@@ -4,7 +4,7 @@ import { Mail, ArrowRight } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="container lg:py-20 flex md:items-center justify-between max-md:flex-col gap-y-6 md:col-start-1 md:col-span-8 md:row-start-2">
+    <footer className="container md:py-20 flex md:items-center justify-between max-md:flex-col gap-y-6 md:col-start-1 md:col-span-8 md:row-start-2 px-4 md:px-0">
       {/* <form className="newsletter max-w-[300px] w-full">
         <label className="text-button block mb-4">Keep up to date</label>
         <div className="input-group flex gap-2 h-[2.75rem]">
@@ -32,18 +32,18 @@ export function Footer() {
         >
           email
         </a>
-        <a 
+        {/* <a 
           href="https://www.linkedin.com/company/pairium-ai" 
           className="text-button text-[--color-mid] capitalize hover:opacity-50"
         >
           linkedin
-        </a>
-        <a 
+        </a> */}
+        {/* <a 
           href="https://x.com/pairium_ai" 
           className="text-button text-[--color-mid] capitalize hover:opacity-50"
         >
           x
-        </a>
+        </a> */}
       </div>
       
       <div className="flex gap-6 items-center">

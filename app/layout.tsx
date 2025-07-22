@@ -65,9 +65,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="grid md:grid-cols-[repeat(8,1fr)] grid-rows-[1fr_auto] gap-4 min-h-screen max-w-[1324px] mx-auto px-8 box-content md:pt-40">
+          <div className="md:grid md:grid-cols-[repeat(8,1fr)] md:grid-rows-[1fr_auto] md:gap-4 min-h-screen md:max-w-[1324px] md:mx-auto md:px-8 md:box-content md:pt-40">
             <Nav />
-            <main className="md:col-start-3 md:col-span-6">
+            <main className="md:col-start-2 md:col-span-7 px-4 md:px-0">
               {children}
             </main>
             <Footer />
