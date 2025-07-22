@@ -23,28 +23,44 @@ export function Nav() {
         <nav className="flex flex-col" aria-label="Main navigation">
           <ul role="list" className="flex flex-col">
             <li className="contents">
-              <Link 
-                href="/pairit" 
+              <a 
+                href="#features" 
                 className="inline-flex items-center gap-x-2 text-nav md:text-button text-[--color-mid] pointer-events-auto w-fit py-2"
               >
-                Product
-              </Link>
+                Features
+              </a>
             </li>
             <li className="contents">
-              <Link 
-                href="/research" 
+              <a 
+                href="#pairit" 
+                className="inline-flex items-center gap-x-2 text-nav md:text-button text-[--color-mid] pointer-events-auto w-fit py-2"
+              >
+                Pairit
+              </a>
+            </li>
+            <li className="contents">
+              <a 
+                href="#research" 
                 className="inline-flex items-center gap-x-2 text-nav md:text-button text-[--color-mid] pointer-events-auto w-fit py-2"
               >
                 Research
-              </Link>
+              </a>
             </li>
             <li className="contents">
-              <Link 
-                href="/about" 
+              <a 
+                href="#team" 
                 className="text-nav md:text-button text-[--color-mid] pointer-events-auto w-fit py-2"
               >
-                About
-              </Link>
+                Team
+              </a>
+            </li>
+            <li className="contents">
+              <a 
+                href="#contact" 
+                className="text-nav md:text-button text-[--color-mid] pointer-events-auto w-fit py-2"
+              >
+                Contact
+              </a>
             </li>
           </ul>
         </nav>
