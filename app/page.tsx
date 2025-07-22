@@ -158,10 +158,11 @@ export default function LandingPage() {
           </div>
         </div>
         
-        {/* Co-founders */}
+        {/* Team */}
         <div className="component">
+          {/* Co-founders */}
           <h3 className="text-h3 text-[--color-foreground] mb-8 text-center">Co-founders</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-16">
             <div className="group">
               <Link href="/about#sinan-aral" className="block">
                 <div className="relative overflow-hidden rounded-xl bg-[--color-background-alt] p-6 shadow-md transition-all hover:shadow-lg">
@@ -207,17 +208,15 @@ export default function LandingPage() {
                     <h4 className="text-h3 text-[--color-foreground]">Harang Ju</h4>
                     <p className="mb-3 text-p text-[--color-brand]">Co-founder and COO</p>
                     <p className="mb-6 text-p text-[--color-mid]">
-                      Incoming Assistant Professor at Johns Hopkins University. PhD in Neuroscience. Expert in human-AI collaboration systems.
+                      Assistant Professor at Johns Hopkins Carey Business School. PhD in Neuroscience. Expert in human-AI collaboration systems.
                     </p>
                   </div>
                 </div>
               </Link>
             </div>
           </div>
-        </div>
 
-        {/* Staff */}
-        <div className="component">
+          {/* Technical Staff */}
           <h3 className="text-h3 text-[--color-foreground] mb-8 text-center">Technical Staff</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="group">
