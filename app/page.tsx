@@ -18,7 +18,7 @@ export default function LandingPage() {
                   Pairium <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007ACC] to-[#40A9FF] dark:from-[#40A9FF] dark:to-[#69C0FF]">AI</span>
                 </h1>
                 <p className="text-xl md:text-2xl max-w-2xl mx-auto text-slate-700 dark:text-white/90">
-                  Personalizing the Agentic Age with AI technology that adapts to your unique work style.
+                  AI personalization that makes you better
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center">
@@ -43,7 +43,7 @@ export default function LandingPage() {
               Why Choose <span className="text-[#007ACC] dark:text-[#40A9FF]">Pairium AI</span>
             </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-2xl">
-              Our AI personality pairing technology enhances productivity and performance in human-AI collaboration.
+              Our AI personality pairing technology improves productivity and performance in human-AI collaboration.
             </p>
           </div>
           

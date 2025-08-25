@@ -9,7 +9,7 @@ export function Footer() {
           <div className="mb-8">
             <h3 className="text-lg font-semibold mb-2">Pairium AI</h3>
             <p className="text-slate-600 dark:text-slate-400 max-w-md">
-              Personalizing the Agentic Age with MIT research-backed AI technology.
+              AI personalization that makes you better
             </p>
           </div>
           

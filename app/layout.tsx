@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://pairium.ai'),
   title: "Pairium AI",
-  description: "Personalizing the Agentic Age",
+  description: "AI personalization that makes you better",
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -30,20 +30,20 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Pairium AI',
-    description: 'Personalizing the Agentic Age',
+    description: 'AI personalization that makes you better',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 1200,
-        alt: 'Pairium AI - Personalizing the Agentic Age'
+        alt: 'Pairium AI - AI personalization that makes you better'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Pairium AI',
-    description: 'Personalizing the Agentic Age',
+    description: 'AI personalization that makes you better',
     images: ['/og-image.png']
   }
 };
