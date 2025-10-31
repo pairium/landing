@@ -23,6 +23,4 @@
 
 - After `bun run build`, run `firebase deploy`.
 - Update `.firebaserc` with your actual project id first.
-
-
-clear
+- To run with a specific account, use `bun run build` and `firebase deploy --only hosting --account <account_email>`.
