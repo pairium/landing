@@ -1,13 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { ThemeToggle } from "@/components/theme-toggle";
 
-const FOOTER_LINKS = [
+type FooterLink = { to: string; label: string; hash?: string } | { href: string; label: string; external: true };
+
+const FOOTER_LINKS: FooterLink[] = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { href: "https://arxiv.org/abs/2503.18238", label: "Research", external: true },
   { to: "/privacy", label: "Privacy" },
   { to: "/terms", label: "Terms" },
-  { to: "/", hash: "contact", label: "Contact" },
+  { href: "mailto:info@pairium.ai", label: "Contact", external: true },
 ];
 
 export function Footer() {
@@ -22,7 +24,7 @@ export function Footer() {
         </div>
         <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
           {FOOTER_LINKS.map((link) =>
-            link.external ? (
+            "external" in link ? (
               <a
                 key={link.label}
                 href={link.href}

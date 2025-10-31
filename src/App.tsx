@@ -291,7 +291,7 @@ function NotFoundPage() {
 function HeroSection() {
   return (
     <section
-      className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden bg-gradient-to-b from-blue-50 via-blue-100 to-white py-20 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"
+      className="relative flex items-center overflow-hidden bg-gradient-to-b from-blue-50 via-blue-100 to-white py-24 sm:py-32 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"
       aria-labelledby="hero-heading"
     >
       <div className="absolute inset-0 bg-grid-slate-100/60 dark:bg-grid-white/[0.04]" />
@@ -315,7 +315,7 @@ function HeroSection() {
 
 function ComingSoonSection() {
   return (
-    <section id="coming-soon" className="flex min-h-[calc(100vh-4rem)] items-center bg-white py-20 dark:bg-slate-950" aria-labelledby="coming-soon-heading">
+    <section id="coming-soon" className="flex items-center bg-white py-24 sm:py-32 dark:bg-slate-950" aria-labelledby="coming-soon-heading">
       <div className="container mx-auto flex max-w-4xl flex-col items-center gap-8 px-4 text-center sm:px-6">
         <span className="inline-flex rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-100">
           Coming Soon
@@ -375,11 +375,17 @@ function AboutSection() {
           <div className="space-y-6 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
             <p>
               Built on proprietary MIT research around “personality pairing” between AI agents and human teammates, Pairium AI personalizes human-AI collaboration to
-              maximize productivity across complex workflows.
+              maximize productivity across complex workflows. That research powered Pairit, a commercial grade platform validated in a large scale randomized controlled trial
+              that delivered full marketing campaigns with AI teammates.
             </p>
             <p>
-              Pairit anchors that mission as a fully configurable platform where humans collaborate with AI agents that can mirror human workflows. We now extend the same
-              personalization into production through a managed MCP server so every teammate works with an aligned agent.
+              Pairit anchors that mission as a fully configurable platform where humans collaborate with AI agents that mirror human workflows. The causal gains we observe are
+              documented in
+              <a className="mx-1 text-[#007ACC] dark:text-[#40A9FF] hover:underline" href="https://arxiv.org/abs/2503.18238" target="_blank" rel="noreferrer">
+                our research paper
+              </a>
+              detailing how personality pairing unlocks sustained performance improvements. We now extend the same personalization into production through a managed MCP server
+              so every teammate works with an aligned agent.
             </p>
             <p>
               Field experiments, randomized controlled trials, and enterprise deployments continue to uncover meaningful, sometimes counterintuitive, effects of pairing AI
