@@ -1,0 +1,12 @@
+[default]
+entrypoints = ["src/index.html"]
+
+[install]
+path = "node_modules"
+
+[alias]
+"@/" = "./src/"
+"next-themes" = "./src/stubs/next-themes.tsx"
+"@radix-ui/react-dropdown-menu" = "./src/stubs/radix-dropdown-menu.tsx"
+
+
