@@ -5,9 +5,7 @@ import logoIcon from "@/assets/icon.svg";
 const LINKS = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
-  { to: "/terms", label: "Terms" },
-  { to: "/privacy", label: "Privacy" },
-  { to: "/", hash: "contact", label: "Contact" },
+  { to: "/pairit", label: "Pairit" },
 ];
 
 export function Nav() {

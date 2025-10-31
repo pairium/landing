@@ -10,7 +10,6 @@ import {
   Layout,
   Linkedin,
   ListCheck,
-  Mail,
   MessageCircle,
   Network,
   RefreshCcw,
@@ -23,7 +22,7 @@ import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 import { Button } from "@/components/ui/button";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { PrivacyPage } from "@/pages/privacy";
 import { TermsPage } from "@/pages/terms";
@@ -65,24 +64,6 @@ const primaryCtaClass = cn(
   "inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#007ACC] to-[#00AAFF] px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:from-[#0088CC] hover:to-[#00CCFF]",
 );
 
-const heroFeatures: Feature[] = [
-  {
-    icon: BrainCircuit,
-    title: "Personality Pairing",
-    description: "Matches AI agents with humans for complementary collaboration.",
-  },
-  {
-    icon: BarChart,
-    title: "Performance Optimization",
-    description: "Grounded in MIT research with measurable productivity gains.",
-  },
-  {
-    icon: Network,
-    title: "Adaptive Learning",
-    description: "Continuously adapts to how you work and make decisions.",
-  },
-];
-
 const pairitFeatures: Feature[] = [
   { icon: Code, title: "State Machine Design", description: "Configure complex experiments with clear, visual flows." },
   { icon: Layout, title: "Custom UI Builder", description: "Design participant interfaces with drag-and-drop precision." },
@@ -102,17 +83,17 @@ const pairitSteps = [
   {
     step: "01",
     title: "Design",
-    description: "Model your experiment with reusable states, logic, and data schemas.",
+    description: "Model personalized experiments with reusable states, logic, and data schemas.",
   },
   {
     step: "02",
     title: "Launch",
-    description: "Recruit and manage participants through integrated Prolific support.",
+    description: "Recruit participants and match AI teammates through integrated Prolific support.",
   },
   {
     step: "03",
     title: "Measure",
-    description: "Export structured datasets ready for statistical or causal analysis.",
+    description: "Export structured datasets that surface personalization insights for analysis.",
   },
 ];
 
@@ -273,8 +254,7 @@ function HomePage() {
   return (
     <>
       <HeroSection />
-      <PairitSection />
-      <ContactSection />
+      <ComingSoonSection />
     </>
   );
 }
@@ -310,33 +290,69 @@ function NotFoundPage() {
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 via-blue-100 to-white py-20 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900" aria-labelledby="hero-heading">
+    <section
+      className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden bg-gradient-to-b from-blue-50 via-blue-100 to-white py-20 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"
+      aria-labelledby="hero-heading"
+    >
       <div className="absolute inset-0 bg-grid-slate-100/60 dark:bg-grid-white/[0.04]" />
       <div className="container relative mx-auto flex max-w-5xl flex-col items-center gap-10 px-4 text-center sm:px-6">
         <div className="space-y-4">
-          <h1 id="hero-heading" className="text-4xl font-bold tracking-tight sm:text-5xl">
+          <h1 id="hero-heading" className="text-4xl font-bold tracking-tight sm:text-4xl">
             Pairium <span className="bg-gradient-to-r from-[#007ACC] to-[#40A9FF] bg-clip-text text-transparent">AI</span>
           </h1>
           <p className="text-xl text-slate-700 dark:text-slate-200">
             AI personalization that makes you better.
           </p>
         </div>
-        <Link to="/about" className={primaryCtaClass}>
+        <Link to="/" hash="coming-soon" className={primaryCtaClass}>
           Learn more
           <ArrowRight className="ml-2 size-4" aria-hidden="true" />
         </Link>
-        <div className="grid w-full gap-6 sm:grid-cols-3">
-          {heroFeatures.map((feature) => (
-            <Card key={feature.title} className="border-white/70 bg-white/70 text-left dark:border-slate-800/70 dark:bg-slate-900/60">
-              <CardHeader>
-                <div className="inline-flex size-11 items-center justify-center rounded-lg bg-[#007ACC]/10 dark:bg-[#40A9FF]/20">
-                  <feature.icon className="size-5 text-[#007ACC] dark:text-[#40A9FF]" aria-hidden="true" />
-                </div>
-                <CardTitle className="mt-4 text-lg font-semibold">{feature.title}</CardTitle>
-                <CardDescription>{feature.description}</CardDescription>
-              </CardHeader>
-            </Card>
-          ))}
+      </div>
+    </section>
+  );
+}
+
+function ComingSoonSection() {
+  return (
+    <section id="coming-soon" className="flex min-h-[calc(100vh-4rem)] items-center bg-white py-20 dark:bg-slate-950" aria-labelledby="coming-soon-heading">
+      <div className="container mx-auto flex max-w-4xl flex-col items-center gap-8 px-4 text-center sm:px-6">
+        <span className="inline-flex rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-100">
+          Coming Soon
+        </span>
+        <h2 id="coming-soon-heading" className="text-4xl font-bold tracking-tight sm:text-4xl">
+          The Pairium personalization suite
+        </h2>
+        <p className="text-lg text-slate-600 dark:text-slate-300">
+          We are building a personalized collaboration tool that personalizes AI teammates to you.
+        </p>
+        <ul className="grid w-full gap-4 text-left sm:grid-cols-2">
+          <li className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900/70 dark:text-slate-300">
+            <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#007ACC]/10 text-[#007ACC] dark:bg-[#40A9FF]/20 dark:text-[#40A9FF]">✓</span>
+            <div>
+              <h3 className="text-base font-semibold text-slate-900 dark:text-white">Personality pairing engine</h3>
+              <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">Agent behaviors adapt across tools using persistent user profiles.</p>
+            </div>
+          </li>
+          <li className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900/70 dark:text-slate-300">
+            <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#007ACC]/10 text-[#007ACC] dark:bg-[#40A9FF]/20 dark:text-[#40A9FF]">✓</span>
+            <div>
+              <h3 className="text-base font-semibold text-slate-900 dark:text-white">Research-grade experimentation</h3>
+              <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">Pairit delivers causal insights with state machines, branching logic, and audits.</p>
+            </div>
+          </li>
+        </ul>
+        <div className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
+          <Link to="/pairit" className={primaryCtaClass}>
+            Pairit Experiment Platform
+          </Link>
+          <a
+            href="mailto:info@pairium.ai"
+            className="inline-flex items-center justify-center rounded-md border border-slate-300 px-6 py-3 text-base font-semibold text-slate-700 transition hover:border-[#007ACC] hover:text-[#007ACC] dark:border-slate-700 dark:text-slate-300 dark:hover:border-[#40A9FF] dark:hover:text-[#40A9FF]"
+          >
+            Contact us
+            <ArrowRight className="ml-2 size-4" aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>
@@ -362,12 +378,12 @@ function AboutSection() {
               maximize productivity across complex workflows.
             </p>
             <p>
-              Our team created Pairit, a fully configurable platform where humans collaborate with AI agents that can mirror human workflows. Unlike other tools, Pairit
-              pinpoints the causal drivers of productivity gains at scale, revealing how tailored AI teammates accelerate performance.
+              Pairit anchors that mission as a fully configurable platform where humans collaborate with AI agents that can mirror human workflows. We now extend the same
+              personalization into production through a managed MCP server so every teammate works with an aligned agent.
             </p>
             <p>
               Field experiments, randomized controlled trials, and enterprise deployments continue to uncover meaningful, sometimes counterintuitive, effects of pairing AI
-              agents and human experts. Those insights fuel Pairium’s product roadmap.
+              agents and human experts. Those insights shape both Pairit today and the Pairium MCP server that follows.
             </p>
           </div>
           <div className="relative mx-auto w-full max-w-md">
@@ -386,32 +402,33 @@ function AboutSection() {
   );
 }
 
-function PairitSection() {
+function PairitPage() {
   return (
     <section id="pairit" className="bg-white py-20 dark:bg-blue-950/80" aria-labelledby="pairit-heading">
-      <div className="container mx-auto flex max-w-6xl flex-col gap-16 px-4 sm:px-6">
-        <div className="flex flex-col items-center gap-4 text-center">
-          <span className="inline-flex rounded-full bg-[#007ACC] px-3 py-1 text-sm font-medium text-white">Pairit Platform</span>
+      <div className="container mx-auto flex max-w-6xl flex-col gap-24 px-4 sm:px-6">
+        <div className="flex flex-col items-center gap-6 text-center">
+          <span className="inline-flex rounded-full bg-[#007ACC] px-3 py-1 text-sm font-medium text-white">Personalized Platforms</span>
           <h2 id="pairit-heading" className="text-3xl font-bold tracking-tight sm:text-4xl">
-            The experiment platform for human-AI collaboration
+            Personalize every collaboration with Pairium AI
           </h2>
           <p className="max-w-3xl text-lg text-slate-600 dark:text-slate-300">
-            Pairit lets you design, launch, and measure sophisticated experiments that combine human judgment with configurable AI teammates. It is the engine behind our
-            research discoveries and enterprise pilots.
+            Pairium AI blends research-driven personalization with deployable tools. Pairit gives researchers and operators control today, while our MCP server extends the
+            same personalization into production agent stacks.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <div className="rounded-lg border border-[#007ACC]/30 bg-blue-50 px-4 py-2 text-sm text-[#007ACC] dark:border-blue-900/40 dark:bg-slate-800/60 dark:text-[#40A9FF]">
-              Academic access available for qualified researchers
-            </div>
-            <Button disabled className="relative bg-gradient-to-r from-[#007ACC] to-[#00AAFF] px-5 py-2 text-white opacity-80">
-              Get started
-              <ArrowRight className="ml-2 size-4" aria-hidden="true" />
-              <span className="absolute -top-2 -right-2 rounded-full bg-white px-2 py-0.5 text-[10px] font-semibold text-[#007ACC]">Soon</span>
-            </Button>
+          <div className="mt-12 grid gap-8 rounded-2xl border border-slate-200 bg-white/80 p-8 shadow-sm dark:border-blue-900/50 dark:bg-blue-950/40 md:grid-cols-3">
+            {pairitSteps.map((step) => (
+              <div key={step.title} className="flex flex-col items-center gap-4 text-center">
+                <div className="flex size-14 items-center justify-center rounded-full bg-[#007ACC] text-lg font-semibold text-white">
+                  {step.step}
+                </div>
+                <h3 className="text-xl font-semibold">{step.title}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-300">{step.description}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
           {pairitFeatures.map((feature) => (
             <Card key={feature.title} className="border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/70">
               <CardHeader>
@@ -425,19 +442,7 @@ function PairitSection() {
           ))}
         </div>
 
-        <div className="grid gap-6 rounded-2xl border border-slate-200 bg-white/80 p-8 shadow-sm dark:border-blue-900/50 dark:bg-blue-950/40 md:grid-cols-3">
-          {pairitSteps.map((step) => (
-            <div key={step.title} className="text-center md:text-left">
-              <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-[#007ACC] text-lg font-semibold text-white md:mx-0">
-                {step.step}
-              </div>
-              <h3 className="mt-4 text-xl font-semibold">{step.title}</h3>
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{step.description}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="rounded-2xl border border-slate-200 bg-white/80 p-8 shadow-sm dark:border-blue-900/50 dark:bg-blue-950/40">
+        <div className="rounded-2xl border border-slate-200 bg-white/80 p-10 shadow-md dark:border-blue-900/50 dark:bg-blue-950/40">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="space-y-4">
               <span className="inline-flex rounded-full bg-[#007ACC] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
@@ -465,7 +470,7 @@ function PairitSection() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-blue-50/80 p-8 dark:border-blue-900/60 dark:bg-slate-900" aria-labelledby="academic-access-heading">
+        <div className="rounded-2xl border border-slate-200 bg-blue-50/80 p-10 dark:border-blue-900/60 dark:bg-slate-900" aria-labelledby="academic-access-heading">
           <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
             <div>
               <span className="inline-flex rounded-full bg-[#007ACC] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
@@ -618,32 +623,6 @@ function TeamSection() {
   );
 }
 
-function ContactSection() {
-  return (
-    <section id="contact" className="bg-blue-50 py-20 dark:bg-slate-900" aria-labelledby="contact-heading">
-      <div className="container mx-auto flex max-w-4xl flex-col items-center gap-8 px-4 text-center sm:px-6">
-        <span className="inline-flex rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-100">
-          Contact
-        </span>
-        <h2 id="contact-heading" className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Get in touch
-        </h2>
-        <p className="max-w-2xl text-lg text-slate-600 dark:text-slate-300">
-          Interested in exploring human-AI collaboration or deploying Pairit? Reach out to the Pairium AI team.
-        </p>
-        <div className="w-full rounded-2xl border border-slate-200 bg-white p-10 shadow-sm dark:border-blue-900/60 dark:bg-blue-950/40">
-          <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-blue-50 text-[#007ACC] dark:bg-blue-900/30 dark:text-[#40A9FF]">
-            <Mail className="size-8" aria-hidden="true" />
-          </div>
-          <h3 className="mt-6 text-xl font-semibold">Email us</h3>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">We respond within two business days.</p>
-          <a href="mailto:info@pairium.ai" className={cn(primaryCtaClass, "mt-6 inline-flex")}>info@pairium.ai</a>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 const rootRoute = createRootRoute({
   component: RootLayout,
   notFoundComponent: NotFoundPage,
@@ -661,6 +640,12 @@ const aboutRoute = createRoute({
   component: AboutPage,
 });
 
+const pairitRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/pairit",
+  component: PairitPage,
+});
+
 const privacyRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/privacy",
@@ -673,7 +658,7 @@ const termsRoute = createRoute({
   component: TermsPage,
 });
 
-const routeTree = rootRoute.addChildren([homeRoute, aboutRoute, privacyRoute, termsRoute]);
+const routeTree = rootRoute.addChildren([homeRoute, aboutRoute, pairitRoute, privacyRoute, termsRoute]);
 
 const router = createRouter({
   routeTree,
