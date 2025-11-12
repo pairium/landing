@@ -3,8 +3,8 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "dev": "bun scripts/dev.ts",
-    "build": "bun scripts/build.ts",
+    "dev": "bun --hot src/index.html",
+    "build": "rm -rf build && bun build src/index.html --outdir build --minify --target browser --define.process.env.NODE_ENV=production",
     "serve": "bun run --production build/index.html",
     "deploy": "bun run build && firebase deploy --only hosting",
     "check": "tsc --noEmit"
