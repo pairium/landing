@@ -427,9 +427,9 @@ function AboutSection() {
             </p>
           </div>
           <div className="relative mx-auto w-full max-w-md">
-            <div className="relative grid h-full grid-cols-2 gap-4 rounded-xl border border-slate-200 bg-slate-50 p-8 shadow-lg">
+            <div className="relative grid h-full grid-cols-2 gap-4 rounded-xl bg-[#f2f1ed] p-8 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl">
               {[BrainCircuit, Users, BarChart, Network].map((Icon, index) => (
-                <div key={Icon.displayName ?? index} className="flex items-center justify-center rounded-lg border border-slate-200 bg-slate-50 py-10">
+                <div key={Icon.displayName ?? index} className="flex items-center justify-center rounded-lg bg-[#ebeae5] py-10">
                   <Icon className="size-10 text-[#26251e]" aria-hidden="true" />
                 </div>
               ))}
@@ -459,7 +459,7 @@ function ResearchPage() {
               Read the paper <ExternalLinkIcon className="h-4 w-4 ml-2" />
             </a>
           </div>
-          <div className="mt-12 grid gap-8 rounded-2xl border border-slate-200 bg-[#f7f7f4]/80 p-8 shadow-sm md:grid-cols-3">
+          <div className="mt-12 grid gap-8 rounded-2xl bg-[#f2f1ed] p-8 shadow-sm md:grid-cols-3">
             {pairitSteps.map((step) => (
               <div key={step.title} className="flex flex-col items-center gap-4 text-center">
                 <div className="flex size-14 items-center justify-center rounded-full bg-[#26251e] text-lg font-semibold text-white">
@@ -474,7 +474,7 @@ function ResearchPage() {
 
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
           {pairitFeatures.map((feature) => (
-            <Card key={feature.title} className="border-slate-200 bg-slate-50">
+            <Card key={feature.title} className="border-none bg-[#f2f1ed]">
               <CardHeader>
                 <div className="inline-flex size-10 items-center justify-center rounded-lg bg-[#26251e]/10">
                   <feature.icon className="size-5 text-[#26251e]" aria-hidden="true" />
@@ -486,7 +486,7 @@ function ResearchPage() {
           ))}
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-[#f7f7f4]/80 p-10 shadow-md">
+        <div className="rounded-2xl bg-[#f2f1ed] p-10 shadow-md">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="space-y-4">
               <span className="inline-flex rounded-full bg-[#26251e] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
@@ -504,7 +504,7 @@ function ResearchPage() {
                   href={partner.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex flex-col items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 p-4 text-center transition hover:border-[#26251e] hover:text-[#26251e]"
+                  className="flex flex-col items-center gap-2 rounded-lg bg-[#ebeae5] p-4 text-center transition hover:text-[#26251e]"
                 >
                   <span className="text-xl font-bold text-[#26251e]">{partner.label}</span>
                   <span className="text-xs text-[#26251e]/60">{partner.description}</span>
@@ -514,7 +514,7 @@ function ResearchPage() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-[#f7f7f4]/80 p-10 shadow-md" aria-labelledby="academic-access-heading">
+        <div className="rounded-2xl bg-[#f2f1ed] p-10 shadow-md" aria-labelledby="academic-access-heading">
           <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
             <div>
               <span className="inline-flex rounded-full bg-[#26251e] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
@@ -571,7 +571,7 @@ function FoundersSection() {
 
         <div className="space-y-16">
           {founderBios.map((founder) => (
-            <article key={founder.id} id={founder.id} className="flex flex-col gap-10 rounded-2xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
+            <article key={founder.id} id={founder.id} className="flex flex-col gap-10 rounded-2xl bg-[#f2f1ed] p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
               <div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
                 <div className="relative size-48 shrink-0 overflow-hidden rounded-full border-4 border-white shadow-md">
                   <img src={founder.image} alt={founder.name} className="h-full w-full object-cover" loading="lazy" />
@@ -639,7 +639,7 @@ function TeamSection() {
         </div>
         <div className="grid gap-10 md:grid-cols-3">
           {teamMembers.map((member) => (
-            <article key={member.id} className="group flex flex-col gap-6 rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <article key={member.id} className="group flex flex-col gap-6 rounded-2xl bg-[#f2f1ed] p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
               <div className="mx-auto h-48 w-48 overflow-hidden rounded-full border-4 border-white shadow-md">
                 <img src={member.image} alt={member.name} className="h-full w-full object-cover" loading="lazy" />
               </div>
