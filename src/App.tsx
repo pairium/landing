@@ -21,11 +21,12 @@ import { Link, Outlet, RouterProvider, createRoute, createRootRoute, createRoute
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ExternalLinkIcon } from "lucide-react";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { PrivacyPage } from "@/pages/privacy";
 import { TermsPage } from "@/pages/terms";
+import { CodeTabs } from '@/components/ui/shadcn-io/code-tabs';
 import harangJuImage from "@/assets/harang-ju.jpg";
 import jamesKupernikImage from "@/assets/james-kupernik.jpg";
 import joshAttenbergImage from "@/assets/josh-attenberg.jpg";
@@ -61,8 +62,33 @@ type TeamMember = {
 };
 
 const primaryCtaClass = cn(
-  "inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#007ACC] to-[#00AAFF] px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:from-[#0088CC] hover:to-[#00CCFF]",
+  "inline-flex items-center justify-center rounded-full bg-[#26251e] px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:bg-[#1a1916]",
 );
+
+const mcpConfigCode = {
+  Cursor: {
+    lang: 'json',
+    code: `// Copy and paste the code into .cursor/mcp.json
+{
+  "mcpServers": {
+    "pairium-mcp": {
+      "url": "https://pairium-mcp-883054196136.us-east4.run.app/mcp"
+    }
+  }
+}`,
+    link: 'cursor://anysphere.cursor-deeplink/mcp/install?name=pairium-mcp&config=eyJ1cmwiOiJodHRwczovL3BhaXJpdW0tbWNwLTg4MzA1NDE5NjEzNi51cy1lYXN0NC5ydW4uYXBwL21jcCJ9Cg==',
+  },
+  'ChatGPT': {
+    lang: 'text',
+    code: `Enable in ChatGPT via Settings → Connectors \\\n\t→ Advanced → Developer mode (Plus and Pro accounts only).
+Then create a new Connector using this MCP server URL:
+https://pairium-mcp-883054196136.us-east4.run.app/mcp`,
+  },
+  'Claude Code': {
+    lang: 'bash',
+    code: `claude mcp add pairium-mcp -t http \\\n\thttps://pairium-mcp-883054196136.us-east4.run.app/mcp`,
+  },
+};
 
 const pairitFeatures: Feature[] = [
   { icon: Code, title: "State Machine Design", description: "Configure complex experiments with clear, visual flows." },
@@ -118,7 +144,7 @@ const founderBios: FounderBio[] = [
         <p key="sinan-1">
           Sinan Aral is a scientist, entrepreneur, and investor ranked among the top 50 management scholars in the world and named the World&apos;s Top Digital
           Thinker in 2021. He is the David Austin Chaired Professor of Management, Marketing, IT, and Data Science at MIT, where he directs the
-          <a className="mx-1 text-[#007ACC] dark:text-[#40A9FF] hover:underline" href="https://ide.mit.edu">
+          <a className="mx-1 text-[#26251e] dark:text-[#26251e] hover:underline" href="https://ide.mit.edu">
             MIT Initiative on the Digital Economy
           </a>
           and has been called “the Indiana Jones of Data Science.”
@@ -134,7 +160,7 @@ const founderBios: FounderBio[] = [
       (
         <p key="sinan-3">
           His research has earned the Microsoft Faculty Fellowship, NSF CAREER Award, and the Herbert Simon Award. His work on misinformation in
-          <em className="mx-1">Science</em> became one of the most cited papers of the year, and his TED talk on protecting truth has reached millions. He holds a PhD from MIT and
+          <em className="mx-1">Science</em>became one of the most cited papers of the year, and his TED talk on protecting truth has reached millions. He holds a PhD from MIT and
           graduate degrees from the London School of Economics and Harvard University.
         </p>
       ),
@@ -158,8 +184,8 @@ const founderBios: FounderBio[] = [
       ),
       (
         <p key="harang-2">
-          His research, published in journals such as <em className="mx-1">Nature Neuroscience</em>, blends causal inference with experimental design. Harang advises companies like
-          <a className="mx-1 text-[#007ACC] dark:text-[#40A9FF] hover:underline" href="https://www.linkedin.com/company/mokuhq/">
+          His research, published in journals such as <em>Nature Neuroscience</em>, blends causal inference with experimental design. Harang advises companies like
+          <a className="mx-1 text-[#26251e] dark:text-[#26251e] hover:underline" href="https://www.linkedin.com/company/mokuhq/">
             Moku
           </a>
           and holds a PhD in Neuroscience from the University of Pennsylvania along with dual degrees in computer and cognitive science from the University of Virginia.
@@ -194,7 +220,7 @@ const teamMembers: TeamMember[] = [
     role: "Technical Staff",
     image: michaelZhaoImage,
     blurb:
-      "Applied scientist at the Columbia–Dream Sports AI Innovation Center, formerly advancing recommendation systems at Netflix and measurement at Amazon.",
+      "Applied scientist at the Columbia-Dream Sports AI Innovation Center, formerly advancing recommendation systems at Netflix and measurement at Amazon.",
     linkedin: "https://www.linkedin.com/in/mfzhao/",
   },
 ];
@@ -239,9 +265,9 @@ function RootLayout() {
   }, [location.hash, location.pathname, location.search]);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-white">
+    <div className="min-h-screen flex flex-col bg-[#f7f7f4] text-[#26251e]">
       <Nav />
-      <main id="hero" className="flex flex-col">
+      <main id="hero" className="flex flex-col flex-grow">
         <Outlet />
       </main>
       <Footer />
@@ -254,7 +280,7 @@ function HomePage() {
   return (
     <>
       <HeroSection />
-      <ComingSoonSection />
+      {/* <ComingSoonSection /> */}
     </>
   );
 }
@@ -291,23 +317,22 @@ function NotFoundPage() {
 function HeroSection() {
   return (
     <section
-      className="relative flex items-center overflow-hidden bg-gradient-to-b from-blue-50 via-blue-100 to-white py-24 sm:py-32 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"
+      className="relative items-center py-24 sm:py-32 flex flex-col gap-16"
       aria-labelledby="hero-heading"
     >
-      <div className="absolute inset-0 bg-grid-slate-100/60 dark:bg-grid-white/[0.04]" />
-      <div className="container relative mx-auto flex max-w-5xl flex-col items-center gap-10 px-4 text-center sm:px-6">
-        <div className="space-y-4">
-          <h1 id="hero-heading" className="text-4xl font-bold tracking-tight sm:text-4xl">
-            Pairium <span className="bg-gradient-to-r from-[#007ACC] to-[#40A9FF] bg-clip-text text-transparent">AI</span>
-          </h1>
-          <p className="text-xl text-slate-700 dark:text-slate-200">
-            AI personalization that makes you better.
-          </p>
-        </div>
-        <Link to="/" hash="coming-soon" className={primaryCtaClass}>
+      <div className="container relative mx-auto justify-center flex max-w-5xl flex-col gap-8 px-4 sm:px-6">
+        <h1 id="hero-heading" className="text-[1.625rem] font-normal tracking-tight sm:text-[1.75rem] max-w-2xl leading-tight text-[#26251e]">
+          AI personalization that makes you better.
+        </h1>
+        {/* <Link to="/" hash="coming-soon" className={primaryCtaClass + " w-fit"}>
           Learn more
           <ArrowRight className="ml-2 size-4" aria-hidden="true" />
-        </Link>
+        </Link> */}
+      </div>
+      <div className="container relative mx-auto justify-center flex max-w-5xl px-4 sm:px-6">
+        <div className="mt-8 w-full max-w-2xl text-left">
+          <CodeTabs codes={mcpConfigCode} />
+        </div>
       </div>
     </section>
   );
@@ -315,40 +340,40 @@ function HeroSection() {
 
 function ComingSoonSection() {
   return (
-    <section id="coming-soon" className="flex items-center bg-white py-24 sm:py-32 dark:bg-slate-950" aria-labelledby="coming-soon-heading">
+    <section id="coming-soon" className="flex items-center py-24 sm:py-32" aria-labelledby="coming-soon-heading">
       <div className="container mx-auto flex max-w-4xl flex-col items-center gap-8 px-4 text-center sm:px-6">
-        <span className="inline-flex rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-100">
+        <span className="inline-flex rounded-full bg-[#26251e]/10 px-3 py-1 text-sm font-medium text-[#26251e]">
           Coming Soon
         </span>
-        <h2 id="coming-soon-heading" className="text-4xl font-bold tracking-tight sm:text-4xl">
+        <h2 id="coming-soon-heading" className="text-4xl font-bold tracking-tight sm:text-4xl text-[#26251e]">
           The Pairium personalization suite
         </h2>
-        <p className="text-lg text-slate-600 dark:text-slate-300">
+        <p className="text-lg text-[#26251e]/80">
           We are building a personalized collaboration tool that personalizes AI teammates to you.
         </p>
         <ul className="grid w-full gap-4 text-left sm:grid-cols-2">
-          <li className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900/70 dark:text-slate-300">
-            <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#007ACC]/10 text-[#007ACC] dark:bg-[#40A9FF]/20 dark:text-[#40A9FF]">✓</span>
+          <li className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-[#26251e]/80">
+            <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#26251e]/10 text-[#26251e]">✓</span>
             <div>
-              <h3 className="text-base font-semibold text-slate-900 dark:text-white">Personality pairing engine</h3>
-              <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">Agent behaviors adapt across tools using persistent user profiles.</p>
+              <h3 className="text-base font-semibold text-[#26251e]">Personality pairing engine</h3>
+              <p className="mt-1 text-xs text-[#26251e]/60">Agent behaviors adapt across tools using persistent user profiles.</p>
             </div>
           </li>
-          <li className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900/70 dark:text-slate-300">
-            <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#007ACC]/10 text-[#007ACC] dark:bg-[#40A9FF]/20 dark:text-[#40A9FF]">✓</span>
+          <li className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-[#26251e]/80">
+            <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#26251e]/10 text-[#26251e]">✓</span>
             <div>
-              <h3 className="text-base font-semibold text-slate-900 dark:text-white">Research-grade experimentation</h3>
-              <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">Pairit delivers causal insights with state machines, branching logic, and audits.</p>
+              <h3 className="text-base font-semibold text-[#26251e]">Research-grade experimentation</h3>
+              <p className="mt-1 text-xs text-[#26251e]/60">Pairit delivers causal insights with state machines, branching logic, and audits.</p>
             </div>
           </li>
         </ul>
         <div className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link to="/pairit" className={primaryCtaClass}>
+          <Link to="/research" className={primaryCtaClass}>
             Pairit Experiment Platform
           </Link>
           <a
             href="mailto:info@pairium.ai"
-            className="inline-flex items-center justify-center rounded-md border border-slate-300 px-6 py-3 text-base font-semibold text-slate-700 transition hover:border-[#007ACC] hover:text-[#007ACC] dark:border-slate-700 dark:text-slate-300 dark:hover:border-[#40A9FF] dark:hover:text-[#40A9FF]"
+            className="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3 text-base font-semibold text-[#26251e] transition hover:border-[#26251e] hover:text-[#26251e]"
           >
             Contact us
             <ArrowRight className="ml-2 size-4" aria-hidden="true" />
@@ -361,27 +386,27 @@ function ComingSoonSection() {
 
 function AboutSection() {
   return (
-    <section id="about" className="bg-blue-50 py-20 dark:bg-slate-900" aria-labelledby="about-heading">
+    <section id="about" className="py-20" aria-labelledby="about-heading">
       <div className="container mx-auto flex max-w-6xl flex-col gap-12 px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
-          <span className="mb-4 inline-flex rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-100">
+          <span className="mb-4 inline-flex rounded-full bg-[#26251e]/10 px-3 py-1 text-sm font-medium text-[#26251e]">
             About Us
           </span>
-          <h2 id="about-heading" className="text-3xl font-bold tracking-tight sm:text-4xl">
-            About <span className="text-[#007ACC] dark:text-[#40A9FF]">Pairium AI</span>
+          <h2 id="about-heading" className="text-3xl font-bold tracking-tight sm:text-4xl text-[#26251e]">
+            About <span className="text-[#26251e]">Pairium AI</span>
           </h2>
         </div>
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-6 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
+          <div className="space-y-6 text-lg leading-relaxed text-[#26251e]/80">
             <p>
-              Built on proprietary MIT research around “personality pairing” between AI agents and human teammates, Pairium AI personalizes human-AI collaboration to
+              Built on proprietary MIT research around "personality pairing" between AI agents and human teammates, Pairium AI personalizes human-AI collaboration to
               maximize productivity across complex workflows. That research powered Pairit, a commercial grade platform validated in a large scale randomized controlled trial
               that delivered full marketing campaigns with AI teammates.
             </p>
             <p>
               Pairit anchors that mission as a fully configurable platform where humans collaborate with AI agents that mirror human workflows. The causal gains we observe are
               documented in
-              <a className="mx-1 text-[#007ACC] dark:text-[#40A9FF] hover:underline" href="https://arxiv.org/abs/2503.18238" target="_blank" rel="noreferrer">
+              <a className="mx-1 text-[#26251e] hover:underline" href="https://arxiv.org/abs/2503.18238" target="_blank" rel="noreferrer">
                 our research paper
               </a>
               detailing how personality pairing unlocks sustained performance improvements. We now extend the same personalization into production through a managed MCP server
@@ -393,11 +418,10 @@ function AboutSection() {
             </p>
           </div>
           <div className="relative mx-auto w-full max-w-md">
-            <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-[#007ACC] to-[#00AAFF] opacity-20 blur-3xl" />
-            <div className="relative grid h-full grid-cols-2 gap-4 rounded-xl border border-slate-200 bg-white p-8 shadow-lg dark:border-blue-900/60 dark:bg-blue-950/50">
+            <div className="relative grid h-full grid-cols-2 gap-4 rounded-xl border border-slate-200 bg-slate-50 p-8 shadow-lg">
               {[BrainCircuit, Users, BarChart, Network].map((Icon, index) => (
-                <div key={Icon.displayName ?? index} className="flex items-center justify-center rounded-lg border border-slate-200 bg-slate-50 py-10 dark:border-slate-800 dark:bg-slate-900">
-                  <Icon className="size-10 text-[#007ACC] dark:text-[#40A9FF]" aria-hidden="true" />
+                <div key={Icon.displayName ?? index} className="flex items-center justify-center rounded-lg border border-slate-200 bg-slate-50 py-10">
+                  <Icon className="size-10 text-[#26251e]" aria-hidden="true" />
                 </div>
               ))}
             </div>
@@ -408,27 +432,32 @@ function AboutSection() {
   );
 }
 
-function PairitPage() {
+function ResearchPage() {
   return (
-    <section id="pairit" className="bg-white py-20 dark:bg-blue-950/80" aria-labelledby="pairit-heading">
+    <section id="research" className="py-20" aria-labelledby="research-heading">
       <div className="container mx-auto flex max-w-6xl flex-col gap-24 px-4 sm:px-6">
         <div className="flex flex-col items-center gap-6 text-center">
-          <span className="inline-flex rounded-full bg-[#007ACC] px-3 py-1 text-sm font-medium text-white">Personalized Platforms</span>
-          <h2 id="pairit-heading" className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Personalize every collaboration with Pairium AI
+          <span className="inline-flex rounded-full bg-[#26251e] px-3 py-1 text-sm font-medium text-white">Coming Soon</span>
+          <h2 id="research-heading" className="text-3xl font-bold tracking-tight sm:text-4xl text-[#26251e]">
+            Pairit Lab
           </h2>
-          <p className="max-w-3xl text-lg text-slate-600 dark:text-slate-300">
-            Pairium AI blends research-driven personalization with deployable tools. Pairit gives researchers and operators control today, while our MCP server extends the
-            same personalization into production agent stacks.
+          <p className="max-w-3xl text-lg text-[#26251e]/80">
+            Pairit allows researchers to design and run experiments on human-AI collaboration.
           </p>
-          <div className="mt-12 grid gap-8 rounded-2xl border border-slate-200 bg-white/80 p-8 shadow-sm dark:border-blue-900/50 dark:bg-blue-950/40 md:grid-cols-3">
+          {/* TODO: Add two buttons to go to the paper and the research platform */}
+          <div className="flex gap-4">
+            <a href="https://arxiv.org/abs/2503.18238" target="_blank" rel="noreferrer" className={primaryCtaClass}>
+              Read the paper <ExternalLinkIcon className="h-4 w-4 ml-2" />
+            </a>
+          </div>
+          <div className="mt-12 grid gap-8 rounded-2xl border border-slate-200 bg-[#f7f7f4]/80 p-8 shadow-sm md:grid-cols-3">
             {pairitSteps.map((step) => (
               <div key={step.title} className="flex flex-col items-center gap-4 text-center">
-                <div className="flex size-14 items-center justify-center rounded-full bg-[#007ACC] text-lg font-semibold text-white">
+                <div className="flex size-14 items-center justify-center rounded-full bg-[#26251e] text-lg font-semibold text-white">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-semibold">{step.title}</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300">{step.description}</p>
+                <h3 className="text-xl font-semibold text-[#26251e]">{step.title}</h3>
+                <p className="text-sm text-[#26251e]/80">{step.description}</p>
               </div>
             ))}
           </div>
@@ -436,26 +465,26 @@ function PairitPage() {
 
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
           {pairitFeatures.map((feature) => (
-            <Card key={feature.title} className="border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/70">
+            <Card key={feature.title} className="border-slate-200 bg-slate-50">
               <CardHeader>
-                <div className="inline-flex size-10 items-center justify-center rounded-lg bg-[#007ACC]/10 dark:bg-[#40A9FF]/20">
-                  <feature.icon className="size-5 text-[#007ACC] dark:text-[#40A9FF]" aria-hidden="true" />
+                <div className="inline-flex size-10 items-center justify-center rounded-lg bg-[#26251e]/10">
+                  <feature.icon className="size-5 text-[#26251e]" aria-hidden="true" />
                 </div>
-                <CardTitle className="mt-4 text-lg">{feature.title}</CardTitle>
-                <CardDescription>{feature.description}</CardDescription>
+                <CardTitle className="mt-4 text-lg text-[#26251e]">{feature.title}</CardTitle>
+                <CardDescription className="text-[#26251e]/80">{feature.description}</CardDescription>
               </CardHeader>
             </Card>
           ))}
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white/80 p-10 shadow-md dark:border-blue-900/50 dark:bg-blue-950/40">
+        <div className="rounded-2xl border border-slate-200 bg-[#f7f7f4]/80 p-10 shadow-md">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="space-y-4">
-              <span className="inline-flex rounded-full bg-[#007ACC] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+              <span className="inline-flex rounded-full bg-[#26251e] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
                 Research & Development
               </span>
-              <h3 className="text-2xl font-semibold">Built with leading research partners</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300">
+              <h3 className="text-2xl font-semibold text-[#26251e]">Built with leading research partners</h3>
+              <p className="text-sm text-[#26251e]/80">
                 Pairit powers experiments across academic institutions and enterprises exploring the future of human-AI collaboration.
               </p>
             </div>
@@ -466,47 +495,47 @@ function PairitPage() {
                   href={partner.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex flex-col items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 p-4 text-center transition hover:border-[#007ACC] hover:text-[#007ACC] dark:border-slate-800 dark:bg-slate-900/70 dark:hover:border-[#40A9FF] dark:hover:text-[#40A9FF]"
+                  className="flex flex-col items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 p-4 text-center transition hover:border-[#26251e] hover:text-[#26251e]"
                 >
-                  <span className="text-xl font-bold">{partner.label}</span>
-                  <span className="text-xs text-slate-500 dark:text-slate-400">{partner.description}</span>
+                  <span className="text-xl font-bold text-[#26251e]">{partner.label}</span>
+                  <span className="text-xs text-[#26251e]/60">{partner.description}</span>
                 </a>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-blue-50/80 p-10 dark:border-blue-900/60 dark:bg-slate-900" aria-labelledby="academic-access-heading">
+        <div className="rounded-2xl border border-slate-200 bg-[#f7f7f4]/80 p-10 shadow-md" aria-labelledby="academic-access-heading">
           <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
             <div>
-              <span className="inline-flex rounded-full bg-[#007ACC] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+              <span className="inline-flex rounded-full bg-[#26251e] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
                 Academic Access
               </span>
-              <h3 id="academic-access-heading" className="mt-4 text-2xl font-semibold">Free for qualified researchers</h3>
-              <p className="mt-2 max-w-2xl text-sm text-slate-600 dark:text-slate-300">
+              <h3 id="academic-access-heading" className="mt-4 text-2xl font-semibold text-[#26251e]">Free for qualified researchers</h3>
+              <p className="mt-2 max-w-2xl text-sm text-[#26251e]/80">
                 Pairium AI offers complimentary access to Pairit for faculty, postdoctoral researchers, and PhD students conducting research on human-AI collaboration,
                 personality pairing, or related topics.
               </p>
             </div>
-            <a href="mailto:info@pairium.ai" className={primaryCtaClass}>
+            <a href="https://forms.gle/26KnPZBjaZDskKs89" className={primaryCtaClass} target="_blank" rel="noreferrer">
               Request access
             </a>
           </div>
           <ul className="mt-6 grid gap-3 sm:grid-cols-3">
-            <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
-              <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#007ACC]/10 text-[#007ACC] dark:bg-[#40A9FF]/20 dark:text-[#40A9FF]">
+            <li className="flex items-start gap-3 text-sm text-[#26251e]/80">
+              <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#26251e]/10 text-[#26251e]">
                 ✓
               </span>
               Faculty, postdoctoral researchers, or PhD students at accredited institutions
             </li>
-            <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
-              <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#007ACC]/10 text-[#007ACC] dark:bg-[#40A9FF]/20 dark:text-[#40A9FF]">
+            <li className="flex items-start gap-3 text-sm text-[#26251e]/80">
+              <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#26251e]/10 text-[#26251e]">
                 ✓
               </span>
               Research focused on human-AI collaboration, personalization, or adjacent domains
             </li>
-            <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
-              <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#007ACC]/10 text-[#007ACC] dark:bg-[#40A9FF]/20 dark:text-[#40A9FF]">
+            <li className="flex items-start gap-3 text-sm text-[#26251e]/80">
+              <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#26251e]/10 text-[#26251e]">
                 ✓
               </span>
               Willingness to share non-confidential findings with the broader research community
@@ -520,29 +549,29 @@ function PairitPage() {
 
 function FoundersSection() {
   return (
-    <section id="about-founders" className="bg-blue-50 py-20 dark:bg-slate-900" aria-labelledby="founders-heading">
+    <section id="about-founders" className="py-20" aria-labelledby="founders-heading">
       <div className="container mx-auto flex max-w-6xl flex-col gap-16 px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
-          <span className="mb-4 inline-flex rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-100">
+          <span className="mb-4 inline-flex rounded-full bg-[#26251e]/10 px-3 py-1 text-sm font-medium text-[#26251e]">
             Our Founders
           </span>
-          <h2 id="founders-heading" className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 id="founders-heading" className="text-3xl font-bold tracking-tight sm:text-4xl text-[#26251e]">
             The team behind the research
           </h2>
         </div>
 
         <div className="space-y-16">
           {founderBios.map((founder) => (
-            <article key={founder.id} id={founder.id} className="flex flex-col gap-10 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-950">
+            <article key={founder.id} id={founder.id} className="flex flex-col gap-10 rounded-2xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
               <div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
-                <div className="relative size-48 shrink-0 overflow-hidden rounded-full border-4 border-white shadow-md dark:border-slate-800">
+                <div className="relative size-48 shrink-0 overflow-hidden rounded-full border-4 border-white shadow-md">
                   <img src={founder.image} alt={founder.name} className="h-full w-full object-cover" loading="lazy" />
                 </div>
                 <div className="flex-1 space-y-4 text-center md:text-left">
                   <div className="flex flex-col items-center gap-3 md:flex-row md:items-center md:justify-between">
                     <div>
-                      <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">{founder.name}</h3>
-                      <p className="text-[#007ACC] dark:text-[#40A9FF]">{founder.role}</p>
+                      <h3 className="text-2xl font-semibold text-[#26251e]">{founder.name}</h3>
+                      <p className="text-[#26251e]">{founder.role}</p>
                     </div>
                     <div className="flex gap-2">
                       {founder.links.x && (
@@ -550,7 +579,7 @@ function FoundersSection() {
                           href={founder.links.x}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex size-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-[#007ACC] hover:text-[#007ACC] dark:border-slate-700 dark:text-slate-300 dark:hover:border-[#40A9FF] dark:hover:text-[#40A9FF]"
+                          className="inline-flex size-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-[#26251e] hover:text-[#26251e]"
                           aria-label={`${founder.name} on X`}
                         >
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -564,7 +593,7 @@ function FoundersSection() {
                           href={founder.links.linkedin}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex size-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-[#007ACC] hover:text-[#007ACC] dark:border-slate-700 dark:text-slate-300 dark:hover:border-[#40A9FF] dark:hover:text-[#40A9FF]"
+                          className="inline-flex size-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-[#26251e] hover:text-[#26251e]"
                           aria-label={`${founder.name} on LinkedIn`}
                         >
                           <Linkedin className="size-4" />
@@ -572,7 +601,7 @@ function FoundersSection() {
                       )}
                     </div>
                   </div>
-                  <div className="space-y-4 text-base text-slate-700 dark:text-slate-300">
+                  <div className="space-y-4 text-base text-[#26251e]/80">
                     {founder.paragraphs.map((paragraph, index) => (
                       <div key={index}>{paragraph}</div>
                     ))}
@@ -589,33 +618,33 @@ function FoundersSection() {
 
 function TeamSection() {
   return (
-    <section id="team" className="bg-white py-20 dark:bg-blue-950/80" aria-labelledby="team-heading">
+    <section id="team" className="py-20" aria-labelledby="team-heading">
       <div className="container mx-auto flex max-w-6xl flex-col gap-14 px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
-          <span className="mb-4 inline-flex rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-100">
+          <span className="mb-4 inline-flex rounded-full bg-[#26251e]/10 px-3 py-1 text-sm font-medium text-[#26251e]">
             Our Team
           </span>
-          <h2 id="team-heading" className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 id="team-heading" className="text-3xl font-bold tracking-tight sm:text-4xl text-[#26251e]">
             Leadership and collaborators
           </h2>
         </div>
         <div className="grid gap-10 md:grid-cols-3">
           {teamMembers.map((member) => (
-            <article key={member.id} className="group flex flex-col gap-6 rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900/70">
-              <div className="mx-auto h-48 w-48 overflow-hidden rounded-full border-4 border-white shadow-md dark:border-slate-800">
+            <article key={member.id} className="group flex flex-col gap-6 rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <div className="mx-auto h-48 w-48 overflow-hidden rounded-full border-4 border-white shadow-md">
                 <img src={member.image} alt={member.name} className="h-full w-full object-cover" loading="lazy" />
               </div>
               <div className="text-center">
-                <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{member.name}</h3>
-                <p className="text-[#007ACC] dark:text-[#40A9FF]">{member.role}</p>
+                <h3 className="text-xl font-semibold text-[#26251e]">{member.name}</h3>
+                <p className="text-[#26251e]">{member.role}</p>
               </div>
-              <p className="text-sm text-slate-600 dark:text-slate-300">{member.blurb}</p>
+              <p className="text-sm text-[#26251e]/80">{member.blurb}</p>
               {member.linkedin && (
                 <a
                   href={member.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-slate-200 px-4 py-2 text-sm font-medium text-slate-600 transition hover:border-[#007ACC] hover:text-[#007ACC] dark:border-slate-700 dark:text-slate-300 dark:hover:border-[#40A9FF] dark:hover:text-[#40A9FF]"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-600 transition hover:border-[#26251e] hover:text-[#26251e]"
                 >
                   <Linkedin className="size-4" />
                   Connect on LinkedIn
@@ -646,10 +675,10 @@ const aboutRoute = createRoute({
   component: AboutPage,
 });
 
-const pairitRoute = createRoute({
+const researchRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/pairit",
-  component: PairitPage,
+  path: "/research",
+  component: ResearchPage,
 });
 
 const privacyRoute = createRoute({
@@ -664,7 +693,7 @@ const termsRoute = createRoute({
   component: TermsPage,
 });
 
-const routeTree = rootRoute.addChildren([homeRoute, aboutRoute, pairitRoute, privacyRoute, termsRoute]);
+const routeTree = rootRoute.addChildren([homeRoute, aboutRoute, researchRoute, privacyRoute, termsRoute]);
 
 const router = createRouter({
   routeTree,

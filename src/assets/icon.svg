@@ -12,8 +12,8 @@
       }
     </style>
     <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#007ACC" />
-      <stop offset="100%" stop-color="#00AAFF" />
+      <stop offset="0%" stop-color="#26251e" />
+      <stop offset="100%" stop-color="#26251e" />
     </linearGradient>
   </defs>
   <rect fill="url(#blueGradient)" x="0" y="0" width="300" height="300" rx="150" ry="150"/>
