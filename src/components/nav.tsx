@@ -54,7 +54,7 @@ export function Nav() {
         <div className="flex flex-1 justify-end">
           <a
             href="mailto:harang@pairium.ai"
-            className="inline-flex items-center rounded-full bg-[#26251e] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#1a1916]"
+            className="inline-flex items-center rounded-full bg-[#26251e] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#1a1916] hover:scale-[1.02]"
           >
             Get in touch
           </a>

@@ -63,7 +63,7 @@ type TeamMember = {
 };
 
 const primaryCtaClass = cn(
-  "inline-flex items-center justify-center rounded-full bg-[#26251e] px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:bg-[#1a1916]",
+  "inline-flex items-center justify-center rounded-full bg-[#26251e] px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:bg-[#1a1916] hover:scale-[1.02]",
 );
 
 const mcpConfigCode = {
