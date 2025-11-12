@@ -1,5 +1,6 @@
-import { useEffect, type JSX, type ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import {
+  ArrowDown,
   ArrowRight,
   BarChart,
   Bot,
@@ -225,6 +226,31 @@ const teamMembers: TeamMember[] = [
   },
 ];
 
+let cachedScrollbarWidth: number | null = null;
+
+function getScrollbarWidth() {
+  if (cachedScrollbarWidth !== null) {
+    return cachedScrollbarWidth;
+  }
+
+  if (typeof window === "undefined") {
+    return 0;
+  }
+
+  const scrollContainer = document.createElement("div");
+  scrollContainer.style.width = "100px";
+  scrollContainer.style.height = "100px";
+  scrollContainer.style.overflow = "scroll";
+  scrollContainer.style.position = "absolute";
+  scrollContainer.style.top = "-9999px";
+
+  document.body.appendChild(scrollContainer);
+  cachedScrollbarWidth = scrollContainer.offsetWidth - scrollContainer.clientWidth;
+  document.body.removeChild(scrollContainer);
+
+  return cachedScrollbarWidth ?? 0;
+}
+
 function scrollToHash(hash: string | null) {
   if (typeof window === "undefined" || !hash) {
     return;
@@ -264,6 +290,24 @@ function RootLayout() {
     }
   }, [location.hash, location.pathname, location.search]);
 
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const updateCompensation = () => {
+      const root = document.documentElement;
+      const needsScrollbar = root.scrollHeight > root.clientHeight + 1;
+      const width = needsScrollbar ? 0 : getScrollbarWidth();
+      root.style.setProperty("--scrollbar-compensation", `${width}px`);
+    };
+
+    updateCompensation();
+
+    window.addEventListener("resize", updateCompensation);
+    return () => window.removeEventListener("resize", updateCompensation);
+  }, [location.hash, location.pathname, location.search]);
+
   return (
     <div className="min-h-screen flex flex-col bg-[#f7f7f4] text-[#26251e]">
       <Nav />
@@ -297,8 +341,8 @@ function AboutPage() {
 
 function NotFoundPage() {
   return (
-    <section className="flex flex-1 items-center justify-center py-32">
-      <div className="container mx-auto flex max-w-xl flex-col items-center gap-6 px-4 text-center sm:px-6">
+    <section className="flex w-full flex-1 items-center justify-center py-32">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 text-center sm:px-6">
         <span className="rounded-full bg-[#26251e]/10 px-3 py-1 text-sm font-medium text-[#26251e]">
           404
         </span>
@@ -317,67 +361,29 @@ function NotFoundPage() {
 function HeroSection() {
   return (
     <section
-      className="relative items-center py-24 sm:py-32 flex flex-col gap-16"
+      className="relative flex w-full flex-col items-center gap-16 py-24 sm:py-32"
       aria-labelledby="hero-heading"
     >
-      <div className="container relative mx-auto justify-center flex max-w-5xl flex-col gap-8 px-4 sm:px-6">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-4 sm:px-6 text-center sm:text-left sm:items-start justify-center">
         <h1 id="hero-heading" className="text-[1.625rem] font-normal tracking-tight sm:text-[1.75rem] max-w-2xl leading-tight text-[#26251e]">
           AI personalization that makes you better.
         </h1>
+        <a href="/enterprise" className={cn(primaryCtaClass, "gap-2")}>
+          <span>For teams</span>
+          <ArrowRight className="size-4" aria-hidden="true" />
+        </a>
         {/* <Link to="/" hash="coming-soon" className={primaryCtaClass + " w-fit"}>
           Learn more
           <ArrowRight className="ml-2 size-4" aria-hidden="true" />
         </Link> */}
       </div>
-      <div className="container relative mx-auto justify-center flex max-w-5xl px-4 sm:px-6">
-        <div className="mt-8 w-full max-w-2xl text-left">
+      <div className="relative mx-auto flex w-full max-w-6xl px-4 sm:px-6 justify-center">
+        <div className="flex w-full max-w-2xl flex-col gap-2">
+          <div className="flex items-center gap-1 text-lg font-semibold text-[#26251e]">
+            <span>Try it</span>
+            <ArrowDown className="size-6" aria-hidden="true" />
+          </div>
           <CodeTabs codes={mcpConfigCode} />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ComingSoonSection() {
-  return (
-    <section id="coming-soon" className="flex items-center py-24 sm:py-32" aria-labelledby="coming-soon-heading">
-      <div className="container mx-auto flex max-w-4xl flex-col items-center gap-8 px-4 text-center sm:px-6">
-        <span className="inline-flex rounded-full bg-[#26251e]/10 px-3 py-1 text-sm font-medium text-[#26251e]">
-          Coming Soon
-        </span>
-        <h2 id="coming-soon-heading" className="text-4xl font-bold tracking-tight sm:text-4xl text-[#26251e]">
-          The Pairium personalization suite
-        </h2>
-        <p className="text-lg text-[#26251e]/80">
-          We are building a personalized collaboration tool that personalizes AI teammates to you.
-        </p>
-        <ul className="grid w-full gap-4 text-left sm:grid-cols-2">
-          <li className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-[#26251e]/80">
-            <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#26251e]/10 text-[#26251e]">✓</span>
-            <div>
-              <h3 className="text-base font-semibold text-[#26251e]">Personality pairing engine</h3>
-              <p className="mt-1 text-xs text-[#26251e]/60">Agent behaviors adapt across tools using persistent user profiles.</p>
-            </div>
-          </li>
-          <li className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-[#26251e]/80">
-            <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#26251e]/10 text-[#26251e]">✓</span>
-            <div>
-              <h3 className="text-base font-semibold text-[#26251e]">Research-grade experimentation</h3>
-              <p className="mt-1 text-xs text-[#26251e]/60">Pairit delivers causal insights with state machines, branching logic, and audits.</p>
-            </div>
-          </li>
-        </ul>
-        <div className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link to="/research" className={primaryCtaClass}>
-            Pairit Experiment Platform
-          </Link>
-          <a
-            href="mailto:info@pairium.ai"
-            className="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3 text-base font-semibold text-[#26251e] transition hover:border-[#26251e] hover:text-[#26251e]"
-          >
-            Contact us
-            <ArrowRight className="ml-2 size-4" aria-hidden="true" />
-          </a>
         </div>
       </div>
     </section>
@@ -386,8 +392,8 @@ function ComingSoonSection() {
 
 function AboutSection() {
   return (
-    <section id="about" className="py-20" aria-labelledby="about-heading">
-      <div className="container mx-auto flex max-w-6xl flex-col gap-12 px-4 sm:px-6">
+    <section id="about" className="w-full py-20" aria-labelledby="about-heading">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
           <span className="mb-4 inline-flex rounded-full bg-[#26251e]/10 px-3 py-1 text-sm font-medium text-[#26251e]">
             About Us
@@ -434,8 +440,8 @@ function AboutSection() {
 
 function ResearchPage() {
   return (
-    <section id="research" className="py-20" aria-labelledby="research-heading">
-      <div className="container mx-auto flex max-w-6xl flex-col gap-24 px-4 sm:px-6">
+    <section id="research" className="w-full py-20" aria-labelledby="research-heading">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-24 px-4 sm:px-6">
         <div className="flex flex-col items-center gap-6 text-center">
           <span className="inline-flex rounded-full bg-[#26251e] px-3 py-1 text-sm font-medium text-white">Coming Soon</span>
           <h2 id="research-heading" className="text-3xl font-bold tracking-tight sm:text-4xl text-[#26251e]">
@@ -549,8 +555,8 @@ function ResearchPage() {
 
 function FoundersSection() {
   return (
-    <section id="about-founders" className="py-20" aria-labelledby="founders-heading">
-      <div className="container mx-auto flex max-w-6xl flex-col gap-16 px-4 sm:px-6">
+    <section id="about-founders" className="w-full py-20" aria-labelledby="founders-heading">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
           <span className="mb-4 inline-flex rounded-full bg-[#26251e]/10 px-3 py-1 text-sm font-medium text-[#26251e]">
             Our Founders
@@ -618,8 +624,8 @@ function FoundersSection() {
 
 function TeamSection() {
   return (
-    <section id="team" className="py-20" aria-labelledby="team-heading">
-      <div className="container mx-auto flex max-w-6xl flex-col gap-14 px-4 sm:px-6">
+    <section id="team" className="w-full py-20" aria-labelledby="team-heading">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-14 px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
           <span className="mb-4 inline-flex rounded-full bg-[#26251e]/10 px-3 py-1 text-sm font-medium text-[#26251e]">
             Our Team
