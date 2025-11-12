@@ -63,7 +63,7 @@ type TeamMember = {
 };
 
 const primaryCtaClass = cn(
-  "inline-flex items-center justify-center rounded-full bg-[#26251e] px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:bg-[#1a1916] hover:scale-[1.02]",
+  "inline-flex items-center justify-center rounded-full color-bg-primary px-6 py-3 text-base font-semibold color-text-on-primary shadow-sm transition-all hover-color-bg-primary-strong hover:scale-[1.02]",
 );
 
 const mcpConfigCode = {
@@ -148,7 +148,7 @@ const founderBios: FounderBio[] = [
         <p key="sinan-1">
           Sinan Aral is a scientist, entrepreneur, and investor ranked among the top 50 management scholars in the world and named the World&apos;s Top Digital
           Thinker in 2021. He is the David Austin Chaired Professor of Management, Marketing, IT, and Data Science at MIT, where he directs the
-          <a className="mx-1 text-[#26251e] dark:text-[#26251e] hover:underline" href="https://ide.mit.edu">
+          <a className="mx-1 color-text-base hover:underline" href="https://ide.mit.edu">
             MIT Initiative on the Digital Economy
           </a>
           and has been called “the Indiana Jones of Data Science.”
@@ -189,7 +189,7 @@ const founderBios: FounderBio[] = [
       (
         <p key="harang-2">
           His research, published in journals such as <em>Nature Neuroscience</em>, blends causal inference with experimental design. Harang advises companies like
-          <a className="mx-1 text-[#26251e] dark:text-[#26251e] hover:underline" href="https://www.linkedin.com/company/mokuhq/">
+          <a className="mx-1 color-text-base hover:underline" href="https://www.linkedin.com/company/mokuhq/">
             Moku
           </a>
           and holds a PhD in Neuroscience from the University of Pennsylvania along with dual degrees in computer and cognitive science from the University of Virginia.
@@ -312,7 +312,7 @@ function RootLayout() {
   }, [location.hash, location.pathname, location.search]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f7f7f4] text-[#26251e]">
+    <div className="min-h-screen flex flex-col color-bg-base color-text-base">
       <Nav />
       <main id="hero" className="flex flex-col flex-grow">
         <Outlet />
@@ -346,11 +346,11 @@ function NotFoundPage() {
   return (
     <section className="flex w-full flex-1 items-center justify-center py-32">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 text-center sm:px-6">
-        <span className="rounded-full bg-[#26251e]/10 px-3 py-1 text-sm font-medium text-[#26251e]">
+        <span className="rounded-full color-bg-primary-tint px-3 py-1 text-sm font-medium color-text-base">
           404
         </span>
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-[#26251e]">Page not found</h1>
-        <p className="text-base text-[#26251e]/80">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl color-text-base">Page not found</h1>
+        <p className="text-base color-text-muted">
           The page you&apos;re looking for doesn&apos;t exist or has moved. Use the navigation above or return home.
         </p>
         <Link to="/" className={primaryCtaClass}>
@@ -368,7 +368,7 @@ function HeroSection() {
       aria-labelledby="hero-heading"
     >
       <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-4 sm:px-6 text-center sm:text-left sm:items-start justify-center">
-        <h1 id="hero-heading" className="text-2xl font-normal tracking-tight sm:text-3xl max-w-2xl leading-tight text-[#26251e]">
+        <h1 id="hero-heading" className="text-2xl font-normal tracking-tight sm:text-3xl max-w-2xl leading-tight color-text-base">
           AI personalization that makes you better.
         </h1>
         <a href="/enterprise" className={cn(primaryCtaClass, "gap-2")}>
@@ -382,7 +382,7 @@ function HeroSection() {
       </div>
       <div className="relative mx-auto flex w-full max-w-6xl px-4 sm:px-6 justify-center">
         <div className="flex w-full max-w-2xl flex-col gap-2">
-          <div className="flex items-center gap-1 text-lg font-semibold text-[#26251e]">
+          <div className="flex items-center gap-1 text-lg font-semibold color-text-base">
             <span>Try it</span>
             <ArrowDown className="size-6" aria-hidden="true" />
           </div>
@@ -398,15 +398,15 @@ function AboutSection() {
     <section id="about" className="w-full py-20" aria-labelledby="about-heading">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
-          <span className="mb-4 inline-flex rounded-full bg-[#26251e]/10 px-3 py-1 text-sm font-medium text-[#26251e]">
+          <span className="mb-4 inline-flex rounded-full color-bg-primary-tint px-3 py-1 text-sm font-medium color-text-base">
             About Us
           </span>
-          <h2 id="about-heading" className="text-3xl font-bold tracking-tight sm:text-4xl text-[#26251e]">
-            About <span className="text-[#26251e]">Pairium AI</span>
+          <h2 id="about-heading" className="text-3xl font-bold tracking-tight sm:text-4xl color-text-base">
+            About <span className="color-text-base">Pairium AI</span>
           </h2>
         </div>
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-6 leading-relaxed text-[#26251e]/80">
+          <div className="space-y-6 leading-relaxed color-text-muted">
             <p>
               Built on proprietary MIT research around "personality pairing" between AI agents and human teammates, Pairium AI personalizes human-AI collaboration to
               maximize productivity across complex workflows. That research powered Pairit, a commercial grade platform validated in a large scale randomized controlled trial
@@ -415,7 +415,7 @@ function AboutSection() {
             <p>
               Pairit anchors that mission as a fully configurable platform where humans collaborate with AI agents that mirror human workflows. The causal gains we observe are
               documented in
-              <a className="mx-1 text-[#26251e] hover:underline" href="https://arxiv.org/abs/2503.18238" target="_blank" rel="noreferrer">
+              <a className="mx-1 color-text-base hover:underline" href="https://arxiv.org/abs/2503.18238" target="_blank" rel="noreferrer">
                 our research paper
               </a>
               detailing how personality pairing unlocks sustained performance improvements. We now extend the same personalization into production through a managed MCP server
@@ -427,10 +427,10 @@ function AboutSection() {
             </p>
           </div>
           <div className="relative mx-auto w-full max-w-md">
-            <div className="relative grid h-full grid-cols-2 gap-4 rounded-xl bg-[#f2f1ed] p-8 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div className="relative grid h-full grid-cols-2 gap-4 rounded-xl color-bg-surface p-8 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl">
               {[BrainCircuit, Users, BarChart, Network].map((Icon, index) => (
-                <div key={Icon.displayName ?? index} className="flex items-center justify-center rounded-lg bg-[#ebeae5] py-10">
-                  <Icon className="size-10 text-[#26251e]" aria-hidden="true" />
+                <div key={Icon.displayName ?? index} className="flex items-center justify-center rounded-lg color-bg-surface-subtle py-10">
+                  <Icon className="size-10 color-text-base" aria-hidden="true" />
                 </div>
               ))}
             </div>
@@ -446,11 +446,11 @@ function ResearchPage() {
     <section id="research" className="w-full py-20" aria-labelledby="research-heading">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-24 px-4 sm:px-6">
         <div className="flex flex-col items-center gap-6 text-center">
-          <span className="inline-flex rounded-full bg-[#26251e] px-3 py-1 text-sm font-medium text-white">Coming Soon</span>
-          <h2 id="research-heading" className="text-3xl font-bold tracking-tight sm:text-4xl text-[#26251e]">
+          <span className="inline-flex rounded-full color-bg-primary px-3 py-1 text-sm font-medium color-text-on-primary">Coming Soon</span>
+          <h2 id="research-heading" className="text-3xl font-bold tracking-tight sm:text-4xl color-text-base">
             Pairit Lab
           </h2>
-          <p className="max-w-3xl text-lg text-[#26251e]/80">
+          <p className="max-w-3xl text-lg color-text-muted">
             Pairit allows researchers to design and run experiments on human-AI collaboration.
           </p>
           {/* TODO: Add two buttons to go to the paper and the research platform */}
@@ -459,14 +459,14 @@ function ResearchPage() {
               Read the paper <ExternalLinkIcon className="h-4 w-4 ml-2" />
             </a>
           </div>
-          <div className="mt-12 grid gap-8 rounded-2xl bg-[#f2f1ed] p-8 shadow-sm md:grid-cols-3">
+          <div className="mt-12 grid gap-8 rounded-2xl color-bg-surface p-8 shadow-sm md:grid-cols-3">
             {pairitSteps.map((step) => (
               <div key={step.title} className="flex flex-col items-center gap-4 text-center">
-                <div className="flex size-14 items-center justify-center rounded-full bg-[#26251e] text-lg font-semibold text-white">
+                <div className="flex size-14 items-center justify-center rounded-full color-bg-primary text-lg font-semibold color-text-on-primary">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-semibold text-[#26251e]">{step.title}</h3>
-                <p className="text-sm text-[#26251e]/80">{step.description}</p>
+                <h3 className="text-xl font-semibold color-text-base">{step.title}</h3>
+                <p className="text-sm color-text-muted">{step.description}</p>
               </div>
             ))}
           </div>
@@ -474,26 +474,26 @@ function ResearchPage() {
 
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
           {pairitFeatures.map((feature) => (
-            <Card key={feature.title} className="border-none bg-[#f2f1ed]">
+            <Card key={feature.title} className="border-none card-bg-surface">
               <CardHeader>
-                <div className="inline-flex size-10 items-center justify-center rounded-lg bg-[#26251e]/10">
-                  <feature.icon className="size-5 text-[#26251e]" aria-hidden="true" />
+                <div className="inline-flex size-10 items-center justify-center rounded-lg color-bg-primary-tint">
+                  <feature.icon className="size-5 color-text-base" aria-hidden="true" />
                 </div>
-                <CardTitle className="mt-4 text-lg text-[#26251e]">{feature.title}</CardTitle>
-                <CardDescription className="text-[#26251e]/80">{feature.description}</CardDescription>
+                <CardTitle className="mt-4 text-lg color-text-base">{feature.title}</CardTitle>
+                <CardDescription className="color-text-muted">{feature.description}</CardDescription>
               </CardHeader>
             </Card>
           ))}
         </div>
 
-        <div className="rounded-2xl bg-[#f2f1ed] p-10 shadow-md">
+        <div className="rounded-2xl color-bg-surface p-10 shadow-md">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="space-y-4">
-              <span className="inline-flex rounded-full bg-[#26251e] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+              <span className="inline-flex rounded-full color-bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide color-text-on-primary">
                 Research & Development
               </span>
-              <h3 className="text-2xl font-semibold text-[#26251e]">Built with leading research partners</h3>
-              <p className="text-sm text-[#26251e]/80">
+              <h3 className="text-2xl font-semibold color-text-base">Built with leading research partners</h3>
+              <p className="text-sm color-text-muted">
                 Pairit powers experiments across academic institutions and enterprises exploring the future of human-AI collaboration.
               </p>
             </div>
@@ -504,24 +504,24 @@ function ResearchPage() {
                   href={partner.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex flex-col items-center gap-2 rounded-lg bg-[#ebeae5] p-4 text-center transition hover:text-[#26251e]"
+                  className="flex flex-col items-center gap-2 rounded-lg color-bg-surface-subtle p-4 text-center transition hover-color-text-base"
                 >
-                  <span className="text-xl font-bold text-[#26251e]">{partner.label}</span>
-                  <span className="text-xs text-[#26251e]/60">{partner.description}</span>
+                  <span className="text-xl font-bold color-text-base">{partner.label}</span>
+                  <span className="text-xs color-text-soft">{partner.description}</span>
                 </a>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="rounded-2xl bg-[#f2f1ed] p-10 shadow-md" aria-labelledby="academic-access-heading">
+        <div className="rounded-2xl color-bg-surface p-10 shadow-md" aria-labelledby="academic-access-heading">
           <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
             <div>
-              <span className="inline-flex rounded-full bg-[#26251e] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+              <span className="inline-flex rounded-full color-bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide color-text-on-primary">
                 Academic Access
               </span>
-              <h3 id="academic-access-heading" className="mt-4 text-2xl font-semibold text-[#26251e]">Free for qualified researchers</h3>
-              <p className="mt-2 max-w-2xl text-sm text-[#26251e]/80">
+              <h3 id="academic-access-heading" className="mt-4 text-2xl font-semibold color-text-base">Free for qualified researchers</h3>
+              <p className="mt-2 max-w-2xl text-sm color-text-muted">
                 Pairium AI offers complimentary access to Pairit for faculty, postdoctoral researchers, and PhD students conducting research on human-AI collaboration,
                 personality pairing, or related topics.
               </p>
@@ -531,20 +531,20 @@ function ResearchPage() {
             </a>
           </div>
           <ul className="mt-6 grid gap-3 sm:grid-cols-3">
-            <li className="flex items-start gap-3 text-sm text-[#26251e]/80">
-              <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#26251e]/10 text-[#26251e]">
+            <li className="flex items-start gap-3 text-sm color-text-muted">
+              <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full color-bg-primary-tint color-text-base">
                 ✓
               </span>
               Faculty, postdoctoral researchers, or PhD students at accredited institutions
             </li>
-            <li className="flex items-start gap-3 text-sm text-[#26251e]/80">
-              <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#26251e]/10 text-[#26251e]">
+            <li className="flex items-start gap-3 text-sm color-text-muted">
+              <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full color-bg-primary-tint color-text-base">
                 ✓
               </span>
               Research focused on human-AI collaboration, personalization, or adjacent domains
             </li>
-            <li className="flex items-start gap-3 text-sm text-[#26251e]/80">
-              <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full bg-[#26251e]/10 text-[#26251e]">
+            <li className="flex items-start gap-3 text-sm color-text-muted">
+              <span className="mt-1 inline-flex size-6 items-center justify-center rounded-full color-bg-primary-tint color-text-base">
                 ✓
               </span>
               Willingness to share non-confidential findings with the broader research community
@@ -561,26 +561,26 @@ function FoundersSection() {
     <section id="about-founders" className="w-full py-20" aria-labelledby="founders-heading">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
-          <span className="mb-4 inline-flex rounded-full bg-[#26251e]/10 px-3 py-1 text-sm font-medium text-[#26251e]">
+          <span className="mb-4 inline-flex rounded-full color-bg-primary-tint px-3 py-1 text-sm font-medium color-text-base">
             Our Founders
           </span>
-          <h2 id="founders-heading" className="text-3xl font-bold tracking-tight sm:text-4xl text-[#26251e]">
+          <h2 id="founders-heading" className="text-3xl font-bold tracking-tight sm:text-4xl color-text-base">
             The team behind the research
           </h2>
         </div>
 
         <div className="space-y-16">
           {founderBios.map((founder) => (
-            <article key={founder.id} id={founder.id} className="flex flex-col gap-10 rounded-2xl bg-[#f2f1ed] p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <article key={founder.id} id={founder.id} className="flex flex-col gap-10 rounded-2xl color-bg-surface p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
               <div className="flex flex-col items-center gap-6 md:flex-row md:items-start">
-                <div className="relative size-48 shrink-0 overflow-hidden rounded-full border-4 border-white shadow-md">
+                <div className="relative size-48 shrink-0 overflow-hidden rounded-full border-4 color-border-highlight shadow-md">
                   <img src={founder.image} alt={founder.name} className="h-full w-full object-cover" loading="lazy" />
                 </div>
                 <div className="flex-1 space-y-4 text-center md:text-left">
                   <div className="flex flex-col items-center gap-3 md:flex-row md:items-center md:justify-between">
                     <div>
-                      <h3 className="text-2xl font-semibold text-[#26251e]">{founder.name}</h3>
-                      <p className="text-[#26251e]">{founder.role}</p>
+                      <h3 className="text-2xl font-semibold color-text-base">{founder.name}</h3>
+                      <p className="color-text-base">{founder.role}</p>
                     </div>
                     <div className="flex gap-2">
                       {founder.links.x && (
@@ -588,7 +588,7 @@ function FoundersSection() {
                           href={founder.links.x}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex size-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-[#26251e] hover:text-[#26251e]"
+                          className="inline-flex size-9 items-center justify-center rounded-full border color-border-soft color-text-secondary transition hover-color-border-base hover-color-text-base"
                           aria-label={`${founder.name} on X`}
                         >
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -602,7 +602,7 @@ function FoundersSection() {
                           href={founder.links.linkedin}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex size-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-[#26251e] hover:text-[#26251e]"
+                          className="inline-flex size-9 items-center justify-center rounded-full border color-border-soft color-text-secondary transition hover-color-border-base hover-color-text-base"
                           aria-label={`${founder.name} on LinkedIn`}
                         >
                           <Linkedin className="size-4" />
@@ -610,7 +610,7 @@ function FoundersSection() {
                       )}
                     </div>
                   </div>
-                  <div className="space-y-4 text-base text-[#26251e]/80">
+                  <div className="space-y-4 text-base color-text-muted">
                     {founder.paragraphs.map((paragraph, index) => (
                       <div key={index}>{paragraph}</div>
                     ))}
@@ -630,30 +630,30 @@ function TeamSection() {
     <section id="team" className="w-full py-20" aria-labelledby="team-heading">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-14 px-4 sm:px-6">
         <div className="flex flex-col items-center text-center">
-          <span className="mb-4 inline-flex rounded-full bg-[#26251e]/10 px-3 py-1 text-sm font-medium text-[#26251e]">
+          <span className="mb-4 inline-flex rounded-full color-bg-primary-tint px-3 py-1 text-sm font-medium color-text-base">
             Our Team
           </span>
-          <h2 id="team-heading" className="text-3xl font-bold tracking-tight sm:text-4xl text-[#26251e]">
+          <h2 id="team-heading" className="text-3xl font-bold tracking-tight sm:text-4xl color-text-base">
             Leadership and collaborators
           </h2>
         </div>
         <div className="grid gap-10 md:grid-cols-3">
           {teamMembers.map((member) => (
-            <article key={member.id} className="group flex flex-col gap-6 rounded-2xl bg-[#f2f1ed] p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-              <div className="mx-auto h-48 w-48 overflow-hidden rounded-full border-4 border-white shadow-md">
+            <article key={member.id} className="group flex flex-col gap-6 rounded-2xl color-bg-surface p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <div className="mx-auto h-48 w-48 overflow-hidden rounded-full border-4 color-border-highlight shadow-md">
                 <img src={member.image} alt={member.name} className="h-full w-full object-cover" loading="lazy" />
               </div>
               <div className="text-center">
-                <h3 className="text-xl font-semibold text-[#26251e]">{member.name}</h3>
-                <p className="text-[#26251e]">{member.role}</p>
+                <h3 className="text-xl font-semibold color-text-base">{member.name}</h3>
+                <p className="color-text-base">{member.role}</p>
               </div>
-              <p className="text-sm text-[#26251e]/80">{member.blurb}</p>
+              <p className="text-sm color-text-muted">{member.blurb}</p>
               {member.linkedin && (
                 <a
                   href={member.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-600 transition hover:border-[#26251e] hover:text-[#26251e]"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border color-border-soft px-4 py-2 text-sm font-medium color-text-secondary transition hover-color-border-base hover-color-text-base"
                 >
                   <Linkedin className="size-4" />
                   Connect on LinkedIn

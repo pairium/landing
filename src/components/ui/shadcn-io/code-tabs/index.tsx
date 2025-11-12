@@ -125,7 +125,7 @@ function CodeTabsContent({
       <TabsList
         data-slot="install-tabs-list"
         className="w-full relative justify-between rounded-none h-10 bg-muted border-b border-border/75 dark:border-border/50 text-current py-0 px-4"
-        activeClassName="rounded-none shadow-none bg-transparent after:content-[''] after:absolute after:inset-x-0 after:h-0.5 after:bottom-0 dark:after:bg-white after:bg-black after:rounded-t-full"
+        activeClassName="rounded-none shadow-none bg-transparent tab-indicator"
       >
         <div className="flex gap-x-3 h-full">
           {Object.keys(codes).map((code) => (
@@ -147,7 +147,7 @@ function CodeTabsContent({
                 href={externalLink.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-0.5 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-8 w-auto px-1.5 bg-transparent hover:bg-black/5 dark:hover:bg-white/10"
+                className="inline-flex items-center justify-center gap-0.5 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-8 w-auto px-1.5 bg-transparent hover-color-bg-interactive"
                 title="Open in external app"
                 aria-label={externalLink.label ?? externalLink.href}
                 whileHover={{ scale: 1.05 }}
@@ -166,7 +166,7 @@ function CodeTabsContent({
               content={getRawCode(codes, activeValue)}
               size="default"
               variant="ghost"
-              className="bg-transparent hover:bg-black/5 dark:hover:bg-white/10 h-8 w-auto px-1.5 gap-0.5"
+              className="bg-transparent hover-color-bg-interactive h-8 w-auto px-1.5 gap-0.5"
               label="Copy"
               labelClassName="text-xs"
               onCopy={onCopy}

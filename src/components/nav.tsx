@@ -25,25 +25,25 @@ export function Nav() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-[#f7f7f4]/90 backdrop-blur transition-shadow ${isPinned ? "shadow-sm" : ""}`}
+      className={`sticky top-0 z-50 w-full color-bg-base-veil backdrop-blur transition-shadow ${isPinned ? "shadow-sm" : ""}`}
     >
       <div className="relative mx-auto flex h-16 w-full max-w-6xl items-center px-4 sm:px-6">
         <div className="flex flex-1 items-center">
           <Link to="/" className="flex items-center gap-1" aria-label="Pairium AI home">
             <img src={logoIcon} alt="Pairium AI" className="h-6 w-6" />
-            <span className="text-lg font-semibold tracking-tight text-[#26251e]">
+            <span className="text-lg font-semibold tracking-tight color-text-base">
               Pairium
             </span>
           </Link>
         </div>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-[#26251e]/80 md:flex">
+        <nav className="hidden items-center gap-6 text-sm font-medium color-text-muted md:flex">
           {LINKS.map((link) => {
             const active = isActive(link.to);
             return (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`transition-colors hover:text-[#26251e] ${active ? "text-[#26251e]" : ""}`}
+                className={`transition-colors hover-color-text-base ${active ? "color-text-base" : ""}`}
                 aria-current={active ? "page" : undefined}
               >
                 {link.label}
@@ -54,7 +54,7 @@ export function Nav() {
         <div className="flex flex-1 justify-end">
           <a
             href="mailto:harang@pairium.ai"
-            className="inline-flex items-center rounded-full bg-[#26251e] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#1a1916] hover:scale-[1.02]"
+            className="inline-flex items-center rounded-full color-bg-primary px-4 py-2 text-sm font-semibold color-text-on-primary shadow-sm transition-all hover-color-bg-primary-strong hover:scale-[1.02]"
           >
             Get in touch
           </a>

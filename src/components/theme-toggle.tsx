@@ -37,7 +37,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      className="inline-flex size-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition-colors hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+      className="inline-flex size-10 items-center justify-center rounded-full border color-border-control color-bg-control color-text-control shadow-sm transition-colors hover-color-bg-control"
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (

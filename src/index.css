@@ -17,6 +17,7 @@
   --accent: #f7f7f4;
   --accent-foreground: #26251e;
   --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: #ffffff;
   --border: #e5e7eb;
   --input: #e5e7eb;
   --ring: #26251e;
@@ -66,6 +67,30 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --ink: var(--foreground);
+  --ink-strong: #1a1916;
+  --ink-contrast: #ffffff;
+  --ink-muted: color-mix(in srgb, var(--ink) 80%, transparent);
+  --ink-soft: color-mix(in srgb, var(--ink) 60%, transparent);
+  --primary-tint: color-mix(in srgb, var(--primary) 10%, transparent);
+  --primary-strong: color-mix(in srgb, var(--primary) 90%, black 10%);
+  --base-veil: color-mix(in srgb, var(--background) 90%, transparent);
+  --surface: #f2f1ed;
+  --surface-subtle: #ebeae5;
+  --panel: #ffffff;
+  --panel-hover: #f1f5f9;
+  --text-secondary: #475569;
+  --text-secondary-strong: #334155;
+  --text-meta: #64748b;
+  --control-border: #e2e8f0;
+  --control-text: #334155;
+  --control-bg: #ffffff;
+  --control-bg-hover: #f1f5f9;
+  --canvas-muted: #eff6ff;
+  --canvas-default: #ffffff;
+  --interactive-hover: color-mix(in srgb, var(--ink) 8%, transparent);
+  --tab-indicator: var(--ink);
+  --highlight-border: #ffffff;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -89,6 +114,7 @@
   --accent: #26251e;
   --accent-foreground: #f7f7f4;
   --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: #26251e;
   --border: #4b5563;
   --input: #374151;
   --ring: #f7f7f4;
@@ -105,6 +131,171 @@
   --sidebar-accent-foreground: #f7f7f4;
   --sidebar-border: #4b5563;
   --sidebar-ring: #f7f7f4;
+  --ink: var(--foreground);
+  --ink-strong: #fdfdfb;
+  --ink-contrast: #26251e;
+  --ink-muted: color-mix(in srgb, var(--ink) 82%, transparent);
+  --ink-soft: color-mix(in srgb, var(--ink) 64%, transparent);
+  --primary-tint: color-mix(in srgb, var(--primary) 16%, transparent);
+  --primary-strong: color-mix(in srgb, var(--primary) 78%, black 22%);
+  --base-veil: color-mix(in srgb, var(--background) 82%, transparent);
+  --surface: #31302a;
+  --surface-subtle: #2a2823;
+  --panel: #0f172a;
+  --panel-hover: #1e293b;
+  --text-secondary: #d1d5db;
+  --text-secondary-strong: #cbd5f5;
+  --text-meta: #94a3b8;
+  --control-border: #334155;
+  --control-text: #e2e8f0;
+  --control-bg: #0f172a;
+  --control-bg-hover: #1e293b;
+  --canvas-muted: #0f172a;
+  --canvas-default: color-mix(in srgb, #0b1120 80%, transparent);
+  --interactive-hover: color-mix(in srgb, var(--ink) 12%, transparent);
+  --tab-indicator: var(--ink);
+  --highlight-border: #f7f7f4;
+}
+
+.color-text-base {
+  color: var(--ink);
+}
+
+.color-text-muted {
+  color: var(--ink-muted);
+}
+
+.color-text-soft {
+  color: var(--ink-soft);
+}
+
+.color-text-on-primary {
+  color: var(--primary-foreground);
+}
+
+.color-text-secondary {
+  color: var(--text-secondary);
+}
+
+.color-text-secondary-strong {
+  color: var(--text-secondary-strong);
+}
+
+.color-text-meta {
+  color: var(--text-meta);
+}
+
+.color-text-on-destructive {
+  color: var(--destructive-foreground);
+}
+
+.color-bg-base {
+  background-color: var(--background);
+}
+
+.color-bg-base-veil {
+  background-color: var(--base-veil);
+}
+
+.color-bg-surface {
+  background-color: var(--surface);
+}
+
+.color-bg-surface-subtle {
+  background-color: var(--surface-subtle);
+}
+
+.color-bg-primary {
+  background-color: var(--primary);
+}
+
+.color-bg-primary-tint {
+  background-color: var(--primary-tint);
+}
+
+.color-bg-panel {
+  background-color: var(--panel);
+}
+
+.color-bg-canvas-muted {
+  background-color: var(--canvas-muted);
+}
+
+.color-bg-canvas-default {
+  background-color: var(--canvas-default);
+}
+
+.color-border-soft {
+  border-color: var(--control-border);
+}
+
+.color-border-strong {
+  border-color: var(--ink);
+}
+
+.color-border-highlight {
+  border-color: var(--highlight-border);
+}
+
+.card-bg-surface {
+  --card: var(--surface);
+  background-color: var(--surface);
+}
+
+.card-bg-surface-subtle {
+  --card: var(--surface-subtle);
+  background-color: var(--surface-subtle);
+}
+
+.hover-color-text-base:hover {
+  color: var(--ink);
+}
+
+.hover-color-border-base:hover {
+  border-color: var(--ink);
+}
+
+.hover-color-bg-primary-strong:hover {
+  background-color: var(--primary-strong);
+}
+
+.hover-color-bg-interactive:hover {
+  background-color: var(--interactive-hover);
+}
+
+.color-text-control {
+  color: var(--control-text);
+}
+
+.color-border-control {
+  border-color: var(--control-border);
+}
+
+.color-bg-control {
+  background-color: var(--control-bg);
+}
+
+.hover-color-bg-control:hover {
+  background-color: var(--control-bg-hover);
+}
+
+.hover-color-bg-panel:hover {
+  background-color: var(--panel-hover);
+}
+
+.tab-indicator {
+  position: relative;
+}
+
+.tab-indicator::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 0.125rem;
+  background-color: var(--tab-indicator);
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
 }
 
 .animate-in {

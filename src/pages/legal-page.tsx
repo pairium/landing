@@ -13,7 +13,7 @@ export type LegalPageProps = {
 };
 
 export function LegalPage({ id, title, sections, tone = "default" }: LegalPageProps): JSX.Element {
-  const backgroundClass = tone === "muted" ? "bg-blue-50 dark:bg-slate-900" : "bg-white dark:bg-blue-950/80";
+  const backgroundClass = tone === "muted" ? "color-bg-canvas-muted" : "color-bg-canvas-default";
 
   return (
     <section id={id} className={`${backgroundClass} py-20`} aria-labelledby={`${id}-heading`}>
@@ -22,9 +22,9 @@ export function LegalPage({ id, title, sections, tone = "default" }: LegalPagePr
           <h1 id={`${id}-heading`} className="text-3xl font-bold tracking-tight sm:text-4xl">
             {title}
           </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400">Last updated: {new Date().toLocaleDateString()}</p>
+          <p className="text-sm color-text-meta">Last updated: {new Date().toLocaleDateString()}</p>
         </div>
-        <div className="space-y-6 text-left text-slate-700 dark:text-slate-300">
+        <div className="space-y-6 text-left color-text-secondary-strong">
           {sections.map((section) => (
             <article key={section.title} className="space-y-2">
               <h2 className="text-xl font-semibold">{section.title}</h2>

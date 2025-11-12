@@ -13,14 +13,14 @@ const FOOTER_LINKS: FooterLink[] = [
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-slate-200 bg-[#f7f7f4] py-6 text-[#26251e]">
+    <footer className="w-full color-bg-base py-6 color-text-base">
       <div className="container mx-auto flex max-w-8xl flex-col items-center gap-8 px-4 text-center sm:px-6">
         <div>
-          <p className="mt-2 max-w-md text-sm text-[#26251e]/80">
+          <p className="mt-2 max-w-md text-sm color-text-muted">
             © {new Date().getFullYear()} Pairium AI. AI personalization that makes you better.
           </p>
         </div>
-        <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-[#26251e]/80">
+        <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium color-text-muted">
           {FOOTER_LINKS.map((link) =>
             "external" in link ? (
               <a
@@ -28,12 +28,12 @@ export function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="transition-colors hover:text-[#26251e]"
+                className="transition-colors hover-color-text-base"
               >
                 {link.label}
               </a>
             ) : (
-              <Link key={`${link.to}${link.hash ? `#${link.hash}` : ""}`} to={link.to} hash={link.hash} className="transition-colors hover:text-[#26251e]">
+              <Link key={`${link.to}${link.hash ? `#${link.hash}` : ""}`} to={link.to} hash={link.hash} className="transition-colors hover-color-text-base">
                 {link.label}
               </Link>
             ),
