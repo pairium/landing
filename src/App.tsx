@@ -297,13 +297,13 @@ function AboutPage() {
 
 function NotFoundPage() {
   return (
-    <section className="flex flex-1 items-center justify-center bg-blue-50 py-32 dark:bg-slate-900">
+    <section className="flex flex-1 items-center justify-center py-32">
       <div className="container mx-auto flex max-w-xl flex-col items-center gap-6 px-4 text-center sm:px-6">
-        <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-semibold text-blue-800 dark:bg-blue-900 dark:text-blue-100">
+        <span className="rounded-full bg-[#26251e]/10 px-3 py-1 text-sm font-medium text-[#26251e]">
           404
         </span>
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Page not found</h1>
-        <p className="text-base text-slate-600 dark:text-slate-300">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-[#26251e]">Page not found</h1>
+        <p className="text-base text-[#26251e]/80">
           The page you&apos;re looking for doesn&apos;t exist or has moved. Use the navigation above or return home.
         </p>
         <Link to="/" className={primaryCtaClass}>
