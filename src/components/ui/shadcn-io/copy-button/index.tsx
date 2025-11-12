@@ -45,6 +45,8 @@ type CopyButtonProps = Omit<HTMLMotionProps<'button'>, 'children' | 'onCopy'> &
     onCopy?: (content: string) => void;
     isCopied?: boolean;
     onCopyChange?: (isCopied: boolean) => void;
+    label?: string;
+    labelClassName?: string;
   };
 
 function CopyButton({
@@ -57,10 +59,13 @@ function CopyButton({
   onCopy,
   isCopied,
   onCopyChange,
+  label = 'Copy',
+  labelClassName,
   ...props
 }: CopyButtonProps) {
   const [localIsCopied, setLocalIsCopied] = React.useState(isCopied ?? false);
   const Icon = localIsCopied ? CheckIcon : CopyIcon;
+  const showLabel = Boolean(label);
 
   React.useEffect(() => {
     setLocalIsCopied(isCopied ?? false);
@@ -99,7 +104,12 @@ function CopyButton({
       data-slot="copy-button"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className={cn(buttonVariants({ variant, size }), className)}
+      className={cn(
+        buttonVariants({ variant, size }),
+        showLabel && 'w-auto px-3 gap-2',
+        className,
+      )}
+      aria-label={label}
       onClick={handleCopy}
       {...props}
     >
@@ -115,6 +125,14 @@ function CopyButton({
           <Icon />
         </motion.span>
       </AnimatePresence>
+      {showLabel ? (
+        <span
+          data-slot="copy-button-label"
+          className={cn('text-sm font-medium leading-none', labelClassName)}
+        >
+          {label}
+        </span>
+      ) : null}
     </motion.button>
   );
 }

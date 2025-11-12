@@ -3,6 +3,8 @@
 import * as React from 'react';
 // import { useTheme } from 'next-themes';
 
+import { motion } from 'motion/react';
+
 import { cn } from '@/lib/utils';
 import {
   Tabs,
@@ -16,8 +18,10 @@ import {
 import { CopyButton } from '@/components/ui/shadcn-io/copy-button';
 import { ExternalLinkIcon } from 'lucide-react';
 
-type CodeEntry = string | { code: string; lang?: string; link?: string };
+type CodeEntryLink = string | { href: string; label?: string };
+type CodeEntry = string | { code: string; lang?: string; link?: CodeEntryLink };
 type CodesRecord = Record<string, CodeEntry>;
+type ExternalLinkDetails = { href: string; label?: string };
 
 type CodeTabsProps = {
   codes: CodesRecord;
@@ -56,9 +60,20 @@ function CodeTabsContent({
   };
 
   // Extract external link for current tab
-  const getExternalLink = (codes: CodesRecord, key: string): string | undefined => {
+  const resolveLink = (link?: CodeEntryLink): ExternalLinkDetails | undefined => {
+    if (!link) return undefined;
+    if (typeof link === 'string') return { href: link };
+    if (link?.href) return { href: link.href, label: link.label };
+    return undefined;
+  };
+
+  const getExternalLink = (
+    codes: CodesRecord,
+    key: string,
+  ): ExternalLinkDetails | undefined => {
     const entry = codes[key];
-    return typeof entry === 'string' ? undefined : entry.link;
+    if (typeof entry === 'string') return undefined;
+    return resolveLink(entry.link);
   };
 
   const initialCodes: Record<string, string> = {};
@@ -128,15 +143,21 @@ function CodeTabsContent({
           {(() => {
             const externalLink = getExternalLink(codes, activeValue);
             return externalLink ? (
-              <a
-                href={externalLink}
+              <motion.a
+                href={externalLink.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-8 w-8 bg-transparent hover:bg-black/5 dark:hover:bg-white/10 p-0"
+                className="inline-flex items-center justify-center gap-0.5 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-8 w-auto px-1.5 bg-transparent hover:bg-black/5 dark:hover:bg-white/10"
                 title="Open in external app"
+                aria-label={externalLink.label ?? externalLink.href}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <ExternalLinkIcon className="h-4 w-4" />
-              </a>
+                <span className="text-xs font-medium leading-none">
+                  {externalLink.label ?? externalLink.href}
+                </span>
+              </motion.a>
             ) : null;
           })()}
 
@@ -145,7 +166,9 @@ function CodeTabsContent({
               content={getRawCode(codes, activeValue)}
               size="default"
               variant="ghost"
-              className="bg-transparent hover:bg-black/5 dark:hover:bg-white/10"
+              className="bg-transparent hover:bg-black/5 dark:hover:bg-white/10 h-8 w-auto px-1.5 gap-0.5"
+              label="Copy"
+              labelClassName="text-xs"
               onCopy={onCopy}
             />
           )}

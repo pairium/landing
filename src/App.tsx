@@ -77,7 +77,10 @@ const mcpConfigCode = {
     }
   }
 }`,
-    link: 'cursor://anysphere.cursor-deeplink/mcp/install?name=pairium-mcp&config=eyJ1cmwiOiJodHRwczovL3BhaXJpdW0tbWNwLTg4MzA1NDE5NjEzNi51cy1lYXN0NC5ydW4uYXBwL21jcCJ9Cg==',
+    link: {
+      label: 'Add to Cursor',
+      href: 'cursor://anysphere.cursor-deeplink/mcp/install?name=pairium-mcp&config=eyJ1cmwiOiJodHRwczovL3BhaXJpdW0tbWNwLTg4MzA1NDE5NjEzNi51cy1lYXN0NC5ydW4uYXBwL21jcCJ9Cg==',
+    },
   },
   'ChatGPT': {
     lang: 'text',
