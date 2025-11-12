@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "bun --hot src/index.html",
-    "build": "rm -rf build && bun build src/index.html --outdir build --minify --target browser --define.process.env.NODE_ENV=production",
+    "build": "rm -rf build && bun build src/index.html --outdir build --minify --target browser --define.process.env.NODE_ENV=production && cp src/assets/og-image.png build/og-image.png",
     "serve": "bun run --production build/index.html",
     "deploy": "bun run build && firebase deploy --only hosting",
     "check": "tsc --noEmit"
