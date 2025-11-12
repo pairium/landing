@@ -446,7 +446,7 @@ function ResearchPage() {
     <section id="research" className="w-full py-20" aria-labelledby="research-heading">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-24 px-4 sm:px-6">
         <div className="flex flex-col items-center gap-6 text-center">
-          <span className="inline-flex rounded-full color-bg-primary px-3 py-1 text-sm font-medium color-text-on-primary">Coming Soon</span>
+          <span className="inline-flex rounded-full color-bg-primary-tint px-3 py-1 text-sm font-medium color-text-base">Coming Soon</span>
           <h2 id="research-heading" className="text-3xl font-bold tracking-tight sm:text-4xl color-text-base">
             Pairit Lab
           </h2>
