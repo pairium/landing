@@ -14,13 +14,8 @@ const FOOTER_LINKS: FooterLink[] = [
 export function Footer() {
   return (
     <footer className="w-full color-bg-base py-6 color-text-base">
-      <div className="container mx-auto flex max-w-8xl flex-col items-center gap-8 px-4 text-center sm:px-6">
-        <div>
-          <p className="mt-2 max-w-md text-sm color-text-muted">
-            © {new Date().getFullYear()} Pairium AI. AI personalization that makes you better.
-          </p>
-        </div>
-        <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium color-text-muted">
+      <div className="container mx-auto flex max-w-8xl flex-col items-center gap-2 px-4 text-center sm:px-6">
+        <nav className="flex flex-wrap items-center justify-center gap-8 text-sm font-medium color-text-muted">
           {FOOTER_LINKS.map((link) =>
             "external" in link ? (
               <a
@@ -39,6 +34,9 @@ export function Footer() {
             ),
           )}
         </nav>
+        <p className="mt-2 max-w-md text-sm color-text-muted">
+          © {new Date().getFullYear()} Pairium AI. AI personalization that makes you better.
+        </p>
       </div>
     </footer>
   );
