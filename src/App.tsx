@@ -368,7 +368,7 @@ function HeroSection() {
       aria-labelledby="hero-heading"
     >
       <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-4 sm:px-6 text-center sm:text-left sm:items-start justify-center">
-        <h1 id="hero-heading" className="text-[1.625rem] font-normal tracking-tight sm:text-[1.75rem] max-w-2xl leading-tight text-[#26251e]">
+        <h1 id="hero-heading" className="text-2xl font-normal tracking-tight sm:text-3xl max-w-2xl leading-tight text-[#26251e]">
           AI personalization that makes you better.
         </h1>
         <a href="/enterprise" className={cn(primaryCtaClass, "gap-2")}>
@@ -406,7 +406,7 @@ function AboutSection() {
           </h2>
         </div>
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-6 text-lg leading-relaxed text-[#26251e]/80">
+          <div className="space-y-6 leading-relaxed text-[#26251e]/80">
             <p>
               Built on proprietary MIT research around "personality pairing" between AI agents and human teammates, Pairium AI personalizes human-AI collaboration to
               maximize productivity across complex workflows. That research powered Pairit, a commercial grade platform validated in a large scale randomized controlled trial
