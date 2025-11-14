@@ -202,15 +202,6 @@ const founderBios: FounderBio[] = [
 
 const teamMembers: TeamMember[] = [
   {
-    id: "chengfeng-mao",
-    name: "Chengfeng Mao",
-    role: "Technical Staff",
-    image: chengfengMaoImage,
-    blurb:
-      "PhD candidate at the MIT Sloan School of Management, studying LLM post-training techniques and agentic frameworks for enterprise applications.",
-    linkedin: "https://linkedin.com/in/cmao",
-  },
-  {
     id: "james-kupernik",
     name: "James Kupernik",
     role: "Technical Staff",
@@ -236,6 +227,15 @@ const teamMembers: TeamMember[] = [
     blurb:
       "Applied scientist at the Columbia-Dream Sports AI Innovation Center, formerly advancing recommendation systems at Netflix and measurement at Amazon.",
     linkedin: "https://www.linkedin.com/in/mfzhao/",
+  },
+  {
+    id: "chengfeng-mao",
+    name: "Chengfeng Mao",
+    role: "Technical Staff",
+    image: chengfengMaoImage,
+    blurb:
+      "PhD candidate at the MIT Sloan School of Management, studying LLM post-training techniques and agentic frameworks for enterprise applications.",
+    linkedin: "https://linkedin.com/in/cmao",
   },
 ];
 
