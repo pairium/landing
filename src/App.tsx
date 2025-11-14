@@ -28,6 +28,7 @@ import { cn } from "@/lib/utils";
 import { PrivacyPage } from "@/pages/privacy";
 import { TermsPage } from "@/pages/terms";
 import { CodeTabs } from '@/components/ui/shadcn-io/code-tabs';
+import chengfengMaoImage from "@/assets/chengfeng-mao.jpg";
 import harangJuImage from "@/assets/harang-ju.jpg";
 import jamesKupernikImage from "@/assets/james-kupernik.jpg";
 import joshAttenbergImage from "@/assets/josh-attenberg.jpg";
@@ -200,6 +201,15 @@ const founderBios: FounderBio[] = [
 ];
 
 const teamMembers: TeamMember[] = [
+  {
+    id: "chengfeng-mao",
+    name: "Chengfeng Mao",
+    role: "Technical Staff",
+    image: chengfengMaoImage,
+    blurb:
+      "PhD candidate at the MIT Sloan School of Management, studying LLM post-training techniques and agentic frameworks for enterprise applications.",
+    linkedin: "https://linkedin.com/in/cmao",
+  },
   {
     id: "james-kupernik",
     name: "James Kupernik",
