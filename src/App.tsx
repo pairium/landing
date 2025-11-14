@@ -647,7 +647,7 @@ function TeamSection() {
             Leadership and collaborators
           </h2>
         </div>
-        <div className="grid gap-10 md:grid-cols-3 justify-items-center">
+        <div className="grid gap-10 place-items-center md:grid-cols-2 lg:grid-cols-2">
           {teamMembers.map((member) => (
             <article key={member.id} className="group flex flex-col gap-6 rounded-2xl color-bg-surface p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
               <div className="mx-auto h-48 w-48 overflow-hidden rounded-full border-4 color-border-highlight shadow-md">
