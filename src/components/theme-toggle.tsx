@@ -1,50 +1,39 @@
-import { useEffect, useState } from "react";
-import { Moon, Sun } from "lucide-react";
-
-const STORAGE_KEY = "pairium-theme";
-
-type Theme = "light" | "dark";
-
-function getInitialTheme(): Theme {
-  if (typeof window === "undefined") {
-    return "light";
-  }
-
-  const stored = window.localStorage.getItem(STORAGE_KEY) as Theme | null;
-  if (stored === "light" || stored === "dark") {
-    return stored;
-  }
-
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-}
+import { Moon, Sun, Monitor } from "lucide-react";
+import { Toggle } from "@/components/ui/toggle";
+import { useTheme } from "@/stubs/next-themes";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(() => getInitialTheme());
+  const { theme, setTheme } = useTheme();
 
-  useEffect(() => {
-    const root = document.documentElement;
-    root.classList.toggle("dark", theme === "dark");
-    window.localStorage.setItem(STORAGE_KEY, theme);
-  }, [theme]);
+  const cycleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else if (theme === "dark") {
+      setTheme("system");
+    } else {
+      setTheme("light");
+    }
+  };
 
-  const toggle = () => {
-    setTheme((current) => (current === "dark" ? "light" : "dark"));
+  const getIcon = () => {
+    if (theme === "light") return <Sun className="size-4" />;
+    if (theme === "dark") return <Moon className="size-4" />;
+    return <Monitor className="size-4" />;
+  };
+
+  const getLabel = () => {
+    if (theme === "light") return "Switch to dark mode";
+    if (theme === "dark") return "Switch to system mode";
+    return "Switch to light mode";
   };
 
   return (
-    <button
-      type="button"
-      onClick={toggle}
-      className="inline-flex size-10 items-center justify-center rounded-full border color-border-control color-bg-control color-text-control shadow-sm transition-colors hover-color-bg-control"
-      aria-label="Toggle theme"
+    <Toggle
+      onClick={cycleTheme}
+      aria-label={getLabel()}
+      className="size-9 px-0"
     >
-      {theme === "dark" ? (
-        <Moon className="size-5" />
-      ) : (
-        <Sun className="size-5" />
-      )}
-    </button>
+      {getIcon()}
+    </Toggle>
   );
 }

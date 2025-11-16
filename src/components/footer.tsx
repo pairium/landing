@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 type FooterLink = { to: string; label: string; hash?: string } | { href: string; label: string; external: true };
 
@@ -34,9 +35,12 @@ export function Footer() {
             ),
           )}
         </nav>
-        <p className="mt-2 max-w-md text-sm color-text-muted">
-          © {new Date().getFullYear()} Pairium AI. AI personalization that makes you better.
-        </p>
+        <div className="flex w-full items-center justify-between mt-2">
+          <p className="max-w-md text-sm color-text-muted">
+            © {new Date().getFullYear()} Pairium AI.
+          </p>
+          <ThemeToggle />
+        </div>
       </div>
     </footer>
   );

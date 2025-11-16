@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-// import { useTheme } from 'next-themes';
+import { useTheme } from '@/stubs/next-themes';
 
 import { motion } from 'motion/react';
 
@@ -50,7 +50,7 @@ function CodeTabsContent({
   copyButton?: boolean;
   onCopy?: (content: string) => void;
 }) {
-  // const { resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const { activeValue } = useTabs();
 
   // Extract raw codes for initial rendering
@@ -102,7 +102,7 @@ function CodeTabsContent({
               light: themes.light,
               dark: themes.dark,
             },
-            // defaultColor: resolvedTheme === 'dark' ? 'dark' : 'light',
+            defaultColor: resolvedTheme === 'dark' ? 'dark' : 'light',
           });
 
           // Remove background-color inline styles from Shiki output
@@ -117,8 +117,7 @@ function CodeTabsContent({
       }
     }
     loadHighlightedCode();
-  // }, [resolvedTheme, lang, themes.light, themes.dark, codes]);
-  }, [lang, themes.light, themes.dark, codes]);
+  }, [resolvedTheme, lang, themes.light, themes.dark, codes]);
 
   return (
     <>
