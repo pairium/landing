@@ -72,6 +72,8 @@
   --ink-contrast: #ffffff;
   --ink-muted: color-mix(in srgb, var(--ink) 80%, transparent);
   --ink-soft: color-mix(in srgb, var(--ink) 60%, transparent);
+  --logo-icon-bg: #f7f7f4;
+  --logo-icon-fg: #26251e;
   --primary-tint: color-mix(in srgb, var(--primary) 10%, transparent);
   --primary-strong: color-mix(in srgb, var(--primary) 90%, black 10%);
   --base-veil: color-mix(in srgb, var(--background) 90%, transparent);
@@ -96,6 +98,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --scrollbar-compensation: 0px;
+  color-scheme: light dark;
 }
 
 .dark {
@@ -136,6 +139,8 @@
   --ink-contrast: #1a1916;
   --ink-muted: color-mix(in srgb, var(--ink) 70%, transparent);
   --ink-soft: color-mix(in srgb, var(--ink) 50%, transparent);
+  --logo-icon-bg: #14120b;
+  --logo-icon-fg: #f7f7f4;
   --primary-tint: color-mix(in srgb, var(--primary) 15%, transparent);
   --primary-strong: color-mix(in srgb, var(--primary) 90%, white 10%);
   --base-veil: color-mix(in srgb, var(--background) 90%, transparent);
@@ -367,17 +372,6 @@
 
 * {
   border-color: var(--border);
-}
-
-html {
-  scrollbar-gutter: stable both-edges;
-}
-
-body {
-  scrollbar-gutter: stable both-edges;
-  background-color: var(--background);
-  color: var(--foreground);
-  padding-right: var(--scrollbar-compensation, 0px);
 }
 
 @keyframes streak_move_12s {

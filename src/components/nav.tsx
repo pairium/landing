@@ -8,7 +8,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import logoIcon from "@/assets/icon.svg";
+import { LogoIcon } from "@/components/logo-icon";
 
 const LINKS = [
   { to: "/about", label: "About" },
@@ -20,7 +20,6 @@ export function Nav() {
   const [isPinned, setIsPinned] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { location } = useRouterState();
-
   useEffect(() => {
     const onScroll = () => setIsPinned(window.scrollY > 4);
     onScroll();
@@ -38,8 +37,8 @@ export function Nav() {
     >
       <div className="relative mx-auto flex h-16 w-full max-w-6xl items-center px-4 sm:px-6">
         <div className="flex flex-1 items-center">
-          <Link to="/" className="flex items-center gap-1" aria-label="Pairium AI home">
-            <img src={logoIcon} alt="Pairium AI" className="h-6 w-6" />
+          <Link to="/" className="flex items-center gap-0.5" aria-label="Pairium AI home">
+            <LogoIcon aria-hidden="true" />
             <span className="text-lg font-semibold tracking-tight color-text-base">
               Pairium
             </span>
@@ -85,7 +84,7 @@ export function Nav() {
                     aria-label="Pairium AI home"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <img src={logoIcon} alt="Pairium AI" className="h-6 w-6" />
+                    <LogoIcon aria-hidden="true" />
                     <span className="text-lg font-semibold tracking-tight color-text-base">
                       Pairium
                     </span>
